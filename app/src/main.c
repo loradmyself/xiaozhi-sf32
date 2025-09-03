@@ -45,6 +45,13 @@ extern lv_obj_t *shutdown_screen;
 extern lv_obj_t *sleep_screen;
 /* Common functions for RT-Thread based platform
  * -----------------------------------------------*/
+
+void empty_function(void)
+{
+    return;
+}
+
+
 /**
  * @brief  Initialize board default configuration.
  * @param  None
