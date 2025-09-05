@@ -775,7 +775,7 @@ int main(void)
             char local_name[32];
             bd_addr_t addr;
             ble_get_public_address(&addr);
-            sprintf(local_name, "%s-%02x:%02x:%02x:%02x:%02x:%02x",
+            sprintf(local_name, "%s-%02x:%02x:%02x:%02x:%02x:%02x",//修改蓝牙名称
                     BLUETOOTH_NAME, addr.addr[0], addr.addr[1], addr.addr[2],
                     addr.addr[3], addr.addr[4], addr.addr[5]);
 #else

@@ -852,9 +852,9 @@ extern const lv_image_dsc_t neutral_51;
 extern const lv_image_dsc_t neutral_52;
 extern const lv_image_dsc_t neutral_53;
 extern const lv_image_dsc_t neutral_54;
-extern const lv_image_dsc_t neutral_55;
-extern const lv_image_dsc_t neutral_56;
-extern const lv_image_dsc_t neutral_57;
+// extern const lv_image_dsc_t neutral_55;
+// extern const lv_image_dsc_t neutral_56;
+// extern const lv_image_dsc_t neutral_57;
 
 
 
@@ -915,9 +915,9 @@ const lv_image_dsc_t * neutral[] =
   &neutral_52,
   &neutral_53,
   &neutral_54,
-  &neutral_55,
-  &neutral_56,
-  &neutral_57
+  // &neutral_55,
+  // &neutral_56,
+  // &neutral_57
 };
 /*---------------------neutra*/
 
@@ -1296,119 +1296,119 @@ const lv_image_dsc_t * thinking[] =
 
 /*---------------------thinking*/
 
-extern const lv_image_dsc_t bit_1;
-extern const lv_image_dsc_t bit_2;
-extern const lv_image_dsc_t bit_3;
-extern const lv_image_dsc_t bit_4;
-extern const lv_image_dsc_t bit_5;
-extern const lv_image_dsc_t bit_6;
-extern const lv_image_dsc_t bit_7;
-extern const lv_image_dsc_t bit_8;
-extern const lv_image_dsc_t bit_9;
-extern const lv_image_dsc_t bit_10;
-extern const lv_image_dsc_t bit_11;
-extern const lv_image_dsc_t bit_12;
-extern const lv_image_dsc_t bit_13;
-extern const lv_image_dsc_t bit_14;
-extern const lv_image_dsc_t bit_15;
-extern const lv_image_dsc_t bit_16;
-extern const lv_image_dsc_t bit_17;
-extern const lv_image_dsc_t bit_18;
-extern const lv_image_dsc_t bit_19;
-extern const lv_image_dsc_t bit_20;
-extern const lv_image_dsc_t bit_21;
-extern const lv_image_dsc_t bit_22;
-extern const lv_image_dsc_t bit_23;
-extern const lv_image_dsc_t bit_24;
-extern const lv_image_dsc_t bit_25;
-extern const lv_image_dsc_t bit_26;
-extern const lv_image_dsc_t bit_27;
-extern const lv_image_dsc_t bit_28;
-extern const lv_image_dsc_t bit_29;
-extern const lv_image_dsc_t bit_30;
-extern const lv_image_dsc_t bit_31;
-extern const lv_image_dsc_t bit_32;
-extern const lv_image_dsc_t bit_33;
-extern const lv_image_dsc_t bit_34;
-extern const lv_image_dsc_t bit_35;
-extern const lv_image_dsc_t bit_36;
-extern const lv_image_dsc_t bit_37;
-extern const lv_image_dsc_t bit_38;
-extern const lv_image_dsc_t bit_39;
-extern const lv_image_dsc_t bit_40;
-extern const lv_image_dsc_t bit_41;
-extern const lv_image_dsc_t bit_42;
-extern const lv_image_dsc_t bit_43;
-extern const lv_image_dsc_t bit_44;
-extern const lv_image_dsc_t bit_45;
-extern const lv_image_dsc_t bit_46;
-extern const lv_image_dsc_t bit_47;
-extern const lv_image_dsc_t bit_48;
-extern const lv_image_dsc_t bit_49;
-extern const lv_image_dsc_t bit_50;
-extern const lv_image_dsc_t bit_51;
-extern const lv_image_dsc_t bit_52;
-extern const lv_image_dsc_t bit_53;
-extern const lv_image_dsc_t bit_54;
+// extern const lv_image_dsc_t bit_1;
+// extern const lv_image_dsc_t bit_2;
+// extern const lv_image_dsc_t bit_3;
+// extern const lv_image_dsc_t bit_4;
+// extern const lv_image_dsc_t bit_5;
+// extern const lv_image_dsc_t bit_6;
+// extern const lv_image_dsc_t bit_7;
+// extern const lv_image_dsc_t bit_8;
+// extern const lv_image_dsc_t bit_9;
+// extern const lv_image_dsc_t bit_10;
+// extern const lv_image_dsc_t bit_11;
+// extern const lv_image_dsc_t bit_12;
+// extern const lv_image_dsc_t bit_13;
+// extern const lv_image_dsc_t bit_14;
+// extern const lv_image_dsc_t bit_15;
+// extern const lv_image_dsc_t bit_16;
+// extern const lv_image_dsc_t bit_17;
+// extern const lv_image_dsc_t bit_18;
+// extern const lv_image_dsc_t bit_19;
+// extern const lv_image_dsc_t bit_20;
+// extern const lv_image_dsc_t bit_21;
+// extern const lv_image_dsc_t bit_22;
+// extern const lv_image_dsc_t bit_23;
+// extern const lv_image_dsc_t bit_24;
+// extern const lv_image_dsc_t bit_25;
+// extern const lv_image_dsc_t bit_26;
+// extern const lv_image_dsc_t bit_27;
+// extern const lv_image_dsc_t bit_28;
+// extern const lv_image_dsc_t bit_29;
+// extern const lv_image_dsc_t bit_30;
+// extern const lv_image_dsc_t bit_31;
+// extern const lv_image_dsc_t bit_32;
+// extern const lv_image_dsc_t bit_33;
+// extern const lv_image_dsc_t bit_34;
+// extern const lv_image_dsc_t bit_35;
+// extern const lv_image_dsc_t bit_36;
+// extern const lv_image_dsc_t bit_37;
+// extern const lv_image_dsc_t bit_38;
+// extern const lv_image_dsc_t bit_39;
+// extern const lv_image_dsc_t bit_40;
+// extern const lv_image_dsc_t bit_41;
+// extern const lv_image_dsc_t bit_42;
+// extern const lv_image_dsc_t bit_43;
+// extern const lv_image_dsc_t bit_44;
+// extern const lv_image_dsc_t bit_45;
+// extern const lv_image_dsc_t bit_46;
+// extern const lv_image_dsc_t bit_47;
+// extern const lv_image_dsc_t bit_48;
+// extern const lv_image_dsc_t bit_49;
+// extern const lv_image_dsc_t bit_50;
+// extern const lv_image_dsc_t bit_51;
+// extern const lv_image_dsc_t bit_52;
+// extern const lv_image_dsc_t bit_53;
+// extern const lv_image_dsc_t bit_54;
 
 
-const lv_image_dsc_t * bit[] =
-{
-  &bit_1,
-  &bit_2,
-  &bit_3,
-  &bit_4,
-  &bit_5,
-  &bit_6,
-  &bit_7,
-  &bit_8,
-  &bit_9,
-  &bit_10,
-  &bit_11,
-  &bit_12,
-  &bit_13,
-  &bit_14,
-  &bit_15,
-  &bit_16,
-  &bit_17,
-  &bit_18,
-  &bit_19,
-  &bit_20,
-  &bit_21,
-  &bit_22,
-  &bit_23,
-  &bit_24,
-  &bit_25,
-  &bit_26,
-  &bit_27,
-  &bit_28,
-  &bit_29,
-  &bit_30,
-  &bit_31,
-  &bit_32,
-  &bit_33,
-  &bit_34,
-  &bit_35,
-  &bit_36,
-  &bit_37,
-  &bit_38,
-  &bit_39,
-  &bit_40,
-  &bit_41,
-  &bit_42,
-  &bit_43,
-  &bit_44,
-  &bit_45,
-  &bit_46,
-  &bit_47,
-  &bit_48,
-  &bit_49,
-  &bit_50,
-  &bit_51,
-  &bit_52,
-  &bit_53,
-  &bit_54,
-};
+// const lv_image_dsc_t * bit[] =
+// {
+//   &bit_1,
+//   &bit_2,
+//   &bit_3,
+//   &bit_4,
+//   &bit_5,
+//   &bit_6,
+//   &bit_7,
+//   &bit_8,
+//   &bit_9,
+//   &bit_10,
+//   &bit_11,
+//   &bit_12,
+//   &bit_13,
+//   &bit_14,
+//   &bit_15,
+//   &bit_16,
+//   &bit_17,
+//   &bit_18,
+//   &bit_19,
+//   &bit_20,
+//   &bit_21,
+//   &bit_22,
+//   &bit_23,
+//   &bit_24,
+//   &bit_25,
+//   &bit_26,
+//   &bit_27,
+//   &bit_28,
+//   &bit_29,
+//   &bit_30,
+//   &bit_31,
+//   &bit_32,
+//   &bit_33,
+//   &bit_34,
+//   &bit_35,
+//   &bit_36,
+//   &bit_37,
+//   &bit_38,
+//   &bit_39,
+//   &bit_40,
+//   &bit_41,
+//   &bit_42,
+//   &bit_43,
+//   &bit_44,
+//   &bit_45,
+//   &bit_46,
+//   &bit_47,
+//   &bit_48,
+//   &bit_49,
+//   &bit_50,
+//   &bit_51,
+//   &bit_52,
+//   &bit_53,
+//   &bit_54,
+// };
 
 /*---------------------bit*/
 

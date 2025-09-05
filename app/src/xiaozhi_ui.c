@@ -1920,9 +1920,9 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
                         {
                             lv_seqimg_src_array(seqimg, crying, sizeof(crying) / sizeof(crying[0]));
                         }
-                        else if (strcmp(msg->data, "bit") == 0)     //replace angry
+                        else if (strcmp(msg->data, "angry") == 0)     //replace angry
                         {
-                            lv_seqimg_src_array(seqimg, bit, sizeof(bit) / sizeof(bit[0]));
+                            lv_seqimg_src_array(seqimg, angry, sizeof(angry) / sizeof(angry[0]));
                         }
                         else if (strcmp(msg->data, "crying") == 0)
                         {

@@ -32,7 +32,7 @@ objs_ezip += Glob('./thinking/*.png')
 objs_ezip += Glob('./winking/*.png')
 objs_ezip += Glob('./time/*.png')
 objs_ezip += Glob('./weather/*.png')
-objs_ezip += Glob('./bit/*.png')
+# objs_ezip += Glob('./bit/*.png')
 def align_to_power_of_two_and_str(num):
     power = 1
     while power < num:
