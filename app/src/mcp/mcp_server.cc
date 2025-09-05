@@ -113,20 +113,20 @@ void McpServer::AddCommonTools() {
 
 
 
-        //计算器工具
-        AddTool("self.mcp.calculator",
-        "Calculate the sum of two numbers.",
-        PropertyList(
-            {
-                Property("a", kPropertyTypeInteger,0,100),
-                Property("b", kPropertyTypeInteger,0,100)
-            }
-        ),
-        [=](const PropertyList&properties) -> ReturnValue {
-            int a = properties["a"].value<int>();
-            int b = properties["b"].value<int>();
-            return a + b;
-        });
+        // //计算器工具
+        // AddTool("self.mcp.calculator",
+        // "Calculate the sum of two numbers.",
+        // PropertyList(
+        //     {
+        //         Property("a", kPropertyTypeInteger,0,100),
+        //         Property("b", kPropertyTypeInteger,0,100)
+        //     }
+        // ),
+        // [=](const PropertyList&properties) -> ReturnValue {
+        //     int a = properties["a"].value<int>();
+        //     int b = properties["b"].value<int>();
+        //     return a + b;
+        // });
     }
     
     // 添加RGB LED工具
