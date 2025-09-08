@@ -1,4 +1,4 @@
-source "C:/OpenSiFli/sifli-sdk/customer/boards/sf32lb52-lchspi-ulp/hcpu/Kconfig.board"
+source "C:/Users/admin/Desktop/SiFli_Project/xiaozhi/xiaozhi-sf32/sdk/customer/boards/sf32lb52-lchspi-ulp/hcpu/Kconfig.board"
 source "$SIFLI_SDK/customer/boards/Kconfig.v2"
 source "$SIFLI_SDK/Kconfig.v2"
 rsource "Kconfig.proj"

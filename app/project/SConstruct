@@ -1,6 +1,6 @@
 import os
 import rtconfig
-
+from ide_support import vscode_support,clion_support
 # Check SDK 
 SIFLI_SDK = os.getenv('SIFLI_SDK')
 if not SIFLI_SDK:
@@ -43,3 +43,5 @@ AddFTAB(SIFLI_SDK,rtconfig.CHIP)
 
 # Generate download .bat script
 GenDownloadScript(env)
+
+vscode_support(env)
