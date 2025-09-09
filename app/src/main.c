@@ -775,11 +775,11 @@ int main(void)
             char local_name[32];
             bd_addr_t addr;
             ble_get_public_address(&addr);
-            sprintf(local_name, "%s-%02x:%02x:%02x:%02x:%02x:%02x",
-                    BLUETOOTH_NAME, addr.addr[0], addr.addr[1], addr.addr[2],
+            sprintf(local_name, "正常的名字-%02x:%02x:%02x:%02x:%02x:%02x",
+                     addr.addr[0], addr.addr[1], addr.addr[2],
                     addr.addr[3], addr.addr[4], addr.addr[5]);
 #else
-            const char *local_name = "蓝🦷";                //修改蓝牙名称
+            const char *local_name = "正常的名字";                //修改蓝牙名称
 #endif
             bt_interface_set_local_name(strlen(local_name), (void *)local_name);
         }
