@@ -1226,8 +1226,12 @@ extern const lv_image_dsc_t thinking_51;
 extern const lv_image_dsc_t thinking_52;
 extern const lv_image_dsc_t thinking_53;
 extern const lv_image_dsc_t thinking_54;
-
-
+extern const lv_image_dsc_t thinking_55;   
+extern const lv_image_dsc_t thinking_56;
+extern const lv_image_dsc_t thinking_57;
+extern const lv_image_dsc_t thinking_58;   
+extern const lv_image_dsc_t thinking_59;
+extern const lv_image_dsc_t thinking_60;
 //这里是因为文件夹中有60张图片
 
 const lv_image_dsc_t * thinking[] =
@@ -1286,7 +1290,12 @@ const lv_image_dsc_t * thinking[] =
   &thinking_52,
   &thinking_53,
   &thinking_54,
-
+  &thinking_55,
+  &thinking_56,
+  &thinking_57,
+  &thinking_58,
+  &thinking_59,
+  &thinking_60,
 
 };
 
