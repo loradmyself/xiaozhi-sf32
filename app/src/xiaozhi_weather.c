@@ -564,39 +564,39 @@ void time_ui_update_callback(void)
         }
     }
 
-   // 更新蓝牙和网络图标（仅在状态变化时更新）
-    extern lv_obj_t *bluetooth_icon;
-    extern lv_obj_t *network_icon;
-    extern const lv_image_dsc_t ble_icon_img;
-    extern const lv_image_dsc_t ble_icon_img_close;
-    extern const lv_image_dsc_t network_icon_img;
-    extern const lv_image_dsc_t network_icon_img_close;
+//    // 更新蓝牙和网络图标（仅在状态变化时更新）
+//     extern lv_obj_t *bluetooth_icon;
+//     extern lv_obj_t *network_icon;
+//     extern const lv_image_dsc_t ble_icon_img;
+//     extern const lv_image_dsc_t ble_icon_img_close;
+//     extern const lv_image_dsc_t network_icon_img;
+//     extern const lv_image_dsc_t network_icon_img_close;
     
-    // 检查蓝牙连接状态变化
-    extern bt_app_t g_bt_app_env; 
-    if (g_bt_app_env.bt_connected != last_bt_connected) {
-        if (bluetooth_icon) {
-            if (g_bt_app_env.bt_connected) {
-                lv_img_set_src(bluetooth_icon, &ble_icon_img);
-            } else {
-                lv_img_set_src(bluetooth_icon, &ble_icon_img_close);
-            }
-        }
-        last_bt_connected = g_bt_app_env.bt_connected;
-    }
+//     // 检查蓝牙连接状态变化
+//     extern bt_app_t g_bt_app_env; 
+//     if (g_bt_app_env.bt_connected != last_bt_connected) {
+//         if (bluetooth_icon) {
+//             if (g_bt_app_env.bt_connected) {
+//                 lv_img_set_src(bluetooth_icon, &ble_icon_img);
+//             } else {
+//                 lv_img_set_src(bluetooth_icon, &ble_icon_img_close);
+//             }
+//         }
+//         last_bt_connected = g_bt_app_env.bt_connected;
+//     }
 
-    //网络图标
-    extern BOOL g_pan_connected;
-    if (g_pan_connected != last_pan_connected) {
-        if (network_icon) {
-            if (g_pan_connected) {
-                lv_img_set_src(network_icon, &network_icon_img);
-            } else {
-                lv_img_set_src(network_icon, &network_icon_img_close);
-            }
-        }
-        last_pan_connected = g_pan_connected;
-    }
+//     //网络图标
+//     extern BOOL g_pan_connected;
+//     if (g_pan_connected != last_pan_connected) {
+//         if (network_icon) {
+//             if (g_pan_connected) {
+//                 lv_img_set_src(network_icon, &network_icon_img);
+//             } else {
+//                 lv_img_set_src(network_icon, &network_icon_img_close);
+//             }
+//         }
+//         last_pan_connected = g_pan_connected;
+//     }
 
 
 }
