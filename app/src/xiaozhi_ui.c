@@ -1955,10 +1955,10 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
                         {
                             lv_seqimg_src_array(seqimg, surprised, sizeof(surprised) / sizeof(surprised[0]));
                         }
-                        else if (strcmp(msg->data, "thinking") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, thinking, sizeof(thinking) / sizeof(thinking[0]));
-                        }
+                        // else if (strcmp(msg->data, "thinking") == 0)
+                        // {
+                        //     lv_seqimg_src_array(seqimg, thinking, sizeof(thinking) / sizeof(thinking[0]));
+                        // }
                         // else if (strcmp(msg->data, "winking") == 0)
                         // {
                         //     lv_seqimg_src_array(seqimg, loving, sizeof(loving) / sizeof(loving[0]));
@@ -1987,14 +1987,14 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
                         {
                             lv_seqimg_src_array(seqimg, sleepy, sizeof(sleepy) / sizeof(sleepy[0]));
                         }
-                        else if (strcmp(msg->data, "silly") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, thinking, sizeof(thinking) / sizeof(thinking[0]));
-                        }
-                        else if (strcmp(msg->data, "confused") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, thinking, sizeof(thinking) / sizeof(thinking[0]));
-                        }
+                        // else if (strcmp(msg->data, "silly") == 0)
+                        // {
+                        //     lv_seqimg_src_array(seqimg, thinking, sizeof(thinking) / sizeof(thinking[0]));
+                        // }
+                        // else if (strcmp(msg->data, "confused") == 0)
+                        // {
+                        //     lv_seqimg_src_array(seqimg, thinking, sizeof(thinking) / sizeof(thinking[0]));
+                        // }
                         else
                         {
                             lv_seqimg_src_array(seqimg, neutral, sizeof(neutral) / sizeof(neutral[0])); // common emoji is neutral

@@ -1172,134 +1172,134 @@ const lv_image_dsc_t * surprised[] =
 /*---------------------surprised*/
 
 
-extern const lv_image_dsc_t thinking_1;
-extern const lv_image_dsc_t thinking_2;
-extern const lv_image_dsc_t thinking_3;
-extern const lv_image_dsc_t thinking_4;
-extern const lv_image_dsc_t thinking_5;
-extern const lv_image_dsc_t thinking_6;
-extern const lv_image_dsc_t thinking_7;
-extern const lv_image_dsc_t thinking_8;
-extern const lv_image_dsc_t thinking_9;
-extern const lv_image_dsc_t thinking_10;
-extern const lv_image_dsc_t thinking_11;
-extern const lv_image_dsc_t thinking_12;
-extern const lv_image_dsc_t thinking_13;
-extern const lv_image_dsc_t thinking_14;
-extern const lv_image_dsc_t thinking_15;
-extern const lv_image_dsc_t thinking_16;
-extern const lv_image_dsc_t thinking_17;
-extern const lv_image_dsc_t thinking_18;
-extern const lv_image_dsc_t thinking_19;
-extern const lv_image_dsc_t thinking_20;
-extern const lv_image_dsc_t thinking_21;
-extern const lv_image_dsc_t thinking_22;
-extern const lv_image_dsc_t thinking_23;
-extern const lv_image_dsc_t thinking_24;
-extern const lv_image_dsc_t thinking_25;
-extern const lv_image_dsc_t thinking_26;
-extern const lv_image_dsc_t thinking_27;
-extern const lv_image_dsc_t thinking_28;
-extern const lv_image_dsc_t thinking_29;
-extern const lv_image_dsc_t thinking_30;
-extern const lv_image_dsc_t thinking_31;
-extern const lv_image_dsc_t thinking_32;
-extern const lv_image_dsc_t thinking_33;
-extern const lv_image_dsc_t thinking_34;
-extern const lv_image_dsc_t thinking_35;
-extern const lv_image_dsc_t thinking_36;
-extern const lv_image_dsc_t thinking_37;
-extern const lv_image_dsc_t thinking_38;
-extern const lv_image_dsc_t thinking_39;
-extern const lv_image_dsc_t thinking_40;
-extern const lv_image_dsc_t thinking_41;
-extern const lv_image_dsc_t thinking_42;
-extern const lv_image_dsc_t thinking_43;
-extern const lv_image_dsc_t thinking_44;
-extern const lv_image_dsc_t thinking_45;
-extern const lv_image_dsc_t thinking_46;
-extern const lv_image_dsc_t thinking_47;
-extern const lv_image_dsc_t thinking_48;
-extern const lv_image_dsc_t thinking_49;
-extern const lv_image_dsc_t thinking_50;
-extern const lv_image_dsc_t thinking_51;
-extern const lv_image_dsc_t thinking_52;
-extern const lv_image_dsc_t thinking_53;
-extern const lv_image_dsc_t thinking_54;
-extern const lv_image_dsc_t thinking_55;   
-extern const lv_image_dsc_t thinking_56;
-extern const lv_image_dsc_t thinking_57;
-extern const lv_image_dsc_t thinking_58;   
-extern const lv_image_dsc_t thinking_59;
-extern const lv_image_dsc_t thinking_60;
-//这里是因为文件夹中有60张图片
+// extern const lv_image_dsc_t thinking_1;
+// extern const lv_image_dsc_t thinking_2;
+// extern const lv_image_dsc_t thinking_3;
+// extern const lv_image_dsc_t thinking_4;
+// extern const lv_image_dsc_t thinking_5;
+// extern const lv_image_dsc_t thinking_6;
+// extern const lv_image_dsc_t thinking_7;
+// extern const lv_image_dsc_t thinking_8;
+// extern const lv_image_dsc_t thinking_9;
+// extern const lv_image_dsc_t thinking_10;
+// extern const lv_image_dsc_t thinking_11;
+// extern const lv_image_dsc_t thinking_12;
+// extern const lv_image_dsc_t thinking_13;
+// extern const lv_image_dsc_t thinking_14;
+// extern const lv_image_dsc_t thinking_15;
+// extern const lv_image_dsc_t thinking_16;
+// extern const lv_image_dsc_t thinking_17;
+// extern const lv_image_dsc_t thinking_18;
+// extern const lv_image_dsc_t thinking_19;
+// extern const lv_image_dsc_t thinking_20;
+// extern const lv_image_dsc_t thinking_21;
+// extern const lv_image_dsc_t thinking_22;
+// extern const lv_image_dsc_t thinking_23;
+// extern const lv_image_dsc_t thinking_24;
+// extern const lv_image_dsc_t thinking_25;
+// extern const lv_image_dsc_t thinking_26;
+// extern const lv_image_dsc_t thinking_27;
+// extern const lv_image_dsc_t thinking_28;
+// extern const lv_image_dsc_t thinking_29;
+// extern const lv_image_dsc_t thinking_30;
+// extern const lv_image_dsc_t thinking_31;
+// extern const lv_image_dsc_t thinking_32;
+// extern const lv_image_dsc_t thinking_33;
+// extern const lv_image_dsc_t thinking_34;
+// extern const lv_image_dsc_t thinking_35;
+// extern const lv_image_dsc_t thinking_36;
+// extern const lv_image_dsc_t thinking_37;
+// extern const lv_image_dsc_t thinking_38;
+// extern const lv_image_dsc_t thinking_39;
+// extern const lv_image_dsc_t thinking_40;
+// extern const lv_image_dsc_t thinking_41;
+// extern const lv_image_dsc_t thinking_42;
+// extern const lv_image_dsc_t thinking_43;
+// extern const lv_image_dsc_t thinking_44;
+// extern const lv_image_dsc_t thinking_45;
+// extern const lv_image_dsc_t thinking_46;
+// extern const lv_image_dsc_t thinking_47;
+// extern const lv_image_dsc_t thinking_48;
+// extern const lv_image_dsc_t thinking_49;
+// extern const lv_image_dsc_t thinking_50;
+// extern const lv_image_dsc_t thinking_51;
+// extern const lv_image_dsc_t thinking_52;
+// extern const lv_image_dsc_t thinking_53;
+// extern const lv_image_dsc_t thinking_54;
+// extern const lv_image_dsc_t thinking_55;   
+// extern const lv_image_dsc_t thinking_56;
+// extern const lv_image_dsc_t thinking_57;
+// extern const lv_image_dsc_t thinking_58;   
+// extern const lv_image_dsc_t thinking_59;
+// extern const lv_image_dsc_t thinking_60;
+// //这里是因为文件夹中有60张图片
 
-const lv_image_dsc_t * thinking[] =
-{
-  &thinking_1,
-  &thinking_2,
-  &thinking_3,
-  &thinking_4,
-  &thinking_5,
-  &thinking_6,
-  &thinking_7,
-  &thinking_8,
-  &thinking_9,
-  &thinking_10,
-  &thinking_11,
-  &thinking_12,
-  &thinking_13,
-  &thinking_14,
-  &thinking_15,
-  &thinking_16,
-  &thinking_17,
-  &thinking_18,
-  &thinking_19,
-  &thinking_20,
-  &thinking_21,
-  &thinking_22,
-  &thinking_23,
-  &thinking_24,
-  &thinking_25,
-  &thinking_26,
-  &thinking_27,
-  &thinking_28,
-  &thinking_29,
-  &thinking_30,
-  &thinking_31,
-  &thinking_32,
-  &thinking_33,
-  &thinking_34,
-  &thinking_35,
-  &thinking_36,
-  &thinking_37,
-  &thinking_38,
-  &thinking_39,
-  &thinking_40,
-  &thinking_41,
-  &thinking_42,
-  &thinking_43,
-  &thinking_44,
-  &thinking_45,
-  &thinking_46,
-  &thinking_47,
-  &thinking_48,
-  &thinking_49,
-  &thinking_50,
-  &thinking_51,
-  &thinking_52,
-  &thinking_53,
-  &thinking_54,
-  &thinking_55,
-  &thinking_56,
-  &thinking_57,
-  &thinking_58,
-  &thinking_59,
-  &thinking_60,
+// const lv_image_dsc_t * thinking[] =
+// {
+//   &thinking_1,
+//   &thinking_2,
+//   &thinking_3,
+//   &thinking_4,
+//   &thinking_5,
+//   &thinking_6,
+//   &thinking_7,
+//   &thinking_8,
+//   &thinking_9,
+//   &thinking_10,
+//   &thinking_11,
+//   &thinking_12,
+//   &thinking_13,
+//   &thinking_14,
+//   &thinking_15,
+//   &thinking_16,
+//   &thinking_17,
+//   &thinking_18,
+//   &thinking_19,
+//   &thinking_20,
+//   &thinking_21,
+//   &thinking_22,
+//   &thinking_23,
+//   &thinking_24,
+//   &thinking_25,
+//   &thinking_26,
+//   &thinking_27,
+//   &thinking_28,
+//   &thinking_29,
+//   &thinking_30,
+//   &thinking_31,
+//   &thinking_32,
+//   &thinking_33,
+//   &thinking_34,
+//   &thinking_35,
+//   &thinking_36,
+//   &thinking_37,
+//   &thinking_38,
+//   &thinking_39,
+//   &thinking_40,
+//   &thinking_41,
+//   &thinking_42,
+//   &thinking_43,
+//   &thinking_44,
+//   &thinking_45,
+//   &thinking_46,
+//   &thinking_47,
+//   &thinking_48,
+//   &thinking_49,
+//   &thinking_50,
+//   &thinking_51,
+//   &thinking_52,
+//   &thinking_53,
+//   &thinking_54,
+//   &thinking_55,
+//   &thinking_56,
+//   &thinking_57,
+//   &thinking_58,
+//   &thinking_59,
+//   &thinking_60,
 
-};
+// };
 
-/*---------------------thinking*/
+// /*---------------------thinking*/
 
 // extern const lv_image_dsc_t bit_1;
 // extern const lv_image_dsc_t bit_2;
