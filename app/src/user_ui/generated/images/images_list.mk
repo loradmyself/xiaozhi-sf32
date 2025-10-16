@@ -1,0 +1,1 @@
+GEN_CSRCS += _preview_RGB565A8_390x450.c

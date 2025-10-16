@@ -27,6 +27,14 @@ src = src + Glob('./iot/*.cc')
 src = src + Glob('./kws/*.c') 
 #SrcRemove(src, 'xiaozhi.c')
 
+src = src + Glob('./user_ui/*.c') 
+src = src + Glob('./user_ui/custom*.c') 
+src = src + Glob('./user_ui/generated/*.c') 
+src = src + Glob('./user_ui/generated/*.c') 
+src = src + Glob('./user_ui/generated/guider_customer_fonts*/.c') 
+src = src + Glob('./user_ui/generated/guider_fonts/*.c') 
+src = src + Glob('./user_ui/generated/images/*.c') 
+
 group = DefineGroup('Applications', src, depend = [''], CPPDEFINES = CPPDEFINES, 
     CPPPATH = CPPPATH,
     LIBS = ['libetasr_watch_sifli567'],
