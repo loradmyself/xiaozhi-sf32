@@ -708,94 +708,94 @@ rt_err_t xiaozhi_ui_obj_init()
     lv_obj_clear_flag(xiaozhi_standby_screen, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_set_style_bg_color(xiaozhi_standby_screen, lv_color_hex(0x000000), 0);//黑色
 
-    img_emoji = lv_img_create(standby_screen.screen);
-    LV_IMAGE_DECLARE(sleepy2);
-    LV_IMAGE_DECLARE(funny2);
-    lv_img_set_src(img_emoji, &sleepy2);//初始化提示小智还未连接
-    lv_obj_set_width(img_emoji, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(img_emoji, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(img_emoji, (int)(104 * g_scale));
-    lv_obj_set_y(img_emoji, (int)(-123 * g_scale));
-    lv_obj_set_align(img_emoji, LV_ALIGN_CENTER);
-    lv_obj_add_flag(img_emoji, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
-    lv_obj_clear_flag(img_emoji, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_img_set_zoom(img_emoji, (int)(LV_SCALE_NONE * g_scale)); // 根据缩放因子缩放
+    // img_emoji = lv_img_create(standby_screen.screen);
+    // LV_IMAGE_DECLARE(sleepy2);
+    // LV_IMAGE_DECLARE(funny2);
+    // lv_img_set_src(img_emoji, &sleepy2);//初始化提示小智还未连接
+    // lv_obj_set_width(img_emoji, LV_SIZE_CONTENT);   /// 1
+    // lv_obj_set_height(img_emoji, LV_SIZE_CONTENT);    /// 1
+    // lv_obj_set_x(img_emoji, (int)(104 * g_scale));
+    // lv_obj_set_y(img_emoji, (int)(-123 * g_scale));
+    // lv_obj_set_align(img_emoji, LV_ALIGN_CENTER);
+    // lv_obj_add_flag(img_emoji, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
+    // lv_obj_clear_flag(img_emoji, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    // lv_img_set_zoom(img_emoji, (int)(LV_SCALE_NONE * g_scale)); // 根据缩放因子缩放
 
-    hour_tens_img = lv_img_create(standby_screen.screen);
-    LV_IMAGE_DECLARE(img_1);
-    lv_img_set_src(hour_tens_img, &img_1);
-    lv_obj_set_width(hour_tens_img, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(hour_tens_img, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(hour_tens_img, (int)(-142 * g_scale));
-    lv_obj_set_y(hour_tens_img, (int)(-163 * g_scale));
-    lv_obj_set_align(hour_tens_img, LV_ALIGN_CENTER);
-    lv_obj_add_flag(hour_tens_img, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
-    lv_obj_clear_flag(hour_tens_img, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_img_set_zoom(hour_tens_img, (int)(204 * g_scale));
+    // hour_tens_img = lv_img_create(standby_screen.screen);
+    // LV_IMAGE_DECLARE(img_1);
+    // lv_img_set_src(hour_tens_img, &img_1);
+    // lv_obj_set_width(hour_tens_img, LV_SIZE_CONTENT);   /// 1
+    // lv_obj_set_height(hour_tens_img, LV_SIZE_CONTENT);    /// 1
+    // lv_obj_set_x(hour_tens_img, (int)(-142 * g_scale));
+    // lv_obj_set_y(hour_tens_img, (int)(-163 * g_scale));
+    // lv_obj_set_align(hour_tens_img, LV_ALIGN_CENTER);
+    // lv_obj_add_flag(hour_tens_img, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
+    // lv_obj_clear_flag(hour_tens_img, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    // lv_img_set_zoom(hour_tens_img, (int)(204 * g_scale));
 
-    hour_units_img = lv_img_create(standby_screen.screen);
-    LV_IMAGE_DECLARE(img_2);
-    lv_img_set_src(hour_units_img, &img_2);
-    lv_obj_set_width(hour_units_img, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(hour_units_img, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(hour_units_img, (int)(-73 * g_scale));
-    lv_obj_set_y(hour_units_img, (int)(-163 * g_scale));
-    lv_obj_set_align(hour_units_img, LV_ALIGN_CENTER);
-    lv_obj_add_flag(hour_units_img, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
-    lv_obj_clear_flag(hour_units_img, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_img_set_zoom(hour_units_img, (int)(204 * g_scale));
+    // hour_units_img = lv_img_create(standby_screen.screen);
+    // LV_IMAGE_DECLARE(img_2);
+    // lv_img_set_src(hour_units_img, &img_2);
+    // lv_obj_set_width(hour_units_img, LV_SIZE_CONTENT);   /// 1
+    // lv_obj_set_height(hour_units_img, LV_SIZE_CONTENT);    /// 1
+    // lv_obj_set_x(hour_units_img, (int)(-73 * g_scale));
+    // lv_obj_set_y(hour_units_img, (int)(-163 * g_scale));
+    // lv_obj_set_align(hour_units_img, LV_ALIGN_CENTER);
+    // lv_obj_add_flag(hour_units_img, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
+    // lv_obj_clear_flag(hour_units_img, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    // lv_img_set_zoom(hour_units_img, (int)(204 * g_scale));
 
-    minute_tens_img = lv_img_create(standby_screen.screen);
-        LV_IMAGE_DECLARE(img_3);
+    // minute_tens_img = lv_img_create(standby_screen.screen);
+    //     LV_IMAGE_DECLARE(img_3);
 
-    lv_img_set_src(minute_tens_img, &img_3);
-    lv_obj_set_width(minute_tens_img, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(minute_tens_img, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(minute_tens_img, (int)(-142 * g_scale));
-    lv_obj_set_y(minute_tens_img, (int)(-66 * g_scale));
-    lv_obj_set_align(minute_tens_img, LV_ALIGN_CENTER);
-    lv_obj_add_flag(minute_tens_img, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
-    lv_obj_clear_flag(minute_tens_img, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_img_set_zoom(minute_tens_img, (int)(204 * g_scale));
+    // lv_img_set_src(minute_tens_img, &img_3);
+    // lv_obj_set_width(minute_tens_img, LV_SIZE_CONTENT);   /// 1
+    // lv_obj_set_height(minute_tens_img, LV_SIZE_CONTENT);    /// 1
+    // lv_obj_set_x(minute_tens_img, (int)(-142 * g_scale));
+    // lv_obj_set_y(minute_tens_img, (int)(-66 * g_scale));
+    // lv_obj_set_align(minute_tens_img, LV_ALIGN_CENTER);
+    // lv_obj_add_flag(minute_tens_img, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
+    // lv_obj_clear_flag(minute_tens_img, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    // lv_img_set_zoom(minute_tens_img, (int)(204 * g_scale));
 
-    minute_units_img = lv_img_create(standby_screen.screen);
-            LV_IMAGE_DECLARE(img_4);
+    // minute_units_img = lv_img_create(standby_screen.screen);
+    //         LV_IMAGE_DECLARE(img_4);
 
-    lv_img_set_src(minute_units_img, &img_4);
-    lv_obj_set_width(minute_units_img, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(minute_units_img, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(minute_units_img, (int)(-73 * g_scale));
-    lv_obj_set_y(minute_units_img, (int)(-66 * g_scale));
-    lv_obj_set_align(minute_units_img, LV_ALIGN_CENTER);
-    lv_obj_add_flag(minute_units_img, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
-    lv_obj_clear_flag(minute_units_img, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_img_set_zoom(minute_units_img, (int)(204 * g_scale));
+    // lv_img_set_src(minute_units_img, &img_4);
+    // lv_obj_set_width(minute_units_img, LV_SIZE_CONTENT);   /// 1
+    // lv_obj_set_height(minute_units_img, LV_SIZE_CONTENT);    /// 1
+    // lv_obj_set_x(minute_units_img, (int)(-73 * g_scale));
+    // lv_obj_set_y(minute_units_img, (int)(-66 * g_scale));
+    // lv_obj_set_align(minute_units_img, LV_ALIGN_CENTER);
+    // lv_obj_add_flag(minute_units_img, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
+    // lv_obj_clear_flag(minute_units_img, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    // lv_img_set_zoom(minute_units_img, (int)(204 * g_scale));
 
-    bluetooth_icon = lv_img_create(standby_screen.screen);
-        LV_IMAGE_DECLARE(ble_icon_img);
+    // bluetooth_icon = lv_img_create(standby_screen.screen);
+    //     LV_IMAGE_DECLARE(ble_icon_img);
 
-    lv_img_set_src(bluetooth_icon, &ble_icon_img);
-    lv_obj_set_width(bluetooth_icon, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(bluetooth_icon, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(bluetooth_icon, (int)(-134 * g_scale));
-    lv_obj_set_y(bluetooth_icon, (int)(133 * g_scale));
-    lv_obj_set_align(bluetooth_icon, LV_ALIGN_CENTER);
-    lv_obj_add_flag(bluetooth_icon, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
-    lv_obj_clear_flag(bluetooth_icon, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_img_set_zoom(bluetooth_icon, (int)(LV_SCALE_NONE * g_scale));
+    // lv_img_set_src(bluetooth_icon, &ble_icon_img);
+    // lv_obj_set_width(bluetooth_icon, LV_SIZE_CONTENT);   /// 1
+    // lv_obj_set_height(bluetooth_icon, LV_SIZE_CONTENT);    /// 1
+    // lv_obj_set_x(bluetooth_icon, (int)(-134 * g_scale));
+    // lv_obj_set_y(bluetooth_icon, (int)(133 * g_scale));
+    // lv_obj_set_align(bluetooth_icon, LV_ALIGN_CENTER);
+    // lv_obj_add_flag(bluetooth_icon, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
+    // lv_obj_clear_flag(bluetooth_icon, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    // lv_img_set_zoom(bluetooth_icon, (int)(LV_SCALE_NONE * g_scale));
 
-    network_icon = lv_img_create(standby_screen.screen);
-        LV_IMAGE_DECLARE(network_icon_img);
+    // network_icon = lv_img_create(standby_screen.screen);
+    //     LV_IMAGE_DECLARE(network_icon_img);
 
-    lv_img_set_src(network_icon, &network_icon_img);
-    lv_obj_set_width(network_icon, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(network_icon, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(network_icon, (int)(0 * g_scale));
-    lv_obj_set_y(network_icon, (int)(133 * g_scale));
-    lv_obj_set_align(network_icon, LV_ALIGN_CENTER);
-    lv_obj_add_flag(network_icon, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
-    lv_obj_clear_flag(network_icon, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_img_set_zoom(network_icon, (int)(384 * g_scale));
+    // lv_img_set_src(network_icon, &network_icon_img);
+    // lv_obj_set_width(network_icon, LV_SIZE_CONTENT);   /// 1
+    // lv_obj_set_height(network_icon, LV_SIZE_CONTENT);    /// 1
+    // lv_obj_set_x(network_icon, (int)(0 * g_scale));
+    // lv_obj_set_y(network_icon, (int)(133 * g_scale));
+    // lv_obj_set_align(network_icon, LV_ALIGN_CENTER);
+    // lv_obj_add_flag(network_icon, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
+    // lv_obj_clear_flag(network_icon, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    // lv_img_set_zoom(network_icon, (int)(384 * g_scale));
 
     // 电池环形
     battery_arc = lv_arc_create(standby_screen.screen);
@@ -820,30 +820,30 @@ rt_err_t xiaozhi_ui_obj_init()
 
 
 //天气
-    weather_bgimg = lv_img_create(standby_screen.screen);
-    LV_IMAGE_DECLARE(strip);
-    lv_img_set_src(weather_bgimg, &strip);
-    lv_obj_set_width(weather_bgimg, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(weather_bgimg, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(weather_bgimg, (int)(70 * g_scale));
-    lv_obj_set_y(weather_bgimg, (int)(52 * g_scale));
-    lv_obj_set_align(weather_bgimg, LV_ALIGN_CENTER);
-    lv_obj_add_flag(weather_bgimg, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
-    lv_obj_clear_flag(weather_bgimg, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_img_set_zoom(weather_bgimg, (int)(550 * g_scale));
+    // weather_bgimg = lv_img_create(standby_screen.screen);
+    // LV_IMAGE_DECLARE(strip);
+    // lv_img_set_src(weather_bgimg, &strip);
+    // lv_obj_set_width(weather_bgimg, LV_SIZE_CONTENT);   /// 1
+    // lv_obj_set_height(weather_bgimg, LV_SIZE_CONTENT);    /// 1
+    // lv_obj_set_x(weather_bgimg, (int)(70 * g_scale));
+    // lv_obj_set_y(weather_bgimg, (int)(52 * g_scale));
+    // lv_obj_set_align(weather_bgimg, LV_ALIGN_CENTER);
+    // lv_obj_add_flag(weather_bgimg, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
+    // lv_obj_clear_flag(weather_bgimg, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    // lv_img_set_zoom(weather_bgimg, (int)(550 * g_scale));
 
-    weather_icon = lv_img_create(standby_screen.screen);
-    LV_IMAGE_DECLARE(sunny);
+    // weather_icon = lv_img_create(standby_screen.screen);
+    // LV_IMAGE_DECLARE(sunny);
 
-    lv_img_set_src(weather_icon, &sunny);
-    lv_obj_set_width(weather_icon, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(weather_icon, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(weather_icon, (int)(0 * g_scale));
-    lv_obj_set_y(weather_icon, (int)(50 * g_scale));
-    lv_obj_set_align(weather_icon, LV_ALIGN_CENTER);
-    lv_obj_add_flag(weather_icon, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
-    lv_obj_clear_flag(weather_icon, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_img_set_zoom(weather_icon, (int)(LV_SCALE_NONE * g_scale)); // 根据缩放因子缩放
+    // lv_img_set_src(weather_icon, &sunny);
+    // lv_obj_set_width(weather_icon, LV_SIZE_CONTENT);   /// 1
+    // lv_obj_set_height(weather_icon, LV_SIZE_CONTENT);    /// 1
+    // lv_obj_set_x(weather_icon, (int)(0 * g_scale));
+    // lv_obj_set_y(weather_icon, (int)(50 * g_scale));
+    // lv_obj_set_align(weather_icon, LV_ALIGN_CENTER);
+    // lv_obj_add_flag(weather_icon, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
+    // lv_obj_clear_flag(weather_icon, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    // lv_img_set_zoom(weather_icon, (int)(LV_SCALE_NONE * g_scale)); // 根据缩放因子缩放
 
     ui_Label_ip = lv_label_create(standby_screen.screen);
     lv_obj_set_width(ui_Label_ip, LV_SIZE_CONTENT);   /// 1
@@ -865,7 +865,7 @@ rt_err_t xiaozhi_ui_obj_init()
     lv_obj_add_style(last_time, &style2, 0);
 
 
-//日历
+// 日历
     ui_Image_calendar = lv_img_create(standby_screen.screen);
     LV_IMAGE_DECLARE(calendar);
     lv_img_set_src(ui_Image_calendar, &calendar);
@@ -929,8 +929,8 @@ rt_err_t xiaozhi_ui_obj_init()
     lv_obj_add_style(ui_Label3, &style2, 0);
     lv_label_set_text(ui_Label3, "等待连接");
 
-    LV_IMAGE_DECLARE(ble);
-    LV_IMAGE_DECLARE(ble_close);
+    // LV_IMAGE_DECLARE(ble);
+    // LV_IMAGE_DECLARE(ble_close);
 
 
 
@@ -1791,25 +1791,25 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
                     LOG_I("update weather and time\n");
                     rt_mb_send(g_bt_app_mb, UPDATE_REAL_WEATHER_AND_TIME);
                     break;
-                case UI_MSG_STANDBY_EMOJI:
-                    if(msg->data)
-                    {
-                        if (strcmp(msg->data, "sleepy") == 0)
-                        {
-                            if (img_emoji) 
-                            {
-                                lv_img_set_src(img_emoji, &sleepy2); // 使用睡眠表情表示小智未连接
-                            }
-                        }
-                        else if (strcmp(msg->data, "funny") == 0)
-                        {
-                            if (img_emoji) 
-                            {
-                                lv_img_set_src(img_emoji, &funny2); // 使用睡眠表情表示小智未连接
-                            }
-                        }
-                    }
-                    break;
+                // case UI_MSG_STANDBY_EMOJI:
+                //     if(msg->data)
+                //     {
+                //         if (strcmp(msg->data, "sleepy") == 0)
+                //         {
+                //             if (img_emoji) 
+                //             {
+                //                 lv_img_set_src(img_emoji, &sleepy2); // 使用睡眠表情表示小智未连接
+                //             }
+                //         }
+                //         else if (strcmp(msg->data, "funny") == 0)
+                //         {
+                //             if (img_emoji) 
+                //             {
+                //                 lv_img_set_src(img_emoji, &funny2); // 使用睡眠表情表示小智未连接
+                //             }
+                //         }
+                //     }
+                //     break;
                 case UI_MSG_SWITCH_TO_STANDBY:
                     if (standby_screen.screen) {
                         lv_screen_load(standby_screen.screen);
