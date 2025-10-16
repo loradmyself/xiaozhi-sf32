@@ -1687,7 +1687,7 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
     xiaozhi_ui_update_ble("close");
     xiaozhi_ui_chat_status("连接中...");
     xiaozhi_ui_chat_output("等待连接...");
-    xiaozhi_ui_update_emoji("neutral");
+    xiaozhi_ui_update_emoji("cool");
 
 
     //每秒更新时间的ui
@@ -1908,99 +1908,99 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
                         }
                     }
                     break;      
-                case UI_MSG_UPDATE_EMOJI:
-                    if(msg->data)
-                    {
-                        if (strcmp(msg->data, "neutral") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, neutral, sizeof(neutral) / sizeof(neutral[0]));
-                        }
-                        // else if (strcmp(msg->data, "happy") == 0)
-                        // {
-                        //     lv_seqimg_src_array(seqimg, funny, sizeof(funny) / sizeof(funny[0]));
-                        // }
-                        // else if (strcmp(msg->data, "laughing") == 0)
-                        // {
-                        //     lv_seqimg_src_array(seqimg, funny, sizeof(funny) / sizeof(funny[0]));
-                        // }
-                        // else if (strcmp(msg->data, "funny") == 0)
-                        // {
-                        //     lv_seqimg_src_array(seqimg, funny, sizeof(funny) / sizeof(funny[0]));
-                        // }
-                        else if (strcmp(msg->data, "sad") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, crying, sizeof(crying) / sizeof(crying[0]));
-                        }
-                        // else if (strcmp(msg->data, "angry") == 0)     //replace angry
-                        // {
-                        //     lv_seqimg_src_array(seqimg, angry, sizeof(angry) / sizeof(angry[0]));
-                        // }
-                        else if (strcmp(msg->data, "crying") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, crying, sizeof(crying) / sizeof(crying[0]));
-                        }
-                        // else if (strcmp(msg->data, "loving") == 0)
-                        // {
-                        //     lv_seqimg_src_array(seqimg, loving, sizeof(loving) / sizeof(loving[0]));
-                        // }
-                        // else if (strcmp(msg->data, "embarrassed") == 0)
-                        // {
-                        //     lv_seqimg_src_array(seqimg, embarrassed, sizeof(embarrassed) / sizeof(embarrassed[0]));
-                        // }
-                        else if (strcmp(msg->data, "surprised") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, surprised, sizeof(surprised) / sizeof(surprised[0]));
-                        }
-                        else if (strcmp(msg->data, "shocked") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, surprised, sizeof(surprised) / sizeof(surprised[0]));
-                        }
-                        // else if (strcmp(msg->data, "thinking") == 0)
-                        // {
-                        //     lv_seqimg_src_array(seqimg, thinking, sizeof(thinking) / sizeof(thinking[0]));
-                        // }
-                        // else if (strcmp(msg->data, "winking") == 0)
-                        // {
-                        //     lv_seqimg_src_array(seqimg, loving, sizeof(loving) / sizeof(loving[0]));
-                        // }
-                        else if (strcmp(msg->data, "cool") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, cool, sizeof(cool) / sizeof(cool[0]));
-                        }
-                        else if (strcmp(msg->data, "relaxed") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, cool, sizeof(cool) / sizeof(cool[0]));
-                        }
-                        // else if (strcmp(msg->data, "delicious") == 0)
-                        // {
-                        //     lv_seqimg_src_array(seqimg, loving, sizeof(loving) / sizeof(loving[0]));
-                        // }
-                        // else if (strcmp(msg->data, "kissy") == 0)
-                        // {
-                        //     lv_seqimg_src_array(seqimg, kissy, sizeof(kissy) / sizeof(kissy[0]));
-                        // }
-                        else if (strcmp(msg->data, "confident") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, cool, sizeof(cool) / sizeof(cool[0]));
-                        }
-                        else if (strcmp(msg->data, "sleepy") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, sleepy, sizeof(sleepy) / sizeof(sleepy[0]));
-                        }
-                        // else if (strcmp(msg->data, "silly") == 0)
-                        // {
-                        //     lv_seqimg_src_array(seqimg, thinking, sizeof(thinking) / sizeof(thinking[0]));
-                        // }
-                        // else if (strcmp(msg->data, "confused") == 0)
-                        // {
-                        //     lv_seqimg_src_array(seqimg, thinking, sizeof(thinking) / sizeof(thinking[0]));
-                        // }
-                        else
-                        {
-                            lv_seqimg_src_array(seqimg, neutral, sizeof(neutral) / sizeof(neutral[0])); // common emoji is neutral
-                        }
-                    }
-                    break;
+                // case UI_MSG_UPDATE_EMOJI:
+                //     if(msg->data)
+                //     {
+                //         if (strcmp(msg->data, "neutral") == 0)
+                //         {
+                //             lv_seqimg_src_array(seqimg, neutral, sizeof(neutral) / sizeof(neutral[0]));
+                //         }
+                //         // else if (strcmp(msg->data, "happy") == 0)
+                //         // {
+                //         //     lv_seqimg_src_array(seqimg, funny, sizeof(funny) / sizeof(funny[0]));
+                //         // }
+                //         // else if (strcmp(msg->data, "laughing") == 0)
+                //         // {
+                //         //     lv_seqimg_src_array(seqimg, funny, sizeof(funny) / sizeof(funny[0]));
+                //         // }
+                //         // else if (strcmp(msg->data, "funny") == 0)
+                //         // {
+                //         //     lv_seqimg_src_array(seqimg, funny, sizeof(funny) / sizeof(funny[0]));
+                //         // }
+                //         else if (strcmp(msg->data, "sad") == 0)
+                //         {
+                //             lv_seqimg_src_array(seqimg, crying, sizeof(crying) / sizeof(crying[0]));
+                //         }
+                //         // else if (strcmp(msg->data, "angry") == 0)     //replace angry
+                //         // {
+                //         //     lv_seqimg_src_array(seqimg, angry, sizeof(angry) / sizeof(angry[0]));
+                //         // }
+                //         else if (strcmp(msg->data, "crying") == 0)
+                //         {
+                //             lv_seqimg_src_array(seqimg, crying, sizeof(crying) / sizeof(crying[0]));
+                //         }
+                //         // else if (strcmp(msg->data, "loving") == 0)
+                //         // {
+                //         //     lv_seqimg_src_array(seqimg, loving, sizeof(loving) / sizeof(loving[0]));
+                //         // }
+                //         // else if (strcmp(msg->data, "embarrassed") == 0)
+                //         // {
+                //         //     lv_seqimg_src_array(seqimg, embarrassed, sizeof(embarrassed) / sizeof(embarrassed[0]));
+                //         // }
+                //         // else if (strcmp(msg->data, "surprised") == 0)
+                //         // {
+                //         //     lv_seqimg_src_array(seqimg, surprised, sizeof(surprised) / sizeof(surprised[0]));
+                //         // }
+                //         // else if (strcmp(msg->data, "shocked") == 0)
+                //         // {
+                //         //     lv_seqimg_src_array(seqimg, surprised, sizeof(surprised) / sizeof(surprised[0]));
+                //         // }
+                //         // else if (strcmp(msg->data, "thinking") == 0)
+                //         // {
+                //         //     lv_seqimg_src_array(seqimg, thinking, sizeof(thinking) / sizeof(thinking[0]));
+                //         // }
+                //         // else if (strcmp(msg->data, "winking") == 0)
+                //         // {
+                //         //     lv_seqimg_src_array(seqimg, loving, sizeof(loving) / sizeof(loving[0]));
+                //         // }
+                //         // else if (strcmp(msg->data, "cool") == 0)
+                //         // {
+                //         //     lv_seqimg_src_array(seqimg, cool, sizeof(cool) / sizeof(cool[0]));
+                //         // }
+                //         // else if (strcmp(msg->data, "relaxed") == 0)
+                //         // {
+                //         //     lv_seqimg_src_array(seqimg, cool, sizeof(cool) / sizeof(cool[0]));
+                //         // }
+                //         // else if (strcmp(msg->data, "delicious") == 0)
+                //         // {
+                //         //     lv_seqimg_src_array(seqimg, loving, sizeof(loving) / sizeof(loving[0]));
+                //         // }
+                //         // else if (strcmp(msg->data, "kissy") == 0)
+                //         // {
+                //         //     lv_seqimg_src_array(seqimg, kissy, sizeof(kissy) / sizeof(kissy[0]));
+                //         // }
+                //         // else if (strcmp(msg->data, "confident") == 0)
+                //         // {
+                //         //     lv_seqimg_src_array(seqimg, cool, sizeof(cool) / sizeof(cool[0]));
+                //         // }
+                //         // else if (strcmp(msg->data, "sleepy") == 0)
+                //         // {
+                //         //     lv_seqimg_src_array(seqimg, sleepy, sizeof(sleepy) / sizeof(sleepy[0]));
+                //         // }
+                //         // else if (strcmp(msg->data, "silly") == 0)
+                //         // {
+                //         //     lv_seqimg_src_array(seqimg, thinking, sizeof(thinking) / sizeof(thinking[0]));
+                //         // }
+                //         // else if (strcmp(msg->data, "confused") == 0)
+                //         // {
+                //         //     lv_seqimg_src_array(seqimg, thinking, sizeof(thinking) / sizeof(thinking[0]));
+                //         // }
+                //         // else
+                //         // {
+                //         //     lv_seqimg_src_array(seqimg, neutral, sizeof(neutral) / sizeof(neutral[0])); // common emoji is neutral
+                //         // }
+                //     }
+                //     break;
                 case UI_MSG_UPDATE_BLE:
                     if(msg->data)
                     {

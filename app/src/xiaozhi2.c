@@ -277,8 +277,8 @@ err_t my_wsapp_fn(int code, char *buf, size_t len)
             xiaozhi_ui_chat_status("休眠中...");
             xiaozhi_ui_chat_output("请按键或语音唤醒");
             xiaozhi_ui_standby_chat_output("小智已断开请按键唤醒");//待机界面
-            xiaozhi_ui_update_emoji("sleepy");
-            xiaozhi_ui_update_standby_emoji("sleepy");
+            // xiaozhi_ui_update_emoji("sleepy");
+            // xiaozhi_ui_update_standby_emoji("sleepy");
             if(!g_pan_connected)
             {
                 ui_swith_to_standby_screen();
@@ -496,7 +496,7 @@ void parse_helLo(const u8_t *data, u16_t len)
 #endif// CONFIG_IOT_PROTOCOL_MCP
         xiaozhi_ui_chat_status("待命中...");
         xiaozhi_ui_chat_output("小智已连接!");
-        xiaozhi_ui_update_emoji("neutral");
+        xiaozhi_ui_update_emoji("cool");
         xiaozhi_ui_update_standby_emoji("cool");
         rt_kprintf("hello->对话\n");
         ui_swith_to_xiaozhi_screen();//切换到小智对话界面

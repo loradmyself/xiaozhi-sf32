@@ -374,7 +374,7 @@ void pan_reconnect()
               max_reconnect_attempts);
         xiaozhi_ui_chat_status("无法连接PAN");
         xiaozhi_ui_chat_output("请确保设备开启了共享网络,重新发起连接");
-        xiaozhi_ui_update_emoji("surprised");
+        xiaozhi_ui_update_emoji("cool");
         xiaozhi_ui_standby_chat_output("请确保设备开启了共享网络,重新发起连接");
         // 重置尝试次数计数器，以便下次需要时重新开始
         first_reconnect_attempts = 0;
@@ -795,7 +795,7 @@ int main(void)
             xiaozhi_ui_standby_chat_output("初始化 请稍等...");
             xiaozhi_ui_update_ble("open");
             xiaozhi_ui_chat_status("初始化...");
-            xiaozhi_ui_update_emoji("neutral");
+            xiaozhi_ui_update_emoji("cool");
             // 清除主动断开标志位
             Initiate_disconnection_flag = 0;
             rt_thread_mdelay(2000);
