@@ -21,6 +21,11 @@
 #include "xiaozhi_weather.h"
 #include "lv_timer.h"
 #include "lv_display.h"
+
+#include "./user_ui/gui_guider.h"
+#include "./user_ui/events_init.h"
+extern lv_ui standby_screen;
+
 extern void xiaozhi_ui_update_ble(char *string);
 extern void xiaozhi_ui_update_emoji(char *string);
 extern void xiaozhi_ui_chat_status(char *string);
@@ -38,7 +43,7 @@ extern rt_tick_t last_listen_tick;
 extern xiaozhi_ws_t g_xz_ws;
 extern rt_mailbox_t g_button_event_mb;
 extern void ui_sleep_callback(lv_timer_t *timer);
-extern lv_obj_t *standby_screen;
+//extern lv_obj_t *standby_screen;
 rt_mailbox_t g_battery_mb;
 extern lv_timer_t *ui_sleep_timer;
 extern lv_obj_t *shutdown_screen;
@@ -409,7 +414,7 @@ static int bt_app_interface_event_handle(uint16_t type, uint16_t event_id,
             xiaozhi_ui_chat_output("蓝牙断开连接");
             xiaozhi_ui_standby_chat_output("蓝牙断开连接");//待机画面
             lv_obj_t *now_screen = lv_screen_active();
-            if (now_screen != standby_screen && now_screen != sleep_screen && now_screen != shutdown_screen)
+            if (now_screen != standby_screen.screen && now_screen != sleep_screen && now_screen != shutdown_screen)
                 {
                     ui_swith_to_standby_screen();
                 }

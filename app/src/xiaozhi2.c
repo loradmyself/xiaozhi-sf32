@@ -37,6 +37,11 @@
     #include "gui_app_pm.h"
 #endif // BSP_USING_PM
 #include "xiaozhi_public.h"
+
+#include "./user_ui/gui_guider.h"
+#include "./user_ui/events_init.h"
+
+extern lv_ui standby_screen;
 #define MAX_WSOCK_HDR_LEN 4096
 extern void xiaozhi_ui_update_ble(char *string);
 extern void xiaozhi_ui_chat_status(char *string);
@@ -300,7 +305,7 @@ void xiaozhi2(int argc, char **argv);
 
 extern rt_mailbox_t g_bt_app_mb;
 extern lv_obj_t *main_container;
-extern lv_obj_t *standby_screen;
+//extern lv_obj_t *standby_screen;
 
 static void xz_button_event_handler(int32_t pin, button_action_t action)
 {
@@ -324,7 +329,7 @@ static void xz_button_event_handler(int32_t pin, button_action_t action)
         lv_obj_t *now_screen = lv_screen_active();
         rt_kprintf("pressed\r\n");
         rt_kprintf("按键->对话");
-        if (now_screen == standby_screen)
+        if (now_screen == standby_screen.screen)
         {
             ui_swith_to_xiaozhi_screen();
         }
@@ -402,7 +407,7 @@ static void xz_button2_event_handler(int32_t pin, button_action_t action)
 
             // 长按3秒，直接发送关机消息到ui_task
         lv_obj_t *now_screen = lv_screen_active();
-        if (now_screen != standby_screen)
+        if (now_screen != standby_screen.screen)
         {
             rt_sem_release(g_activation_context.sem);
         }

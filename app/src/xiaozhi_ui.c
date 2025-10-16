@@ -25,6 +25,12 @@
 #include "xiaozhi_ui.h"
 #include "xiaozhi_weather.h"
 
+#include "./user_ui/gui_guider.h"
+#include "./user_ui/events_init.h"
+
+lv_ui standby_screen;
+
+
 // 定义UI消息类型
 typedef enum {
     UI_MSG_CHAT_STATUS,
@@ -143,7 +149,8 @@ lv_obj_t *network_icon = NULL;//网络图标
 lv_obj_t *weather_bgimg;//天气背景图片
 lv_obj_t *weather_icon;//天气图标
 lv_obj_t *ui_Image_calendar;//日历图标
-lv_obj_t *standby_screen = NULL;//待机界面
+//lv_obj_t *standby_screen = NULL;//待机界面  
+lv_obj_t *xiaozhi_standby_screen = NULL;//待机界面  
 lv_obj_t *ui_Label_ip = NULL;//地址和温度标签
 lv_obj_t *last_time = NULL;//上次更新天气图标
 lv_obj_t *ui_Label_year =NULL;//年份
@@ -350,9 +357,9 @@ static void startup_fadeout_ready_cb(struct _lv_anim_t* anim)
     rt_kprintf("Startup animation completed\n");
 
         // 开机动画完成后显示待机画面
-    if (standby_screen) {
+    if (standby_screen.screen) {
         rt_kprintf("开机->待机");
-        lv_screen_load(standby_screen);
+        lv_screen_load(standby_screen.screen);
     }
 
 }
@@ -689,15 +696,19 @@ lv_obj_t * ui_Image9 = NULL;
 rt_err_t xiaozhi_ui_obj_init()
 {
 
+    //add guider_ui code
+    setup_ui(&standby_screen);           
+    events_init(&standby_screen);  
+
         // 获取屏幕分辨率
     lv_coord_t scr_width = lv_disp_get_hor_res(NULL);
     lv_coord_t scr_height = lv_disp_get_ver_res(NULL);
    
-    standby_screen = lv_obj_create(NULL);
-    lv_obj_clear_flag(standby_screen, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_bg_color(standby_screen, lv_color_hex(0x000000), 0);//黑色
+    xiaozhi_standby_screen = lv_obj_create(NULL);//standby_screen->xiaozhi_standby_screen
+    lv_obj_clear_flag(xiaozhi_standby_screen, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_bg_color(xiaozhi_standby_screen, lv_color_hex(0x000000), 0);//黑色
 
-    img_emoji = lv_img_create(standby_screen);
+    img_emoji = lv_img_create(standby_screen.screen);
     LV_IMAGE_DECLARE(sleepy2);
     LV_IMAGE_DECLARE(funny2);
     lv_img_set_src(img_emoji, &sleepy2);//初始化提示小智还未连接
@@ -710,7 +721,7 @@ rt_err_t xiaozhi_ui_obj_init()
     lv_obj_clear_flag(img_emoji, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_img_set_zoom(img_emoji, (int)(LV_SCALE_NONE * g_scale)); // 根据缩放因子缩放
 
-    hour_tens_img = lv_img_create(standby_screen);
+    hour_tens_img = lv_img_create(standby_screen.screen);
     LV_IMAGE_DECLARE(img_1);
     lv_img_set_src(hour_tens_img, &img_1);
     lv_obj_set_width(hour_tens_img, LV_SIZE_CONTENT);   /// 1
@@ -722,7 +733,7 @@ rt_err_t xiaozhi_ui_obj_init()
     lv_obj_clear_flag(hour_tens_img, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_img_set_zoom(hour_tens_img, (int)(204 * g_scale));
 
-    hour_units_img = lv_img_create(standby_screen);
+    hour_units_img = lv_img_create(standby_screen.screen);
     LV_IMAGE_DECLARE(img_2);
     lv_img_set_src(hour_units_img, &img_2);
     lv_obj_set_width(hour_units_img, LV_SIZE_CONTENT);   /// 1
@@ -734,7 +745,7 @@ rt_err_t xiaozhi_ui_obj_init()
     lv_obj_clear_flag(hour_units_img, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_img_set_zoom(hour_units_img, (int)(204 * g_scale));
 
-    minute_tens_img = lv_img_create(standby_screen);
+    minute_tens_img = lv_img_create(standby_screen.screen);
         LV_IMAGE_DECLARE(img_3);
 
     lv_img_set_src(minute_tens_img, &img_3);
@@ -747,7 +758,7 @@ rt_err_t xiaozhi_ui_obj_init()
     lv_obj_clear_flag(minute_tens_img, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_img_set_zoom(minute_tens_img, (int)(204 * g_scale));
 
-    minute_units_img = lv_img_create(standby_screen);
+    minute_units_img = lv_img_create(standby_screen.screen);
             LV_IMAGE_DECLARE(img_4);
 
     lv_img_set_src(minute_units_img, &img_4);
@@ -760,7 +771,7 @@ rt_err_t xiaozhi_ui_obj_init()
     lv_obj_clear_flag(minute_units_img, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_img_set_zoom(minute_units_img, (int)(204 * g_scale));
 
-    bluetooth_icon = lv_img_create(standby_screen);
+    bluetooth_icon = lv_img_create(standby_screen.screen);
         LV_IMAGE_DECLARE(ble_icon_img);
 
     lv_img_set_src(bluetooth_icon, &ble_icon_img);
@@ -773,7 +784,7 @@ rt_err_t xiaozhi_ui_obj_init()
     lv_obj_clear_flag(bluetooth_icon, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_img_set_zoom(bluetooth_icon, (int)(LV_SCALE_NONE * g_scale));
 
-    network_icon = lv_img_create(standby_screen);
+    network_icon = lv_img_create(standby_screen.screen);
         LV_IMAGE_DECLARE(network_icon_img);
 
     lv_img_set_src(network_icon, &network_icon_img);
@@ -787,7 +798,7 @@ rt_err_t xiaozhi_ui_obj_init()
     lv_img_set_zoom(network_icon, (int)(384 * g_scale));
 
     // 电池环形
-    battery_arc = lv_arc_create(standby_screen);
+    battery_arc = lv_arc_create(standby_screen.screen);
     lv_obj_set_size(battery_arc, (int)(60 * g_scale), (int)(60 * g_scale)); // 设置圆弧大小
     lv_obj_set_x(battery_arc, (int)(134 * g_scale));
     lv_obj_set_y(battery_arc, (int)(133 * g_scale));
@@ -809,7 +820,7 @@ rt_err_t xiaozhi_ui_obj_init()
 
 
 //天气
-    weather_bgimg = lv_img_create(standby_screen);
+    weather_bgimg = lv_img_create(standby_screen.screen);
     LV_IMAGE_DECLARE(strip);
     lv_img_set_src(weather_bgimg, &strip);
     lv_obj_set_width(weather_bgimg, LV_SIZE_CONTENT);   /// 1
@@ -821,7 +832,7 @@ rt_err_t xiaozhi_ui_obj_init()
     lv_obj_clear_flag(weather_bgimg, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_img_set_zoom(weather_bgimg, (int)(550 * g_scale));
 
-    weather_icon = lv_img_create(standby_screen);
+    weather_icon = lv_img_create(standby_screen.screen);
     LV_IMAGE_DECLARE(sunny);
 
     lv_img_set_src(weather_icon, &sunny);
@@ -834,7 +845,7 @@ rt_err_t xiaozhi_ui_obj_init()
     lv_obj_clear_flag(weather_icon, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_img_set_zoom(weather_icon, (int)(LV_SCALE_NONE * g_scale)); // 根据缩放因子缩放
 
-    ui_Label_ip = lv_label_create(standby_screen);
+    ui_Label_ip = lv_label_create(standby_screen.screen);
     lv_obj_set_width(ui_Label_ip, LV_SIZE_CONTENT);   /// 1
     lv_obj_set_height(ui_Label_ip, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_x(ui_Label_ip, (int)(80 * g_scale));
@@ -844,7 +855,7 @@ rt_err_t xiaozhi_ui_obj_init()
     lv_obj_add_style(ui_Label_ip, &style2, 0);
 
 
-    last_time = lv_label_create(standby_screen);
+    last_time = lv_label_create(standby_screen.screen);
     lv_obj_set_width(last_time, LV_SIZE_CONTENT);   /// 1
     lv_obj_set_height(last_time, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_x(last_time, (int)(80 * g_scale));
@@ -855,7 +866,7 @@ rt_err_t xiaozhi_ui_obj_init()
 
 
 //日历
-    ui_Image_calendar = lv_img_create(standby_screen);
+    ui_Image_calendar = lv_img_create(standby_screen.screen);
     LV_IMAGE_DECLARE(calendar);
     lv_img_set_src(ui_Image_calendar, &calendar);
     lv_obj_set_width(ui_Image_calendar, LV_SIZE_CONTENT);   /// 1
@@ -867,7 +878,7 @@ rt_err_t xiaozhi_ui_obj_init()
     lv_obj_clear_flag(ui_Image_calendar, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_img_set_zoom(ui_Image_calendar,(int)(320 * g_scale));
 
-    ui_Label_year = lv_label_create(standby_screen);
+    ui_Label_year = lv_label_create(standby_screen.screen);
     lv_obj_set_width(ui_Label_year, LV_SIZE_CONTENT);   /// 1
     lv_obj_set_height(ui_Label_year, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_x(ui_Label_year, (int)(-109 * g_scale));
@@ -877,7 +888,7 @@ rt_err_t xiaozhi_ui_obj_init()
         lv_obj_add_style(ui_Label_year, &style, 0);
 
 
-     ui_Label_day = lv_label_create(standby_screen);
+     ui_Label_day = lv_label_create(standby_screen.screen);
     lv_obj_set_width(ui_Label_day, LV_SIZE_CONTENT);   /// 1
     lv_obj_set_height(ui_Label_day, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_x(ui_Label_day, (int)(-109 * g_scale));
@@ -887,7 +898,7 @@ rt_err_t xiaozhi_ui_obj_init()
         lv_obj_add_style(ui_Label_day, &style, 0);
 
 //秒
-     ui_Label_second = lv_label_create(standby_screen);
+     ui_Label_second = lv_label_create(standby_screen.screen);
     lv_obj_set_width(ui_Label_second, LV_SIZE_CONTENT);   /// 1
     lv_obj_set_height(ui_Label_second, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_x(ui_Label_second, (int)(-8 * g_scale));
@@ -896,7 +907,7 @@ rt_err_t xiaozhi_ui_obj_init()
     lv_label_set_text(ui_Label_second, "00");
     lv_obj_add_style(ui_Label_second, &style, 0);
 
-    ui_Image_second = lv_img_create(standby_screen);
+    ui_Image_second = lv_img_create(standby_screen.screen);
     LV_IMAGE_DECLARE(second);
     lv_img_set_src(ui_Image_second, &second);
     lv_obj_set_width(ui_Image_second, LV_SIZE_CONTENT);   /// 1
@@ -909,7 +920,7 @@ rt_err_t xiaozhi_ui_obj_init()
     lv_img_set_zoom(ui_Image_second,(int)(300 * g_scale));
 
 
-    ui_Label3 = lv_label_create(standby_screen);
+    ui_Label3 = lv_label_create(standby_screen.screen);
     lv_obj_set_width(ui_Label3, LV_SIZE_CONTENT);   /// 1
     lv_obj_set_height(ui_Label3, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_x(ui_Label3, (int)(2 * g_scale));
@@ -924,7 +935,7 @@ rt_err_t xiaozhi_ui_obj_init()
 
 
     // 创建主容器 - Flex Column，垂直排列
-    main_container = lv_obj_create(lv_screen_active());
+    main_container = lv_obj_create(xiaozhi_standby_screen);//lv_screen_active->xiaozhi_standby_screen
     lv_obj_remove_flag(main_container, LV_OBJ_FLAG_SCROLLABLE);
     lv_obj_set_size(main_container, scr_width, scr_height);
 
@@ -1800,8 +1811,8 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
                     }
                     break;
                 case UI_MSG_SWITCH_TO_STANDBY:
-                    if (standby_screen) {
-                        lv_screen_load(standby_screen);
+                    if (standby_screen.screen) {
+                        lv_screen_load(standby_screen.screen);
                         }
 
                         // mic关闭，开启KWS
@@ -2109,7 +2120,7 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
             lv_obj_t *current_screen = lv_screen_active();
             //rt_kprintf("current_screen: %p, main_container: %p\n", current_screen, main_container);
             //rt_kprintf("inactive_time: %d, limit: %d\n", lv_display_get_inactive_time(NULL), IDLE_TIME_LIMIT);
-            if (lv_display_get_inactive_time(NULL) > IDLE_TIME_LIMIT && current_screen != standby_screen && current_screen != g_startup_screen && current_screen != shutdown_screen &&
+            if (lv_display_get_inactive_time(NULL) > IDLE_TIME_LIMIT && current_screen != standby_screen.screen && current_screen != g_startup_screen && current_screen != shutdown_screen &&
     current_screen != sleep_screen)
             {
 
@@ -2153,7 +2164,7 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
                     BT_NOTIFY_LINK_POLICY_SNIFF_MODE | BT_NOTIFY_LINK_POLICY_ROLE_SWITCH); // open role switch
                     MCP_RGBLED_CLOSE();
                     rt_kprintf("time out,xiu_mian\n");
-                    if (standby_screen) 
+                    if (standby_screen.screen) 
                     {
                         LOG_I("休眠->待机\n");
                         ui_swith_to_standby_screen();
@@ -2177,7 +2188,7 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
             //         BT_NOTIFY_LINK_POLICY_SNIFF_MODE | BT_NOTIFY_LINK_POLICY_ROLE_SWITCH); // open role switch
             //         MCP_RGBLED_CLOSE();
             //         rt_kprintf("time out,xiu_mian\n");
-            //         if (standby_screen) 
+            //         if (standby_screen.screen) 
             //         {
             //             ui_swith_to_standby_screen();
 
