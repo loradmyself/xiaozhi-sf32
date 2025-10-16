@@ -134,10 +134,10 @@ extern const lv_image_dsc_t cool_gif;
 // extern const lv_image_dsc_t img_8;
 // extern const lv_image_dsc_t img_9;
 
-lv_obj_t *hour_tens_img;     // 小时十位数图片
-lv_obj_t *hour_units_img;    // 小时个位数图片
-lv_obj_t *minute_tens_img;   // 分钟十位数图片
-lv_obj_t *minute_units_img;  // 分钟个位数图片
+// lv_obj_t *hour_tens_img;     // 小时十位数图片
+// lv_obj_t *hour_units_img;    // 小时个位数图片
+// lv_obj_t *minute_tens_img;   // 分钟十位数图片
+// lv_obj_t *minute_units_img;  // 分钟个位数图片
 lv_obj_t *temperature_label = NULL;  // 温度标签
 lv_obj_t *last_update_label = NULL;  // 上次更新时间标签
 lv_obj_t *battery_arc = NULL;           // 电池圆环显示
@@ -1097,7 +1097,7 @@ rt_err_t xiaozhi_ui_obj_init()
 
     //gif  Emoji - 居中显示
     seqimg = lv_seqimg_create(img_container);
-    lv_seqimg_src_array(seqimg, angry, 57);
+    lv_seqimg_src_array(seqimg, loving, 57);
     lv_seqimg_set_period(seqimg, 30);          // 每帧间隔 100ms
     lv_obj_align(seqimg, LV_ALIGN_CENTER, 0, 0);
     lv_img_set_zoom(seqimg, (int)(LV_SCALE_NONE) * g_scale);
@@ -1931,10 +1931,10 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
                         {
                             lv_seqimg_src_array(seqimg, crying, sizeof(crying) / sizeof(crying[0]));
                         }
-                        else if (strcmp(msg->data, "angry") == 0)     //replace angry
-                        {
-                            lv_seqimg_src_array(seqimg, angry, sizeof(angry) / sizeof(angry[0]));
-                        }
+                        // else if (strcmp(msg->data, "angry") == 0)     //replace angry
+                        // {
+                        //     lv_seqimg_src_array(seqimg, angry, sizeof(angry) / sizeof(angry[0]));
+                        // }
                         else if (strcmp(msg->data, "crying") == 0)
                         {
                             lv_seqimg_src_array(seqimg, crying, sizeof(crying) / sizeof(crying[0]));
