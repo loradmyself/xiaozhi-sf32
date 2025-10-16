@@ -21,46 +21,46 @@
 static volatile int g_weather_sync_in_progress = 0;  // 天气同步进行标志
 static volatile int g_ntp_sync_in_progress = 0;      // NTP同步进行标志
 
-extern const lv_image_dsc_t w0;   // 晴
-extern const lv_image_dsc_t w1;   // 多云
-extern const lv_image_dsc_t w2;   // 阴
-extern const lv_image_dsc_t w3;   // 阵雨
-extern const lv_image_dsc_t w4;   // 雷阵雨
-extern const lv_image_dsc_t w5;   // 雷阵雨伴有冰雹
-extern const lv_image_dsc_t w6;   // 雨夹雪
-extern const lv_image_dsc_t w7;   // 小雨
-extern const lv_image_dsc_t w8;   // 中雨
-extern const lv_image_dsc_t w9;   // 大雨
-extern const lv_image_dsc_t w10;  // 暴雨
-extern const lv_image_dsc_t w11;  // 大暴雨
-extern const lv_image_dsc_t w12;  // 特大暴雨
-extern const lv_image_dsc_t w13;  // 阵雪
-extern const lv_image_dsc_t w14;  // 小雪
-extern const lv_image_dsc_t w15;  // 中雪
-extern const lv_image_dsc_t w16;  // 大雪
-extern const lv_image_dsc_t w17;  // 暴雪
-extern const lv_image_dsc_t w18;  // 雾
-extern const lv_image_dsc_t w19;  // 冻雨
-extern const lv_image_dsc_t w20;  // 沙尘暴
-extern const lv_image_dsc_t w21;  // 小到中雨
-extern const lv_image_dsc_t w22;  // 中到大雨
-extern const lv_image_dsc_t w23;  // 大到暴雨
-extern const lv_image_dsc_t w24;  // 暴雨到大暴雨
-extern const lv_image_dsc_t w25;  // 大暴雨到特大暴雨
-extern const lv_image_dsc_t w26;  // 小到中雪
-extern const lv_image_dsc_t w27;  // 中到大雪
-extern const lv_image_dsc_t w28;  // 大到暴雪
-extern const lv_image_dsc_t w29;  // 浮尘
-extern const lv_image_dsc_t w30;  // 扬沙
-extern const lv_image_dsc_t w31;  // 强沙尘暴
-extern const lv_image_dsc_t w32;  // 浓雾
-extern const lv_image_dsc_t w33;  // 龙卷风
-extern const lv_image_dsc_t w34;  // 弱高吹雪
-extern const lv_image_dsc_t w35;  // 轻雾
-extern const lv_image_dsc_t w36;  // 霾
-extern const lv_image_dsc_t w37;  // 小雨转中雨
-extern const lv_image_dsc_t w38;  // 中雨转大雨
-extern const lv_image_dsc_t w99;  // 未知天气
+// extern const lv_image_dsc_t w0;   // 晴
+// extern const lv_image_dsc_t w1;   // 多云
+// extern const lv_image_dsc_t w2;   // 阴
+// extern const lv_image_dsc_t w3;   // 阵雨
+// extern const lv_image_dsc_t w4;   // 雷阵雨
+// extern const lv_image_dsc_t w5;   // 雷阵雨伴有冰雹
+// extern const lv_image_dsc_t w6;   // 雨夹雪
+// extern const lv_image_dsc_t w7;   // 小雨
+// extern const lv_image_dsc_t w8;   // 中雨
+// extern const lv_image_dsc_t w9;   // 大雨
+// extern const lv_image_dsc_t w10;  // 暴雨
+// extern const lv_image_dsc_t w11;  // 大暴雨
+// extern const lv_image_dsc_t w12;  // 特大暴雨
+// extern const lv_image_dsc_t w13;  // 阵雪
+// extern const lv_image_dsc_t w14;  // 小雪
+// extern const lv_image_dsc_t w15;  // 中雪
+// extern const lv_image_dsc_t w16;  // 大雪
+// extern const lv_image_dsc_t w17;  // 暴雪
+// extern const lv_image_dsc_t w18;  // 雾
+// extern const lv_image_dsc_t w19;  // 冻雨
+// extern const lv_image_dsc_t w20;  // 沙尘暴
+// extern const lv_image_dsc_t w21;  // 小到中雨
+// extern const lv_image_dsc_t w22;  // 中到大雨
+// extern const lv_image_dsc_t w23;  // 大到暴雨
+// extern const lv_image_dsc_t w24;  // 暴雨到大暴雨
+// extern const lv_image_dsc_t w25;  // 大暴雨到特大暴雨
+// extern const lv_image_dsc_t w26;  // 小到中雪
+// extern const lv_image_dsc_t w27;  // 中到大雪
+// extern const lv_image_dsc_t w28;  // 大到暴雪
+// extern const lv_image_dsc_t w29;  // 浮尘
+// extern const lv_image_dsc_t w30;  // 扬沙
+// extern const lv_image_dsc_t w31;  // 强沙尘暴
+// extern const lv_image_dsc_t w32;  // 浓雾
+// extern const lv_image_dsc_t w33;  // 龙卷风
+// extern const lv_image_dsc_t w34;  // 弱高吹雪
+// extern const lv_image_dsc_t w35;  // 轻雾
+// extern const lv_image_dsc_t w36;  // 霾
+// extern const lv_image_dsc_t w37;  // 小雨转中雨
+// extern const lv_image_dsc_t w38;  // 中雨转大雨
+// extern const lv_image_dsc_t w99;  // 未知天气
 
 
 // 天气API配置 - 心知天气免费版
@@ -620,172 +620,172 @@ void weather_ui_update_callback(void)
     }
     
     // 更新天气图标 (根据天气代码更新图标)
- if (weather_icon) {
-        // 根据天气代码选择相应的图标
+//  if (weather_icon) {
+//         // 根据天气代码选择相应的图标
         
-        if (strcmp(g_current_weather.code, "0") == 0) {
-            // 晴（国内城市白天晴） Sunny
-            LV_IMAGE_DECLARE(w0);
-            lv_img_set_src(weather_icon, &w0);
-            } else if (strcmp(g_current_weather.code, "1") == 0) {
-            // 晴（国内城市夜晚晴） Clear
-            LV_IMAGE_DECLARE(w1);
-            lv_img_set_src(weather_icon, &w1);
-            } else if (strcmp(g_current_weather.code, "2") == 0) {
-            // 晴（国外城市白天晴） Fair
-            LV_IMAGE_DECLARE(w2);
-            lv_img_set_src(weather_icon, &w2);
-            } else if (strcmp(g_current_weather.code, "3") == 0) {
-            // 晴（国外城市夜晚晴） Fair
-            LV_IMAGE_DECLARE(w3);
-            lv_img_set_src(weather_icon, &w3);
-            } else if (strcmp(g_current_weather.code, "4") == 0) {
-            // 多云 Cloudy
-            LV_IMAGE_DECLARE(w4);
-            lv_img_set_src(weather_icon, &w4);
-            } else if (strcmp(g_current_weather.code, "5") == 0) {
-            // 晴间多云 Partly Cloudy
-            LV_IMAGE_DECLARE(w5);
-            lv_img_set_src(weather_icon, &w5);
-            } else if (strcmp(g_current_weather.code, "6") == 0) {
-            // 晴间多云 Partly Cloudy
-            LV_IMAGE_DECLARE(w6);
-            lv_img_set_src(weather_icon, &w6);
-            } else if (strcmp(g_current_weather.code, "7") == 0) {
-            // 大部多云 Mostly Cloudy
-            LV_IMAGE_DECLARE(w7);
-            lv_img_set_src(weather_icon, &w7);
-            } else if (strcmp(g_current_weather.code, "8") == 0) {
-            // 大部多云 Mostly Cloudy
-            LV_IMAGE_DECLARE(w8);
-            lv_img_set_src(weather_icon, &w8);
-            } else if (strcmp(g_current_weather.code, "9") == 0) {
-            // 阴 Overcast
-            LV_IMAGE_DECLARE(w9);
-            lv_img_set_src(weather_icon, &w9);
-            } else if (strcmp(g_current_weather.code, "10") == 0) {
-            // 阵雨 Shower
-            LV_IMAGE_DECLARE(w10);
-            lv_img_set_src(weather_icon, &w10);
-            } else if (strcmp(g_current_weather.code, "11") == 0) {
-            // 雷阵雨 Thundershower
-            LV_IMAGE_DECLARE(w11);
-            lv_img_set_src(weather_icon, &w11);
-            } else if (strcmp(g_current_weather.code, "12") == 0) {
-            // 雷阵雨伴有冰雹 Thundershower with Hail
-            LV_IMAGE_DECLARE(w12);
-            lv_img_set_src(weather_icon, &w12);
-            } else if (strcmp(g_current_weather.code, "13") == 0) {
-            // 小雨 Light Rain
-            LV_IMAGE_DECLARE(w13);
-            lv_img_set_src(weather_icon, &w13);
-            } else if (strcmp(g_current_weather.code, "14") == 0) {
-            // 中雨 Moderate Rain
-            LV_IMAGE_DECLARE(w14);
-            lv_img_set_src(weather_icon, &w14);
-            } else if (strcmp(g_current_weather.code, "15") == 0) {
-            // 大雨 Heavy Rain
-            LV_IMAGE_DECLARE(w15);
-            lv_img_set_src(weather_icon, &w15);
-            } else if (strcmp(g_current_weather.code, "16") == 0) {
-            // 暴雨 Storm
-            LV_IMAGE_DECLARE(w16);
-            lv_img_set_src(weather_icon, &w16);
-            } else if (strcmp(g_current_weather.code, "17") == 0) {
-            // 大暴雨 Heavy Storm
-            LV_IMAGE_DECLARE(w17);
-            lv_img_set_src(weather_icon, &w17);
-            } else if (strcmp(g_current_weather.code, "18") == 0) {
-            // 特大暴雨 Severe Storm
-            LV_IMAGE_DECLARE(w18);
-            lv_img_set_src(weather_icon, &w18);
-            } else if (strcmp(g_current_weather.code, "19") == 0) {
-            // 冻雨 Ice Rain
-            LV_IMAGE_DECLARE(w19);
-            lv_img_set_src(weather_icon, &w19);
-            } else if (strcmp(g_current_weather.code, "20") == 0) {
-            // 雨夹雪 Sleet
-            LV_IMAGE_DECLARE(w20);
-            lv_img_set_src(weather_icon, &w20);
-            } else if (strcmp(g_current_weather.code, "21") == 0) {
-            // 阵雪 Snow Flurry
-            LV_IMAGE_DECLARE(w21);
-            lv_img_set_src(weather_icon, &w21);
-            } else if (strcmp(g_current_weather.code, "22") == 0) {
-            // 小雪 Light Snow
-            LV_IMAGE_DECLARE(w22);
-            lv_img_set_src(weather_icon, &w22);
-            } else if (strcmp(g_current_weather.code, "23") == 0) {
-            // 中雪 Moderate Snow
-            LV_IMAGE_DECLARE(w23);
-            lv_img_set_src(weather_icon, &w23);
-            } else if (strcmp(g_current_weather.code, "24") == 0) {
-            // 大雪 Heavy Snow
-            LV_IMAGE_DECLARE(w24);
-            lv_img_set_src(weather_icon, &w24);
-            } else if (strcmp(g_current_weather.code, "25") == 0) {
-            // 暴雪 Snowstorm
-            LV_IMAGE_DECLARE(w25);
-            lv_img_set_src(weather_icon, &w25);
-            } else if (strcmp(g_current_weather.code, "26") == 0) {
-            // 浮尘 Dust
-            LV_IMAGE_DECLARE(w26);
-            lv_img_set_src(weather_icon, &w26);
-            } else if (strcmp(g_current_weather.code, "27") == 0) {
-            // 扬沙 Sand
-            LV_IMAGE_DECLARE(w27);
-            lv_img_set_src(weather_icon, &w27);
-            } else if (strcmp(g_current_weather.code, "28") == 0) {
-            // 沙尘暴 Duststorm
-            LV_IMAGE_DECLARE(w28);
-            lv_img_set_src(weather_icon, &w28);
-            } else if (strcmp(g_current_weather.code, "29") == 0) {
-            // 强沙尘暴 Sandstorm
-            LV_IMAGE_DECLARE(w29);
-            lv_img_set_src(weather_icon, &w29);
-            } else if (strcmp(g_current_weather.code, "30") == 0) {
-            // 雾 Foggy
-            LV_IMAGE_DECLARE(w30);
-            lv_img_set_src(weather_icon, &w30);
-            } else if (strcmp(g_current_weather.code, "31") == 0) {
-            // 霾 Haze
-            LV_IMAGE_DECLARE(w31);
-            lv_img_set_src(weather_icon, &w31);
-            } else if (strcmp(g_current_weather.code, "32") == 0) {
-            // 风 Windy
-            LV_IMAGE_DECLARE(w32);
-            lv_img_set_src(weather_icon, &w32);
-            } else if (strcmp(g_current_weather.code, "33") == 0) {
-            // 大风 Blustery
-            LV_IMAGE_DECLARE(w33);
-            lv_img_set_src(weather_icon, &w33);
-            } else if (strcmp(g_current_weather.code, "34") == 0) {
-            // 飓风 Hurricane
-            LV_IMAGE_DECLARE(w34);
-            lv_img_set_src(weather_icon, &w34);
-            } else if (strcmp(g_current_weather.code, "35") == 0) {
-            // 热带风暴 Tropical Storm
-            LV_IMAGE_DECLARE(w35);
-            lv_img_set_src(weather_icon, &w35);
-            } else if (strcmp(g_current_weather.code, "36") == 0) {
-            // 龙卷风 Tornado
-            LV_IMAGE_DECLARE(w36);
-            lv_img_set_src(weather_icon, &w36);
-            } else if (strcmp(g_current_weather.code, "37") == 0) {
-            // 冷 Cold
-            LV_IMAGE_DECLARE(w37);
-            lv_img_set_src(weather_icon, &w37);
-            } else if (strcmp(g_current_weather.code, "38") == 0) {
-            // 热 Hot
-            LV_IMAGE_DECLARE(w38);
-            lv_img_set_src(weather_icon, &w38);
-            } else {
-            // 未知 Unknown
-            LV_IMAGE_DECLARE(w99);
-            lv_img_set_src(weather_icon, &w99);
-        }
+//         if (strcmp(g_current_weather.code, "0") == 0) {
+//             // 晴（国内城市白天晴） Sunny
+//             LV_IMAGE_DECLARE(w0);
+//             lv_img_set_src(weather_icon, &w0);
+//             } else if (strcmp(g_current_weather.code, "1") == 0) {
+//             // 晴（国内城市夜晚晴） Clear
+//             LV_IMAGE_DECLARE(w1);
+//             lv_img_set_src(weather_icon, &w1);
+//             } else if (strcmp(g_current_weather.code, "2") == 0) {
+//             // 晴（国外城市白天晴） Fair
+//             LV_IMAGE_DECLARE(w2);
+//             lv_img_set_src(weather_icon, &w2);
+//             } else if (strcmp(g_current_weather.code, "3") == 0) {
+//             // 晴（国外城市夜晚晴） Fair
+//             LV_IMAGE_DECLARE(w3);
+//             lv_img_set_src(weather_icon, &w3);
+//             } else if (strcmp(g_current_weather.code, "4") == 0) {
+//             // 多云 Cloudy
+//             LV_IMAGE_DECLARE(w4);
+//             lv_img_set_src(weather_icon, &w4);
+//             } else if (strcmp(g_current_weather.code, "5") == 0) {
+//             // 晴间多云 Partly Cloudy
+//             LV_IMAGE_DECLARE(w5);
+//             lv_img_set_src(weather_icon, &w5);
+//             } else if (strcmp(g_current_weather.code, "6") == 0) {
+//             // 晴间多云 Partly Cloudy
+//             LV_IMAGE_DECLARE(w6);
+//             lv_img_set_src(weather_icon, &w6);
+//             } else if (strcmp(g_current_weather.code, "7") == 0) {
+//             // 大部多云 Mostly Cloudy
+//             LV_IMAGE_DECLARE(w7);
+//             lv_img_set_src(weather_icon, &w7);
+//             } else if (strcmp(g_current_weather.code, "8") == 0) {
+//             // 大部多云 Mostly Cloudy
+//             LV_IMAGE_DECLARE(w8);
+//             lv_img_set_src(weather_icon, &w8);
+//             } else if (strcmp(g_current_weather.code, "9") == 0) {
+//             // 阴 Overcast
+//             LV_IMAGE_DECLARE(w9);
+//             lv_img_set_src(weather_icon, &w9);
+//             } else if (strcmp(g_current_weather.code, "10") == 0) {
+//             // 阵雨 Shower
+//             LV_IMAGE_DECLARE(w10);
+//             lv_img_set_src(weather_icon, &w10);
+//             } else if (strcmp(g_current_weather.code, "11") == 0) {
+//             // 雷阵雨 Thundershower
+//             LV_IMAGE_DECLARE(w11);
+//             lv_img_set_src(weather_icon, &w11);
+//             } else if (strcmp(g_current_weather.code, "12") == 0) {
+//             // 雷阵雨伴有冰雹 Thundershower with Hail
+//             LV_IMAGE_DECLARE(w12);
+//             lv_img_set_src(weather_icon, &w12);
+//             } else if (strcmp(g_current_weather.code, "13") == 0) {
+//             // 小雨 Light Rain
+//             LV_IMAGE_DECLARE(w13);
+//             lv_img_set_src(weather_icon, &w13);
+//             } else if (strcmp(g_current_weather.code, "14") == 0) {
+//             // 中雨 Moderate Rain
+//             LV_IMAGE_DECLARE(w14);
+//             lv_img_set_src(weather_icon, &w14);
+//             } else if (strcmp(g_current_weather.code, "15") == 0) {
+//             // 大雨 Heavy Rain
+//             LV_IMAGE_DECLARE(w15);
+//             lv_img_set_src(weather_icon, &w15);
+//             } else if (strcmp(g_current_weather.code, "16") == 0) {
+//             // 暴雨 Storm
+//             LV_IMAGE_DECLARE(w16);
+//             lv_img_set_src(weather_icon, &w16);
+//             } else if (strcmp(g_current_weather.code, "17") == 0) {
+//             // 大暴雨 Heavy Storm
+//             LV_IMAGE_DECLARE(w17);
+//             lv_img_set_src(weather_icon, &w17);
+//             } else if (strcmp(g_current_weather.code, "18") == 0) {
+//             // 特大暴雨 Severe Storm
+//             LV_IMAGE_DECLARE(w18);
+//             lv_img_set_src(weather_icon, &w18);
+//             } else if (strcmp(g_current_weather.code, "19") == 0) {
+//             // 冻雨 Ice Rain
+//             LV_IMAGE_DECLARE(w19);
+//             lv_img_set_src(weather_icon, &w19);
+//             } else if (strcmp(g_current_weather.code, "20") == 0) {
+//             // 雨夹雪 Sleet
+//             LV_IMAGE_DECLARE(w20);
+//             lv_img_set_src(weather_icon, &w20);
+//             } else if (strcmp(g_current_weather.code, "21") == 0) {
+//             // 阵雪 Snow Flurry
+//             LV_IMAGE_DECLARE(w21);
+//             lv_img_set_src(weather_icon, &w21);
+//             } else if (strcmp(g_current_weather.code, "22") == 0) {
+//             // 小雪 Light Snow
+//             LV_IMAGE_DECLARE(w22);
+//             lv_img_set_src(weather_icon, &w22);
+//             } else if (strcmp(g_current_weather.code, "23") == 0) {
+//             // 中雪 Moderate Snow
+//             LV_IMAGE_DECLARE(w23);
+//             lv_img_set_src(weather_icon, &w23);
+//             } else if (strcmp(g_current_weather.code, "24") == 0) {
+//             // 大雪 Heavy Snow
+//             LV_IMAGE_DECLARE(w24);
+//             lv_img_set_src(weather_icon, &w24);
+//             } else if (strcmp(g_current_weather.code, "25") == 0) {
+//             // 暴雪 Snowstorm
+//             LV_IMAGE_DECLARE(w25);
+//             lv_img_set_src(weather_icon, &w25);
+//             } else if (strcmp(g_current_weather.code, "26") == 0) {
+//             // 浮尘 Dust
+//             LV_IMAGE_DECLARE(w26);
+//             lv_img_set_src(weather_icon, &w26);
+//             } else if (strcmp(g_current_weather.code, "27") == 0) {
+//             // 扬沙 Sand
+//             LV_IMAGE_DECLARE(w27);
+//             lv_img_set_src(weather_icon, &w27);
+//             } else if (strcmp(g_current_weather.code, "28") == 0) {
+//             // 沙尘暴 Duststorm
+//             LV_IMAGE_DECLARE(w28);
+//             lv_img_set_src(weather_icon, &w28);
+//             } else if (strcmp(g_current_weather.code, "29") == 0) {
+//             // 强沙尘暴 Sandstorm
+//             LV_IMAGE_DECLARE(w29);
+//             lv_img_set_src(weather_icon, &w29);
+//             } else if (strcmp(g_current_weather.code, "30") == 0) {
+//             // 雾 Foggy
+//             LV_IMAGE_DECLARE(w30);
+//             lv_img_set_src(weather_icon, &w30);
+//             } else if (strcmp(g_current_weather.code, "31") == 0) {
+//             // 霾 Haze
+//             LV_IMAGE_DECLARE(w31);
+//             lv_img_set_src(weather_icon, &w31);
+//             } else if (strcmp(g_current_weather.code, "32") == 0) {
+//             // 风 Windy
+//             LV_IMAGE_DECLARE(w32);
+//             lv_img_set_src(weather_icon, &w32);
+//             } else if (strcmp(g_current_weather.code, "33") == 0) {
+//             // 大风 Blustery
+//             LV_IMAGE_DECLARE(w33);
+//             lv_img_set_src(weather_icon, &w33);
+//             } else if (strcmp(g_current_weather.code, "34") == 0) {
+//             // 飓风 Hurricane
+//             LV_IMAGE_DECLARE(w34);
+//             lv_img_set_src(weather_icon, &w34);
+//             } else if (strcmp(g_current_weather.code, "35") == 0) {
+//             // 热带风暴 Tropical Storm
+//             LV_IMAGE_DECLARE(w35);
+//             lv_img_set_src(weather_icon, &w35);
+//             } else if (strcmp(g_current_weather.code, "36") == 0) {
+//             // 龙卷风 Tornado
+//             LV_IMAGE_DECLARE(w36);
+//             lv_img_set_src(weather_icon, &w36);
+//             } else if (strcmp(g_current_weather.code, "37") == 0) {
+//             // 冷 Cold
+//             LV_IMAGE_DECLARE(w37);
+//             lv_img_set_src(weather_icon, &w37);
+//             } else if (strcmp(g_current_weather.code, "38") == 0) {
+//             // 热 Hot
+//             LV_IMAGE_DECLARE(w38);
+//             lv_img_set_src(weather_icon, &w38);
+//             } else {
+//             // 未知 Unknown
+//             LV_IMAGE_DECLARE(w99);
+//             lv_img_set_src(weather_icon, &w99);
+//         }
         
-    }
+//     }
     
     // 更新上次更新时间显示 (使用新UI中的last_time对象)
     if (last_time && g_current_weather.last_update > 0) {
