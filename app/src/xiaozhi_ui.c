@@ -1097,7 +1097,7 @@ rt_err_t xiaozhi_ui_obj_init()
 
     //gif  Emoji - 居中显示
     seqimg = lv_seqimg_create(img_container);
-    lv_seqimg_src_array(seqimg, loving, 57);
+    lv_seqimg_src_array(seqimg, cool, 57);
     lv_seqimg_set_period(seqimg, 30);          // 每帧间隔 100ms
     lv_obj_align(seqimg, LV_ALIGN_CENTER, 0, 0);
     lv_img_set_zoom(seqimg, (int)(LV_SCALE_NONE) * g_scale);
@@ -1915,18 +1915,18 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
                         {
                             lv_seqimg_src_array(seqimg, neutral, sizeof(neutral) / sizeof(neutral[0]));
                         }
-                        else if (strcmp(msg->data, "happy") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, funny, sizeof(funny) / sizeof(funny[0]));
-                        }
-                        else if (strcmp(msg->data, "laughing") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, funny, sizeof(funny) / sizeof(funny[0]));
-                        }
-                        else if (strcmp(msg->data, "funny") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, funny, sizeof(funny) / sizeof(funny[0]));
-                        }
+                        // else if (strcmp(msg->data, "happy") == 0)
+                        // {
+                        //     lv_seqimg_src_array(seqimg, funny, sizeof(funny) / sizeof(funny[0]));
+                        // }
+                        // else if (strcmp(msg->data, "laughing") == 0)
+                        // {
+                        //     lv_seqimg_src_array(seqimg, funny, sizeof(funny) / sizeof(funny[0]));
+                        // }
+                        // else if (strcmp(msg->data, "funny") == 0)
+                        // {
+                        //     lv_seqimg_src_array(seqimg, funny, sizeof(funny) / sizeof(funny[0]));
+                        // }
                         else if (strcmp(msg->data, "sad") == 0)
                         {
                             lv_seqimg_src_array(seqimg, crying, sizeof(crying) / sizeof(crying[0]));
@@ -1939,14 +1939,14 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
                         {
                             lv_seqimg_src_array(seqimg, crying, sizeof(crying) / sizeof(crying[0]));
                         }
-                        else if (strcmp(msg->data, "loving") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, loving, sizeof(loving) / sizeof(loving[0]));
-                        }
-                        else if (strcmp(msg->data, "embarrassed") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, embarrassed, sizeof(embarrassed) / sizeof(embarrassed[0]));
-                        }
+                        // else if (strcmp(msg->data, "loving") == 0)
+                        // {
+                        //     lv_seqimg_src_array(seqimg, loving, sizeof(loving) / sizeof(loving[0]));
+                        // }
+                        // else if (strcmp(msg->data, "embarrassed") == 0)
+                        // {
+                        //     lv_seqimg_src_array(seqimg, embarrassed, sizeof(embarrassed) / sizeof(embarrassed[0]));
+                        // }
                         else if (strcmp(msg->data, "surprised") == 0)
                         {
                             lv_seqimg_src_array(seqimg, surprised, sizeof(surprised) / sizeof(surprised[0]));
@@ -1959,10 +1959,10 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
                         {
                             lv_seqimg_src_array(seqimg, thinking, sizeof(thinking) / sizeof(thinking[0]));
                         }
-                        else if (strcmp(msg->data, "winking") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, loving, sizeof(loving) / sizeof(loving[0]));
-                        }
+                        // else if (strcmp(msg->data, "winking") == 0)
+                        // {
+                        //     lv_seqimg_src_array(seqimg, loving, sizeof(loving) / sizeof(loving[0]));
+                        // }
                         else if (strcmp(msg->data, "cool") == 0)
                         {
                             lv_seqimg_src_array(seqimg, cool, sizeof(cool) / sizeof(cool[0]));
@@ -1971,14 +1971,14 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
                         {
                             lv_seqimg_src_array(seqimg, cool, sizeof(cool) / sizeof(cool[0]));
                         }
-                        else if (strcmp(msg->data, "delicious") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, loving, sizeof(loving) / sizeof(loving[0]));
-                        }
-                        else if (strcmp(msg->data, "kissy") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, kissy, sizeof(kissy) / sizeof(kissy[0]));
-                        }
+                        // else if (strcmp(msg->data, "delicious") == 0)
+                        // {
+                        //     lv_seqimg_src_array(seqimg, loving, sizeof(loving) / sizeof(loving[0]));
+                        // }
+                        // else if (strcmp(msg->data, "kissy") == 0)
+                        // {
+                        //     lv_seqimg_src_array(seqimg, kissy, sizeof(kissy) / sizeof(kissy[0]));
+                        // }
                         else if (strcmp(msg->data, "confident") == 0)
                         {
                             lv_seqimg_src_array(seqimg, cool, sizeof(cool) / sizeof(cool[0]));

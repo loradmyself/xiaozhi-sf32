@@ -314,489 +314,489 @@ const lv_image_dsc_t * crying[] =
 /*---------------------crying*/
 
 
-extern const lv_image_dsc_t embarrassed_1;
-extern const lv_image_dsc_t embarrassed_2;
-extern const lv_image_dsc_t embarrassed_3;
-extern const lv_image_dsc_t embarrassed_4;
-extern const lv_image_dsc_t embarrassed_5;
-extern const lv_image_dsc_t embarrassed_6;
-extern const lv_image_dsc_t embarrassed_7;
-extern const lv_image_dsc_t embarrassed_8;
-extern const lv_image_dsc_t embarrassed_9;
-extern const lv_image_dsc_t embarrassed_10;
-extern const lv_image_dsc_t embarrassed_11;
-extern const lv_image_dsc_t embarrassed_12;
-extern const lv_image_dsc_t embarrassed_13;
-extern const lv_image_dsc_t embarrassed_14;
-extern const lv_image_dsc_t embarrassed_15;
-extern const lv_image_dsc_t embarrassed_16;
-extern const lv_image_dsc_t embarrassed_17;
-extern const lv_image_dsc_t embarrassed_18;
-extern const lv_image_dsc_t embarrassed_19;
-extern const lv_image_dsc_t embarrassed_20;
-extern const lv_image_dsc_t embarrassed_21;
-extern const lv_image_dsc_t embarrassed_22;
-extern const lv_image_dsc_t embarrassed_23;
-extern const lv_image_dsc_t embarrassed_24;
-extern const lv_image_dsc_t embarrassed_25;
-extern const lv_image_dsc_t embarrassed_26;
-extern const lv_image_dsc_t embarrassed_27;
-extern const lv_image_dsc_t embarrassed_28;
-extern const lv_image_dsc_t embarrassed_29;
-extern const lv_image_dsc_t embarrassed_30;
-extern const lv_image_dsc_t embarrassed_31;
-extern const lv_image_dsc_t embarrassed_32;
-extern const lv_image_dsc_t embarrassed_33;
-extern const lv_image_dsc_t embarrassed_34;
-extern const lv_image_dsc_t embarrassed_35;
-extern const lv_image_dsc_t embarrassed_36;
-extern const lv_image_dsc_t embarrassed_37;
-extern const lv_image_dsc_t embarrassed_38;
-extern const lv_image_dsc_t embarrassed_39;
-extern const lv_image_dsc_t embarrassed_40;
-extern const lv_image_dsc_t embarrassed_41;
-extern const lv_image_dsc_t embarrassed_42;
-extern const lv_image_dsc_t embarrassed_43;
-extern const lv_image_dsc_t embarrassed_44;
-extern const lv_image_dsc_t embarrassed_45;
-extern const lv_image_dsc_t embarrassed_46;
-extern const lv_image_dsc_t embarrassed_47;
-extern const lv_image_dsc_t embarrassed_48;
-extern const lv_image_dsc_t embarrassed_49;
-extern const lv_image_dsc_t embarrassed_50;
-extern const lv_image_dsc_t embarrassed_51;
-extern const lv_image_dsc_t embarrassed_52;
-extern const lv_image_dsc_t embarrassed_53;
-extern const lv_image_dsc_t embarrassed_54;
-extern const lv_image_dsc_t embarrassed_55;
-extern const lv_image_dsc_t embarrassed_56;
-extern const lv_image_dsc_t embarrassed_57;
+// extern const lv_image_dsc_t embarrassed_1;
+// extern const lv_image_dsc_t embarrassed_2;
+// extern const lv_image_dsc_t embarrassed_3;
+// extern const lv_image_dsc_t embarrassed_4;
+// extern const lv_image_dsc_t embarrassed_5;
+// extern const lv_image_dsc_t embarrassed_6;
+// extern const lv_image_dsc_t embarrassed_7;
+// extern const lv_image_dsc_t embarrassed_8;
+// extern const lv_image_dsc_t embarrassed_9;
+// extern const lv_image_dsc_t embarrassed_10;
+// extern const lv_image_dsc_t embarrassed_11;
+// extern const lv_image_dsc_t embarrassed_12;
+// extern const lv_image_dsc_t embarrassed_13;
+// extern const lv_image_dsc_t embarrassed_14;
+// extern const lv_image_dsc_t embarrassed_15;
+// extern const lv_image_dsc_t embarrassed_16;
+// extern const lv_image_dsc_t embarrassed_17;
+// extern const lv_image_dsc_t embarrassed_18;
+// extern const lv_image_dsc_t embarrassed_19;
+// extern const lv_image_dsc_t embarrassed_20;
+// extern const lv_image_dsc_t embarrassed_21;
+// extern const lv_image_dsc_t embarrassed_22;
+// extern const lv_image_dsc_t embarrassed_23;
+// extern const lv_image_dsc_t embarrassed_24;
+// extern const lv_image_dsc_t embarrassed_25;
+// extern const lv_image_dsc_t embarrassed_26;
+// extern const lv_image_dsc_t embarrassed_27;
+// extern const lv_image_dsc_t embarrassed_28;
+// extern const lv_image_dsc_t embarrassed_29;
+// extern const lv_image_dsc_t embarrassed_30;
+// extern const lv_image_dsc_t embarrassed_31;
+// extern const lv_image_dsc_t embarrassed_32;
+// extern const lv_image_dsc_t embarrassed_33;
+// extern const lv_image_dsc_t embarrassed_34;
+// extern const lv_image_dsc_t embarrassed_35;
+// extern const lv_image_dsc_t embarrassed_36;
+// extern const lv_image_dsc_t embarrassed_37;
+// extern const lv_image_dsc_t embarrassed_38;
+// extern const lv_image_dsc_t embarrassed_39;
+// extern const lv_image_dsc_t embarrassed_40;
+// extern const lv_image_dsc_t embarrassed_41;
+// extern const lv_image_dsc_t embarrassed_42;
+// extern const lv_image_dsc_t embarrassed_43;
+// extern const lv_image_dsc_t embarrassed_44;
+// extern const lv_image_dsc_t embarrassed_45;
+// extern const lv_image_dsc_t embarrassed_46;
+// extern const lv_image_dsc_t embarrassed_47;
+// extern const lv_image_dsc_t embarrassed_48;
+// extern const lv_image_dsc_t embarrassed_49;
+// extern const lv_image_dsc_t embarrassed_50;
+// extern const lv_image_dsc_t embarrassed_51;
+// extern const lv_image_dsc_t embarrassed_52;
+// extern const lv_image_dsc_t embarrassed_53;
+// extern const lv_image_dsc_t embarrassed_54;
+// extern const lv_image_dsc_t embarrassed_55;
+// extern const lv_image_dsc_t embarrassed_56;
+// extern const lv_image_dsc_t embarrassed_57;
 
 
 
 
-const lv_image_dsc_t * embarrassed[] =
-{
-  &embarrassed_1,
-  &embarrassed_2,
-  &embarrassed_3,
-  &embarrassed_4,
-  &embarrassed_5,
-  &embarrassed_6,
-  &embarrassed_7,
-  &embarrassed_8,
-  &embarrassed_9,
-  &embarrassed_10,
-  &embarrassed_11,
-  &embarrassed_12,
-  &embarrassed_13,
-  &embarrassed_14,
-  &embarrassed_15,
-  &embarrassed_16,
-  &embarrassed_17,
-  &embarrassed_18,
-  &embarrassed_19,
-  &embarrassed_20,
-  &embarrassed_21,
-  &embarrassed_22,
-  &embarrassed_23,
-  &embarrassed_24,
-  &embarrassed_25,
-  &embarrassed_26,
-  &embarrassed_27,
-  &embarrassed_28,
-  &embarrassed_29,
-  &embarrassed_30,
-  &embarrassed_31,
-  &embarrassed_32,
-  &embarrassed_33,
-  &embarrassed_34,
-  &embarrassed_35,
-  &embarrassed_36,
-  &embarrassed_37,
-  &embarrassed_38,
-  &embarrassed_39,
-  &embarrassed_40,
-  &embarrassed_41,
-  &embarrassed_42,
-  &embarrassed_43,
-  &embarrassed_44,
-  &embarrassed_45,
-  &embarrassed_46,
-  &embarrassed_47,
-  &embarrassed_48,
-  &embarrassed_49,
-  &embarrassed_50,
-  &embarrassed_51,
-  &embarrassed_52,
-  &embarrassed_53,
-  &embarrassed_54,
-  &embarrassed_55,
-  &embarrassed_56,
-  &embarrassed_57
-};
+// const lv_image_dsc_t * embarrassed[] =
+// {
+//   &embarrassed_1,
+//   &embarrassed_2,
+//   &embarrassed_3,
+//   &embarrassed_4,
+//   &embarrassed_5,
+//   &embarrassed_6,
+//   &embarrassed_7,
+//   &embarrassed_8,
+//   &embarrassed_9,
+//   &embarrassed_10,
+//   &embarrassed_11,
+//   &embarrassed_12,
+//   &embarrassed_13,
+//   &embarrassed_14,
+//   &embarrassed_15,
+//   &embarrassed_16,
+//   &embarrassed_17,
+//   &embarrassed_18,
+//   &embarrassed_19,
+//   &embarrassed_20,
+//   &embarrassed_21,
+//   &embarrassed_22,
+//   &embarrassed_23,
+//   &embarrassed_24,
+//   &embarrassed_25,
+//   &embarrassed_26,
+//   &embarrassed_27,
+//   &embarrassed_28,
+//   &embarrassed_29,
+//   &embarrassed_30,
+//   &embarrassed_31,
+//   &embarrassed_32,
+//   &embarrassed_33,
+//   &embarrassed_34,
+//   &embarrassed_35,
+//   &embarrassed_36,
+//   &embarrassed_37,
+//   &embarrassed_38,
+//   &embarrassed_39,
+//   &embarrassed_40,
+//   &embarrassed_41,
+//   &embarrassed_42,
+//   &embarrassed_43,
+//   &embarrassed_44,
+//   &embarrassed_45,
+//   &embarrassed_46,
+//   &embarrassed_47,
+//   &embarrassed_48,
+//   &embarrassed_49,
+//   &embarrassed_50,
+//   &embarrassed_51,
+//   &embarrassed_52,
+//   &embarrassed_53,
+//   &embarrassed_54,
+//   &embarrassed_55,
+//   &embarrassed_56,
+//   &embarrassed_57
+// };
 
 
-/*---------------------embarrassed*/
+// /*---------------------embarrassed*/
 
-extern const lv_image_dsc_t funny_1;
-extern const lv_image_dsc_t funny_2;
-extern const lv_image_dsc_t funny_3;
-extern const lv_image_dsc_t funny_4;
-extern const lv_image_dsc_t funny_5;
-extern const lv_image_dsc_t funny_6;
-extern const lv_image_dsc_t funny_7;
-extern const lv_image_dsc_t funny_8;
-extern const lv_image_dsc_t funny_9;
-extern const lv_image_dsc_t funny_10;
-extern const lv_image_dsc_t funny_11;
-extern const lv_image_dsc_t funny_12;
-extern const lv_image_dsc_t funny_13;
-extern const lv_image_dsc_t funny_14;
-extern const lv_image_dsc_t funny_15;
-extern const lv_image_dsc_t funny_16;
-extern const lv_image_dsc_t funny_17;
-extern const lv_image_dsc_t funny_18;
-extern const lv_image_dsc_t funny_19;
-extern const lv_image_dsc_t funny_20;
-extern const lv_image_dsc_t funny_21;
-extern const lv_image_dsc_t funny_22;
-extern const lv_image_dsc_t funny_23;
-extern const lv_image_dsc_t funny_24;
-extern const lv_image_dsc_t funny_25;
-extern const lv_image_dsc_t funny_26;
-extern const lv_image_dsc_t funny_27;
-extern const lv_image_dsc_t funny_28;
-extern const lv_image_dsc_t funny_29;
-extern const lv_image_dsc_t funny_30;
-extern const lv_image_dsc_t funny_31;
-extern const lv_image_dsc_t funny_32;
-extern const lv_image_dsc_t funny_33;
-extern const lv_image_dsc_t funny_34;
-extern const lv_image_dsc_t funny_35;
-extern const lv_image_dsc_t funny_36;
-extern const lv_image_dsc_t funny_37;
-extern const lv_image_dsc_t funny_38;
-extern const lv_image_dsc_t funny_39;
-extern const lv_image_dsc_t funny_40;
-extern const lv_image_dsc_t funny_41;
-extern const lv_image_dsc_t funny_42;
-extern const lv_image_dsc_t funny_43;
-extern const lv_image_dsc_t funny_44;
-extern const lv_image_dsc_t funny_45;
-extern const lv_image_dsc_t funny_46;
-extern const lv_image_dsc_t funny_47;
-extern const lv_image_dsc_t funny_48;
-extern const lv_image_dsc_t funny_49;
-extern const lv_image_dsc_t funny_50;
-extern const lv_image_dsc_t funny_51;
-extern const lv_image_dsc_t funny_52;
-extern const lv_image_dsc_t funny_53;
-extern const lv_image_dsc_t funny_54;
-extern const lv_image_dsc_t funny_55;
-extern const lv_image_dsc_t funny_56;
-extern const lv_image_dsc_t funny_57;
-
-
-
-
-const lv_image_dsc_t * funny[] =
-{
-  &funny_1,
-  &funny_2,
-  &funny_3,
-  &funny_4,
-  &funny_5,
-  &funny_6,
-  &funny_7,
-  &funny_8,
-  &funny_9,
-  &funny_10,
-  &funny_11,
-  &funny_12,
-  &funny_13,
-  &funny_14,
-  &funny_15,
-  &funny_16,
-  &funny_17,
-  &funny_18,
-  &funny_19,
-  &funny_20,
-  &funny_21,
-  &funny_22,
-  &funny_23,
-  &funny_24,
-  &funny_25,
-  &funny_26,
-  &funny_27,
-  &funny_28,
-  &funny_29,
-  &funny_30,
-  &funny_31,
-  &funny_32,
-  &funny_33,
-  &funny_34,
-  &funny_35,
-  &funny_36,
-  &funny_37,
-  &funny_38,
-  &funny_39,
-  &funny_40,
-  &funny_41,
-  &funny_42,
-  &funny_43,
-  &funny_44,
-  &funny_45,
-  &funny_46,
-  &funny_47,
-  &funny_48,
-  &funny_49,
-  &funny_50,
-  &funny_51,
-  &funny_52,
-  &funny_53,
-  &funny_54,
-  &funny_55,
-  &funny_56,
-  &funny_57
-};
-
-/*---------------------funny*/
-
-
-
-extern const lv_image_dsc_t kissy_1;
-extern const lv_image_dsc_t kissy_2;
-extern const lv_image_dsc_t kissy_3;
-extern const lv_image_dsc_t kissy_4;
-extern const lv_image_dsc_t kissy_5;
-extern const lv_image_dsc_t kissy_6;
-extern const lv_image_dsc_t kissy_7;
-extern const lv_image_dsc_t kissy_8;
-extern const lv_image_dsc_t kissy_9;
-extern const lv_image_dsc_t kissy_10;
-extern const lv_image_dsc_t kissy_11;
-extern const lv_image_dsc_t kissy_12;
-extern const lv_image_dsc_t kissy_13;
-extern const lv_image_dsc_t kissy_14;
-extern const lv_image_dsc_t kissy_15;
-extern const lv_image_dsc_t kissy_16;
-extern const lv_image_dsc_t kissy_17;
-extern const lv_image_dsc_t kissy_18;
-extern const lv_image_dsc_t kissy_19;
-extern const lv_image_dsc_t kissy_20;
-extern const lv_image_dsc_t kissy_21;
-extern const lv_image_dsc_t kissy_22;
-extern const lv_image_dsc_t kissy_23;
-extern const lv_image_dsc_t kissy_24;
-extern const lv_image_dsc_t kissy_25;
-extern const lv_image_dsc_t kissy_26;
-extern const lv_image_dsc_t kissy_27;
-extern const lv_image_dsc_t kissy_28;
-extern const lv_image_dsc_t kissy_29;
-extern const lv_image_dsc_t kissy_30;
-extern const lv_image_dsc_t kissy_31;
-extern const lv_image_dsc_t kissy_32;
-extern const lv_image_dsc_t kissy_33;
-extern const lv_image_dsc_t kissy_34;
-extern const lv_image_dsc_t kissy_35;
-extern const lv_image_dsc_t kissy_36;
-extern const lv_image_dsc_t kissy_37;
-extern const lv_image_dsc_t kissy_38;
-extern const lv_image_dsc_t kissy_39;
-extern const lv_image_dsc_t kissy_40;
-extern const lv_image_dsc_t kissy_41;
-extern const lv_image_dsc_t kissy_42;
-extern const lv_image_dsc_t kissy_43;
-extern const lv_image_dsc_t kissy_44;
-extern const lv_image_dsc_t kissy_45;
-extern const lv_image_dsc_t kissy_46;
-extern const lv_image_dsc_t kissy_47;
-extern const lv_image_dsc_t kissy_48;
-extern const lv_image_dsc_t kissy_49;
-extern const lv_image_dsc_t kissy_50;
-extern const lv_image_dsc_t kissy_51;
-extern const lv_image_dsc_t kissy_52;
-extern const lv_image_dsc_t kissy_53;
-extern const lv_image_dsc_t kissy_54;
-extern const lv_image_dsc_t kissy_55;
-extern const lv_image_dsc_t kissy_56;
-extern const lv_image_dsc_t kissy_57;
+// extern const lv_image_dsc_t funny_1;
+// extern const lv_image_dsc_t funny_2;
+// extern const lv_image_dsc_t funny_3;
+// extern const lv_image_dsc_t funny_4;
+// extern const lv_image_dsc_t funny_5;
+// extern const lv_image_dsc_t funny_6;
+// extern const lv_image_dsc_t funny_7;
+// extern const lv_image_dsc_t funny_8;
+// extern const lv_image_dsc_t funny_9;
+// extern const lv_image_dsc_t funny_10;
+// extern const lv_image_dsc_t funny_11;
+// extern const lv_image_dsc_t funny_12;
+// extern const lv_image_dsc_t funny_13;
+// extern const lv_image_dsc_t funny_14;
+// extern const lv_image_dsc_t funny_15;
+// extern const lv_image_dsc_t funny_16;
+// extern const lv_image_dsc_t funny_17;
+// extern const lv_image_dsc_t funny_18;
+// extern const lv_image_dsc_t funny_19;
+// extern const lv_image_dsc_t funny_20;
+// extern const lv_image_dsc_t funny_21;
+// extern const lv_image_dsc_t funny_22;
+// extern const lv_image_dsc_t funny_23;
+// extern const lv_image_dsc_t funny_24;
+// extern const lv_image_dsc_t funny_25;
+// extern const lv_image_dsc_t funny_26;
+// extern const lv_image_dsc_t funny_27;
+// extern const lv_image_dsc_t funny_28;
+// extern const lv_image_dsc_t funny_29;
+// extern const lv_image_dsc_t funny_30;
+// extern const lv_image_dsc_t funny_31;
+// extern const lv_image_dsc_t funny_32;
+// extern const lv_image_dsc_t funny_33;
+// extern const lv_image_dsc_t funny_34;
+// extern const lv_image_dsc_t funny_35;
+// extern const lv_image_dsc_t funny_36;
+// extern const lv_image_dsc_t funny_37;
+// extern const lv_image_dsc_t funny_38;
+// extern const lv_image_dsc_t funny_39;
+// extern const lv_image_dsc_t funny_40;
+// extern const lv_image_dsc_t funny_41;
+// extern const lv_image_dsc_t funny_42;
+// extern const lv_image_dsc_t funny_43;
+// extern const lv_image_dsc_t funny_44;
+// extern const lv_image_dsc_t funny_45;
+// extern const lv_image_dsc_t funny_46;
+// extern const lv_image_dsc_t funny_47;
+// extern const lv_image_dsc_t funny_48;
+// extern const lv_image_dsc_t funny_49;
+// extern const lv_image_dsc_t funny_50;
+// extern const lv_image_dsc_t funny_51;
+// extern const lv_image_dsc_t funny_52;
+// extern const lv_image_dsc_t funny_53;
+// extern const lv_image_dsc_t funny_54;
+// extern const lv_image_dsc_t funny_55;
+// extern const lv_image_dsc_t funny_56;
+// extern const lv_image_dsc_t funny_57;
 
 
 
 
-const lv_image_dsc_t * kissy[] =
-{
-  &kissy_1,
-  &kissy_2,
-  &kissy_3,
-  &kissy_4,
-  &kissy_5,
-  &kissy_6,
-  &kissy_7,
-  &kissy_8,
-  &kissy_9,
-  &kissy_10,
-  &kissy_11,
-  &kissy_12,
-  &kissy_13,
-  &kissy_14,
-  &kissy_15,
-  &kissy_16,
-  &kissy_17,
-  &kissy_18,
-  &kissy_19,
-  &kissy_20,
-  &kissy_21,
-  &kissy_22,
-  &kissy_23,
-  &kissy_24,
-  &kissy_25,
-  &kissy_26,
-  &kissy_27,
-  &kissy_28,
-  &kissy_29,
-  &kissy_30,
-  &kissy_31,
-  &kissy_32,
-  &kissy_33,
-  &kissy_34,
-  &kissy_35,
-  &kissy_36,
-  &kissy_37,
-  &kissy_38,
-  &kissy_39,
-  &kissy_40,
-  &kissy_41,
-  &kissy_42,
-  &kissy_43,
-  &kissy_44,
-  &kissy_45,
-  &kissy_46,
-  &kissy_47,
-  &kissy_48,
-  &kissy_49,
-  &kissy_50,
-  &kissy_51,
-  &kissy_52,
-  &kissy_53,
-  &kissy_54,
-  &kissy_55,
-  &kissy_56,
-  &kissy_57
-};
+// const lv_image_dsc_t * funny[] =
+// {
+//   &funny_1,
+//   &funny_2,
+//   &funny_3,
+//   &funny_4,
+//   &funny_5,
+//   &funny_6,
+//   &funny_7,
+//   &funny_8,
+//   &funny_9,
+//   &funny_10,
+//   &funny_11,
+//   &funny_12,
+//   &funny_13,
+//   &funny_14,
+//   &funny_15,
+//   &funny_16,
+//   &funny_17,
+//   &funny_18,
+//   &funny_19,
+//   &funny_20,
+//   &funny_21,
+//   &funny_22,
+//   &funny_23,
+//   &funny_24,
+//   &funny_25,
+//   &funny_26,
+//   &funny_27,
+//   &funny_28,
+//   &funny_29,
+//   &funny_30,
+//   &funny_31,
+//   &funny_32,
+//   &funny_33,
+//   &funny_34,
+//   &funny_35,
+//   &funny_36,
+//   &funny_37,
+//   &funny_38,
+//   &funny_39,
+//   &funny_40,
+//   &funny_41,
+//   &funny_42,
+//   &funny_43,
+//   &funny_44,
+//   &funny_45,
+//   &funny_46,
+//   &funny_47,
+//   &funny_48,
+//   &funny_49,
+//   &funny_50,
+//   &funny_51,
+//   &funny_52,
+//   &funny_53,
+//   &funny_54,
+//   &funny_55,
+//   &funny_56,
+//   &funny_57
+// };
 
-
-/*---------------------kissy*/
-
-
-
-
-extern const lv_image_dsc_t loving_1;
-extern const lv_image_dsc_t loving_2;
-extern const lv_image_dsc_t loving_3;
-extern const lv_image_dsc_t loving_4;
-extern const lv_image_dsc_t loving_5;
-extern const lv_image_dsc_t loving_6;
-extern const lv_image_dsc_t loving_7;
-extern const lv_image_dsc_t loving_8;
-extern const lv_image_dsc_t loving_9;
-extern const lv_image_dsc_t loving_10;
-extern const lv_image_dsc_t loving_11;
-extern const lv_image_dsc_t loving_12;
-extern const lv_image_dsc_t loving_13;
-extern const lv_image_dsc_t loving_14;
-extern const lv_image_dsc_t loving_15;
-extern const lv_image_dsc_t loving_16;
-extern const lv_image_dsc_t loving_17;
-extern const lv_image_dsc_t loving_18;
-extern const lv_image_dsc_t loving_19;
-extern const lv_image_dsc_t loving_20;
-extern const lv_image_dsc_t loving_21;
-extern const lv_image_dsc_t loving_22;
-extern const lv_image_dsc_t loving_23;
-extern const lv_image_dsc_t loving_24;
-extern const lv_image_dsc_t loving_25;
-extern const lv_image_dsc_t loving_26;
-extern const lv_image_dsc_t loving_27;
-extern const lv_image_dsc_t loving_28;
-extern const lv_image_dsc_t loving_29;
-extern const lv_image_dsc_t loving_30;
-extern const lv_image_dsc_t loving_31;
-extern const lv_image_dsc_t loving_32;
-extern const lv_image_dsc_t loving_33;
-extern const lv_image_dsc_t loving_34;
-extern const lv_image_dsc_t loving_35;
-extern const lv_image_dsc_t loving_36;
-extern const lv_image_dsc_t loving_37;
-extern const lv_image_dsc_t loving_38;
-extern const lv_image_dsc_t loving_39;
-extern const lv_image_dsc_t loving_40;
-extern const lv_image_dsc_t loving_41;
-extern const lv_image_dsc_t loving_42;
-extern const lv_image_dsc_t loving_43;
-extern const lv_image_dsc_t loving_44;
-extern const lv_image_dsc_t loving_45;
-extern const lv_image_dsc_t loving_46;
-extern const lv_image_dsc_t loving_47;
-extern const lv_image_dsc_t loving_48;
+// /*---------------------funny*/
 
 
 
-const lv_image_dsc_t * loving[] =
-{
-  &loving_1,
-  &loving_2,
-  &loving_3,
-  &loving_4,
-  &loving_5,
-  &loving_6,
-  &loving_7,
-  &loving_8,
-  &loving_9,
-  &loving_10,
-  &loving_11,
-  &loving_12,
-  &loving_13,
-  &loving_14,
-  &loving_15,
-  &loving_16,
-  &loving_17,
-  &loving_18,
-  &loving_19,
-  &loving_20,
-  &loving_21,
-  &loving_22,
-  &loving_23,
-  &loving_24,
-  &loving_25,
-  &loving_26,
-  &loving_27,
-  &loving_28,
-  &loving_29,
-  &loving_30,
-  &loving_31,
-  &loving_32,
-  &loving_33,
-  &loving_34,
-  &loving_35,
-  &loving_36,
-  &loving_37,
-  &loving_38,
-  &loving_39,
-  &loving_40,
-  &loving_41,
-  &loving_42,
-  &loving_43,
-  &loving_44,
-  &loving_45,
-  &loving_46,
-  &loving_47,
-  &loving_48
-};
+// extern const lv_image_dsc_t kissy_1;
+// extern const lv_image_dsc_t kissy_2;
+// extern const lv_image_dsc_t kissy_3;
+// extern const lv_image_dsc_t kissy_4;
+// extern const lv_image_dsc_t kissy_5;
+// extern const lv_image_dsc_t kissy_6;
+// extern const lv_image_dsc_t kissy_7;
+// extern const lv_image_dsc_t kissy_8;
+// extern const lv_image_dsc_t kissy_9;
+// extern const lv_image_dsc_t kissy_10;
+// extern const lv_image_dsc_t kissy_11;
+// extern const lv_image_dsc_t kissy_12;
+// extern const lv_image_dsc_t kissy_13;
+// extern const lv_image_dsc_t kissy_14;
+// extern const lv_image_dsc_t kissy_15;
+// extern const lv_image_dsc_t kissy_16;
+// extern const lv_image_dsc_t kissy_17;
+// extern const lv_image_dsc_t kissy_18;
+// extern const lv_image_dsc_t kissy_19;
+// extern const lv_image_dsc_t kissy_20;
+// extern const lv_image_dsc_t kissy_21;
+// extern const lv_image_dsc_t kissy_22;
+// extern const lv_image_dsc_t kissy_23;
+// extern const lv_image_dsc_t kissy_24;
+// extern const lv_image_dsc_t kissy_25;
+// extern const lv_image_dsc_t kissy_26;
+// extern const lv_image_dsc_t kissy_27;
+// extern const lv_image_dsc_t kissy_28;
+// extern const lv_image_dsc_t kissy_29;
+// extern const lv_image_dsc_t kissy_30;
+// extern const lv_image_dsc_t kissy_31;
+// extern const lv_image_dsc_t kissy_32;
+// extern const lv_image_dsc_t kissy_33;
+// extern const lv_image_dsc_t kissy_34;
+// extern const lv_image_dsc_t kissy_35;
+// extern const lv_image_dsc_t kissy_36;
+// extern const lv_image_dsc_t kissy_37;
+// extern const lv_image_dsc_t kissy_38;
+// extern const lv_image_dsc_t kissy_39;
+// extern const lv_image_dsc_t kissy_40;
+// extern const lv_image_dsc_t kissy_41;
+// extern const lv_image_dsc_t kissy_42;
+// extern const lv_image_dsc_t kissy_43;
+// extern const lv_image_dsc_t kissy_44;
+// extern const lv_image_dsc_t kissy_45;
+// extern const lv_image_dsc_t kissy_46;
+// extern const lv_image_dsc_t kissy_47;
+// extern const lv_image_dsc_t kissy_48;
+// extern const lv_image_dsc_t kissy_49;
+// extern const lv_image_dsc_t kissy_50;
+// extern const lv_image_dsc_t kissy_51;
+// extern const lv_image_dsc_t kissy_52;
+// extern const lv_image_dsc_t kissy_53;
+// extern const lv_image_dsc_t kissy_54;
+// extern const lv_image_dsc_t kissy_55;
+// extern const lv_image_dsc_t kissy_56;
+// extern const lv_image_dsc_t kissy_57;
 
-/*-----------------loving*/
+
+
+
+// const lv_image_dsc_t * kissy[] =
+// {
+//   &kissy_1,
+//   &kissy_2,
+//   &kissy_3,
+//   &kissy_4,
+//   &kissy_5,
+//   &kissy_6,
+//   &kissy_7,
+//   &kissy_8,
+//   &kissy_9,
+//   &kissy_10,
+//   &kissy_11,
+//   &kissy_12,
+//   &kissy_13,
+//   &kissy_14,
+//   &kissy_15,
+//   &kissy_16,
+//   &kissy_17,
+//   &kissy_18,
+//   &kissy_19,
+//   &kissy_20,
+//   &kissy_21,
+//   &kissy_22,
+//   &kissy_23,
+//   &kissy_24,
+//   &kissy_25,
+//   &kissy_26,
+//   &kissy_27,
+//   &kissy_28,
+//   &kissy_29,
+//   &kissy_30,
+//   &kissy_31,
+//   &kissy_32,
+//   &kissy_33,
+//   &kissy_34,
+//   &kissy_35,
+//   &kissy_36,
+//   &kissy_37,
+//   &kissy_38,
+//   &kissy_39,
+//   &kissy_40,
+//   &kissy_41,
+//   &kissy_42,
+//   &kissy_43,
+//   &kissy_44,
+//   &kissy_45,
+//   &kissy_46,
+//   &kissy_47,
+//   &kissy_48,
+//   &kissy_49,
+//   &kissy_50,
+//   &kissy_51,
+//   &kissy_52,
+//   &kissy_53,
+//   &kissy_54,
+//   &kissy_55,
+//   &kissy_56,
+//   &kissy_57
+// };
+
+
+// /*---------------------kissy*/
+
+
+
+
+// extern const lv_image_dsc_t loving_1;
+// extern const lv_image_dsc_t loving_2;
+// extern const lv_image_dsc_t loving_3;
+// extern const lv_image_dsc_t loving_4;
+// extern const lv_image_dsc_t loving_5;
+// extern const lv_image_dsc_t loving_6;
+// extern const lv_image_dsc_t loving_7;
+// extern const lv_image_dsc_t loving_8;
+// extern const lv_image_dsc_t loving_9;
+// extern const lv_image_dsc_t loving_10;
+// extern const lv_image_dsc_t loving_11;
+// extern const lv_image_dsc_t loving_12;
+// extern const lv_image_dsc_t loving_13;
+// extern const lv_image_dsc_t loving_14;
+// extern const lv_image_dsc_t loving_15;
+// extern const lv_image_dsc_t loving_16;
+// extern const lv_image_dsc_t loving_17;
+// extern const lv_image_dsc_t loving_18;
+// extern const lv_image_dsc_t loving_19;
+// extern const lv_image_dsc_t loving_20;
+// extern const lv_image_dsc_t loving_21;
+// extern const lv_image_dsc_t loving_22;
+// extern const lv_image_dsc_t loving_23;
+// extern const lv_image_dsc_t loving_24;
+// extern const lv_image_dsc_t loving_25;
+// extern const lv_image_dsc_t loving_26;
+// extern const lv_image_dsc_t loving_27;
+// extern const lv_image_dsc_t loving_28;
+// extern const lv_image_dsc_t loving_29;
+// extern const lv_image_dsc_t loving_30;
+// extern const lv_image_dsc_t loving_31;
+// extern const lv_image_dsc_t loving_32;
+// extern const lv_image_dsc_t loving_33;
+// extern const lv_image_dsc_t loving_34;
+// extern const lv_image_dsc_t loving_35;
+// extern const lv_image_dsc_t loving_36;
+// extern const lv_image_dsc_t loving_37;
+// extern const lv_image_dsc_t loving_38;
+// extern const lv_image_dsc_t loving_39;
+// extern const lv_image_dsc_t loving_40;
+// extern const lv_image_dsc_t loving_41;
+// extern const lv_image_dsc_t loving_42;
+// extern const lv_image_dsc_t loving_43;
+// extern const lv_image_dsc_t loving_44;
+// extern const lv_image_dsc_t loving_45;
+// extern const lv_image_dsc_t loving_46;
+// extern const lv_image_dsc_t loving_47;
+// extern const lv_image_dsc_t loving_48;
+
+
+
+// const lv_image_dsc_t * loving[] =
+// {
+//   &loving_1,
+//   &loving_2,
+//   &loving_3,
+//   &loving_4,
+//   &loving_5,
+//   &loving_6,
+//   &loving_7,
+//   &loving_8,
+//   &loving_9,
+//   &loving_10,
+//   &loving_11,
+//   &loving_12,
+//   &loving_13,
+//   &loving_14,
+//   &loving_15,
+//   &loving_16,
+//   &loving_17,
+//   &loving_18,
+//   &loving_19,
+//   &loving_20,
+//   &loving_21,
+//   &loving_22,
+//   &loving_23,
+//   &loving_24,
+//   &loving_25,
+//   &loving_26,
+//   &loving_27,
+//   &loving_28,
+//   &loving_29,
+//   &loving_30,
+//   &loving_31,
+//   &loving_32,
+//   &loving_33,
+//   &loving_34,
+//   &loving_35,
+//   &loving_36,
+//   &loving_37,
+//   &loving_38,
+//   &loving_39,
+//   &loving_40,
+//   &loving_41,
+//   &loving_42,
+//   &loving_43,
+//   &loving_44,
+//   &loving_45,
+//   &loving_46,
+//   &loving_47,
+//   &loving_48
+// };
+
+// /*-----------------loving*/
 
 extern const lv_image_dsc_t neutral_1;
 extern const lv_image_dsc_t neutral_2;

@@ -497,7 +497,7 @@ void parse_helLo(const u8_t *data, u16_t len)
         xiaozhi_ui_chat_status("待命中...");
         xiaozhi_ui_chat_output("小智已连接!");
         xiaozhi_ui_update_emoji("neutral");
-        xiaozhi_ui_update_standby_emoji("funny");
+        xiaozhi_ui_update_standby_emoji("cool");
         rt_kprintf("hello->对话\n");
         ui_swith_to_xiaozhi_screen();//切换到小智对话界面
 #ifdef PKG_XIAOZHI_USING_AEC
