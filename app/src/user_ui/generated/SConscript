@@ -1,14 +1,21 @@
 import os
 from building import *
 
-cwd = GetCurrentDir()
+cwd     = GetCurrentDir()
+CPPPATH = [cwd]
+libpath = [cwd + '/../custom']
+CPPPATH += [cwd + '/../custom']
+# Add source code
 src = Glob('*.c')
-# 添加头文件包含路径
-CPPPATH += [cwd + './images', cwd]
-CPPPATH += [cwd + './guider_fonts', cwd]
-CPPPATH += [cwd + './guider_customer_fonts', cwd]
-CPPPATH += [cwd + '../custom', cwd]
+src = src + Glob('/../custom/*.c') 
+src = src + Glob('./guider_customer_fonts*/.c') 
+src = src + Glob('./guider_fonts/*.c') 
+src = src + Glob('./images/*.c') 
 
-group = DefineGroup('USER_UI', src, depend = ['USER_UI'], CPPPATH = CPPPATH)
+group = DefineGroup('Applications', src, depend = [''], CPPDEFINES = CPPDEFINES, 
+    CPPPATH = CPPPATH,
+    LIBS = ['libetasr_watch_sifli567'],
+    LIBPATH = libpath)
 
 Return('group')
+
