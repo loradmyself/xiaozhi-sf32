@@ -503,11 +503,11 @@ void time_ui_update_callback(void)
     int minute_units = g_current_time.minute % 10;
     
     // 根据数字更新对应的图片资源
-    extern const lv_image_dsc_t img_0, img_1, img_2, img_3, img_4, img_5, img_6, img_7, img_8, img_9;
-    const lv_image_dsc_t* hour_tens_img_src[] = {&img_0, &img_1, &img_2, &img_3, &img_4, &img_5, &img_6, &img_7, &img_8, &img_9};
-    const lv_image_dsc_t* hour_units_img_src[] = {&img_0, &img_1, &img_2, &img_3, &img_4, &img_5, &img_6, &img_7, &img_8, &img_9};
-    const lv_image_dsc_t* minute_tens_img_src[] = {&img_0, &img_1, &img_2, &img_3, &img_4, &img_5, &img_6, &img_7, &img_8, &img_9};
-    const lv_image_dsc_t* minute_units_img_src[] = {&img_0, &img_1, &img_2, &img_3, &img_4, &img_5, &img_6, &img_7, &img_8, &img_9};
+    // extern const lv_image_dsc_t img_0, img_1, img_2, img_3, img_4, img_5, img_6, img_7, img_8, img_9;
+    // const lv_image_dsc_t* hour_tens_img_src[] = {&img_0, &img_1, &img_2, &img_3, &img_4, &img_5, &img_6, &img_7, &img_8, &img_9};
+    // const lv_image_dsc_t* hour_units_img_src[] = {&img_0, &img_1, &img_2, &img_3, &img_4, &img_5, &img_6, &img_7, &img_8, &img_9};
+    // const lv_image_dsc_t* minute_tens_img_src[] = {&img_0, &img_1, &img_2, &img_3, &img_4, &img_5, &img_6, &img_7, &img_8, &img_9};
+    // const lv_image_dsc_t* minute_units_img_src[] = {&img_0, &img_1, &img_2, &img_3, &img_4, &img_5, &img_6, &img_7, &img_8, &img_9};
     
         // 只在小时十位数变化时更新
     if (hour_tens != last_hour_tens) {

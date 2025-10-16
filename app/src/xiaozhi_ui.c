@@ -123,16 +123,16 @@ extern const lv_image_dsc_t sleepy2; // 表情图标
 extern const lv_image_dsc_t cool_gif;
 extern const lv_image_dsc_t calendar;//日历
 extern const lv_image_dsc_t second;
-extern const lv_image_dsc_t img_0;  // 数字图片资源
-extern const lv_image_dsc_t img_1;
-extern const lv_image_dsc_t img_2;
-extern const lv_image_dsc_t img_3;
-extern const lv_image_dsc_t img_4;
-extern const lv_image_dsc_t img_5;
-extern const lv_image_dsc_t img_6;
-extern const lv_image_dsc_t img_7;
-extern const lv_image_dsc_t img_8;
-extern const lv_image_dsc_t img_9;
+// extern const lv_image_dsc_t img_0;  // 数字图片资源
+// extern const lv_image_dsc_t img_1;
+// extern const lv_image_dsc_t img_2;
+// extern const lv_image_dsc_t img_3;
+// extern const lv_image_dsc_t img_4;
+// extern const lv_image_dsc_t img_5;
+// extern const lv_image_dsc_t img_6;
+// extern const lv_image_dsc_t img_7;
+// extern const lv_image_dsc_t img_8;
+// extern const lv_image_dsc_t img_9;
 
 lv_obj_t *hour_tens_img;     // 小时十位数图片
 lv_obj_t *hour_units_img;    // 小时个位数图片
@@ -866,17 +866,17 @@ rt_err_t xiaozhi_ui_obj_init()
 
 
 // 日历
-    ui_Image_calendar = lv_img_create(standby_screen.screen);
-    LV_IMAGE_DECLARE(calendar);
-    lv_img_set_src(ui_Image_calendar, &calendar);
-    lv_obj_set_width(ui_Image_calendar, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_Image_calendar, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_Image_calendar, (int)(-107 * g_scale));
-    lv_obj_set_y(ui_Image_calendar, (int)(39 * g_scale));
-    lv_obj_set_align(ui_Image_calendar, LV_ALIGN_CENTER);
-    lv_obj_add_flag(ui_Image_calendar, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
-    lv_obj_clear_flag(ui_Image_calendar, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_img_set_zoom(ui_Image_calendar,(int)(320 * g_scale));
+    // ui_Image_calendar = lv_img_create(standby_screen.screen);
+    // LV_IMAGE_DECLARE(calendar);
+    // lv_img_set_src(ui_Image_calendar, &calendar);
+    // lv_obj_set_width(ui_Image_calendar, LV_SIZE_CONTENT);   /// 1
+    // lv_obj_set_height(ui_Image_calendar, LV_SIZE_CONTENT);    /// 1
+    // lv_obj_set_x(ui_Image_calendar, (int)(-107 * g_scale));
+    // lv_obj_set_y(ui_Image_calendar, (int)(39 * g_scale));
+    // lv_obj_set_align(ui_Image_calendar, LV_ALIGN_CENTER);
+    // lv_obj_add_flag(ui_Image_calendar, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
+    // lv_obj_clear_flag(ui_Image_calendar, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    // lv_img_set_zoom(ui_Image_calendar,(int)(320 * g_scale));
 
     ui_Label_year = lv_label_create(standby_screen.screen);
     lv_obj_set_width(ui_Label_year, LV_SIZE_CONTENT);   /// 1
