@@ -4,11 +4,11 @@ from building import *
 cwd = GetCurrentDir()
 src = Glob('*.c')
 # 添加头文件包含路径
-CPPPATH = [cwd + './images', cwd]
-CPPPATH = [cwd + './guider_fonts', cwd]
-CPPPATH = [cwd + './guider_customer_fonts', cwd]
-CPPPATH = [cwd + '/../custom', cwd]
+CPPPATH += [cwd + './images', cwd]
+CPPPATH += [cwd + './guider_fonts', cwd]
+CPPPATH += [cwd + './guider_customer_fonts', cwd]
+CPPPATH += [cwd + '../custom', cwd]
 
-group = DefineGroup('Drivers', src, depend = ['USER_UI'], CPPPATH = CPPPATH)
+group = DefineGroup('USER_UI', src, depend = ['USER_UI'], CPPPATH = CPPPATH)
 
 Return('group')
