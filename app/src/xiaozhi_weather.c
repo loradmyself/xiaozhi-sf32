@@ -510,28 +510,28 @@ void time_ui_update_callback(void)
     // const lv_image_dsc_t* minute_units_img_src[] = {&img_0, &img_1, &img_2, &img_3, &img_4, &img_5, &img_6, &img_7, &img_8, &img_9};
     
         // 只在小时十位数变化时更新
-    if (hour_tens != last_hour_tens) {
-        if (hour_tens_img) lv_img_set_src(hour_tens_img, hour_tens_img_src[hour_tens]);
-        last_hour_tens = hour_tens;
-    }
+    // if (hour_tens != last_hour_tens) {
+    //     if (hour_tens_img) lv_img_set_src(hour_tens_img, hour_tens_img_src[hour_tens]);
+    //     last_hour_tens = hour_tens;
+    // }
     
-    // 只在小时个位数变化时更新
-    if (hour_units != last_hour_units) {
-        if (hour_units_img) lv_img_set_src(hour_units_img, hour_units_img_src[hour_units]);
-        last_hour_units = hour_units;
-    }
+    // // 只在小时个位数变化时更新
+    // if (hour_units != last_hour_units) {
+    //     if (hour_units_img) lv_img_set_src(hour_units_img, hour_units_img_src[hour_units]);
+    //     last_hour_units = hour_units;
+    // }
     
-    // 只在分钟十位数变化时更新
-    if (minute_tens != last_minute_tens) {
-        if (minute_tens_img) lv_img_set_src(minute_tens_img, minute_tens_img_src[minute_tens]);
-        last_minute_tens = minute_tens;
-    }
+    // // 只在分钟十位数变化时更新
+    // if (minute_tens != last_minute_tens) {
+    //     if (minute_tens_img) lv_img_set_src(minute_tens_img, minute_tens_img_src[minute_tens]);
+    //     last_minute_tens = minute_tens;
+    // }
     
-    // 只在分钟个位数变化时更新
-    if (minute_units != last_minute_units) {
-        if (minute_units_img) lv_img_set_src(minute_units_img, minute_units_img_src[minute_units]);
-        last_minute_units = minute_units;
-    }
+    // // 只在分钟个位数变化时更新
+    // if (minute_units != last_minute_units) {
+    //     if (minute_units_img) lv_img_set_src(minute_units_img, minute_units_img_src[minute_units]);
+    //     last_minute_units = minute_units;
+    // }
 
 
 
