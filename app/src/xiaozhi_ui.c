@@ -112,17 +112,17 @@ lv_font_t *font_medium;
 
 
 /*待机画面*/
-extern const lv_image_dsc_t ble_icon_img; // 蓝牙图标
-extern const lv_image_dsc_t ble_icon_img_close;
-extern const lv_image_dsc_t network_icon_img; // 网络图标
-extern const lv_image_dsc_t network_icon_img_close;
-extern const lv_image_dsc_t sunny;// 天气图标
+// extern const lv_image_dsc_t ble_icon_img; // 蓝牙图标
+// extern const lv_image_dsc_t ble_icon_img_close;
+// extern const lv_image_dsc_t network_icon_img; // 网络图标
+// extern const lv_image_dsc_t network_icon_img_close;
+// extern const lv_image_dsc_t sunny;// 天气图标
 extern const lv_image_dsc_t strip;//天气栏
-extern const lv_image_dsc_t funny2; // 表情图标
-extern const lv_image_dsc_t sleepy2; // 表情图标
+// extern const lv_image_dsc_t funny2; // 表情图标
+// extern const lv_image_dsc_t sleepy2; // 表情图标
 extern const lv_image_dsc_t cool_gif;
-extern const lv_image_dsc_t calendar;//日历
-extern const lv_image_dsc_t second;
+// extern const lv_image_dsc_t calendar;//日历
+// extern const lv_image_dsc_t second;
 // extern const lv_image_dsc_t img_0;  // 数字图片资源
 // extern const lv_image_dsc_t img_1;
 // extern const lv_image_dsc_t img_2;
@@ -878,46 +878,46 @@ rt_err_t xiaozhi_ui_obj_init()
     // lv_obj_clear_flag(ui_Image_calendar, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     // lv_img_set_zoom(ui_Image_calendar,(int)(320 * g_scale));
 
-    ui_Label_year = lv_label_create(standby_screen.screen);
-    lv_obj_set_width(ui_Label_year, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_Label_year, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_Label_year, (int)(-109 * g_scale));
-    lv_obj_set_y(ui_Label_year, (int)(49 * g_scale));
-    lv_obj_set_align(ui_Label_year, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label_year, "2025");
-        lv_obj_add_style(ui_Label_year, &style, 0);
+//     ui_Label_year = lv_label_create(standby_screen.screen);
+//     lv_obj_set_width(ui_Label_year, LV_SIZE_CONTENT);   /// 1
+//     lv_obj_set_height(ui_Label_year, LV_SIZE_CONTENT);    /// 1
+//     lv_obj_set_x(ui_Label_year, (int)(-109 * g_scale));
+//     lv_obj_set_y(ui_Label_year, (int)(49 * g_scale));
+//     lv_obj_set_align(ui_Label_year, LV_ALIGN_CENTER);
+//     lv_label_set_text(ui_Label_year, "2025");
+//         lv_obj_add_style(ui_Label_year, &style, 0);
 
 
-     ui_Label_day = lv_label_create(standby_screen.screen);
-    lv_obj_set_width(ui_Label_day, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_Label_day, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_Label_day, (int)(-109 * g_scale));
-    lv_obj_set_y(ui_Label_day, (int)(74 * g_scale));
-    lv_obj_set_align(ui_Label_day, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label_day, "0801");
-        lv_obj_add_style(ui_Label_day, &style, 0);
+//      ui_Label_day = lv_label_create(standby_screen.screen);
+//     lv_obj_set_width(ui_Label_day, LV_SIZE_CONTENT);   /// 1
+//     lv_obj_set_height(ui_Label_day, LV_SIZE_CONTENT);    /// 1
+//     lv_obj_set_x(ui_Label_day, (int)(-109 * g_scale));
+//     lv_obj_set_y(ui_Label_day, (int)(74 * g_scale));
+//     lv_obj_set_align(ui_Label_day, LV_ALIGN_CENTER);
+//     lv_label_set_text(ui_Label_day, "0801");
+//         lv_obj_add_style(ui_Label_day, &style, 0);
 
-//秒
-     ui_Label_second = lv_label_create(standby_screen.screen);
-    lv_obj_set_width(ui_Label_second, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_Label_second, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_Label_second, (int)(-8 * g_scale));
-    lv_obj_set_y(ui_Label_second, (int)(-48 * g_scale));
-    lv_obj_set_align(ui_Label_second, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label_second, "00");
-    lv_obj_add_style(ui_Label_second, &style, 0);
+// //秒
+//      ui_Label_second = lv_label_create(standby_screen.screen);
+//     lv_obj_set_width(ui_Label_second, LV_SIZE_CONTENT);   /// 1
+//     lv_obj_set_height(ui_Label_second, LV_SIZE_CONTENT);    /// 1
+//     lv_obj_set_x(ui_Label_second, (int)(-8 * g_scale));
+//     lv_obj_set_y(ui_Label_second, (int)(-48 * g_scale));
+//     lv_obj_set_align(ui_Label_second, LV_ALIGN_CENTER);
+//     lv_label_set_text(ui_Label_second, "00");
+//     lv_obj_add_style(ui_Label_second, &style, 0);
 
-    ui_Image_second = lv_img_create(standby_screen.screen);
-    LV_IMAGE_DECLARE(second);
-    lv_img_set_src(ui_Image_second, &second);
-    lv_obj_set_width(ui_Image_second, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_Image_second, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_Image_second, (int)(-7 * g_scale));
-    lv_obj_set_y(ui_Image_second, (int)(-47 * g_scale));
-    lv_obj_set_align(ui_Image_second, LV_ALIGN_CENTER);
-    lv_obj_add_flag(ui_Image_second, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
-    lv_obj_clear_flag(ui_Image_second, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_img_set_zoom(ui_Image_second,(int)(300 * g_scale));
+    // ui_Image_second = lv_img_create(standby_screen.screen);
+    // LV_IMAGE_DECLARE(second);
+    // lv_img_set_src(ui_Image_second, &second);
+    // lv_obj_set_width(ui_Image_second, LV_SIZE_CONTENT);   /// 1
+    // lv_obj_set_height(ui_Image_second, LV_SIZE_CONTENT);    /// 1
+    // lv_obj_set_x(ui_Image_second, (int)(-7 * g_scale));
+    // lv_obj_set_y(ui_Image_second, (int)(-47 * g_scale));
+    // lv_obj_set_align(ui_Image_second, LV_ALIGN_CENTER);
+    // lv_obj_add_flag(ui_Image_second, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
+    // lv_obj_clear_flag(ui_Image_second, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    // lv_img_set_zoom(ui_Image_second,(int)(300 * g_scale));
 
 
     ui_Label3 = lv_label_create(standby_screen.screen);
