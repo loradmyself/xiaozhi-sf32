@@ -20,13 +20,15 @@ __attribute__((unused)) void kb_event_cb(lv_event_t *e);
 __attribute__((unused)) void ta_event_cb(lv_event_t *e);
 #if LV_USE_ANALOGCLOCK != 0
 void clock_count(int *hour, int *min, int *sec);
+void digital_clock_count(int * hour, int * minute, int * seconds, char * meridiem);
 #endif
 
 
-extern const lv_img_dsc_t * xiaozhiUI_xiaozhiUI_bg_imgs[41];
-void xiaozhiUI_datetext_event_handler(lv_event_t *e);
-void xiaozhiUI_datetext_calendar_event_handler(lv_event_t *e);
-void xiaozhiUI_datetext_init_calendar(lv_obj_t *obj, char * s);
+extern const lv_image_dsc_t * screen_xiaozhiui_bg_imgs[40];
+void screen_xiaozhiui_data_event_handler(lv_event_t *e);
+void screen_xiaozhiui_data_calendar_event_handler(lv_event_t *e);
+void screen_xiaozhiui_data_init_calendar(lv_obj_t *obj, char * s);
+
 
 #ifdef __cplusplus
 }
