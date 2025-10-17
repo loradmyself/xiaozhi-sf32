@@ -26,18 +26,22 @@ void setup_scr_screen(lv_ui *ui)
     //Write style for screen, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
     lv_obj_set_style_bg_opa(ui->screen, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
-    //Write codes screen_xiaozhiui_bg
-    ui->screen_xiaozhiui_bg = lv_animimg_create(ui->screen);
-    lv_obj_set_pos(ui->screen_xiaozhiui_bg, 0, 0);
-    lv_obj_set_size(ui->screen_xiaozhiui_bg, 390, 450);
-    lv_animimg_set_src(ui->screen_xiaozhiui_bg, (const void **) screen_xiaozhiui_bg_imgs, 30);
-    lv_animimg_set_duration(ui->screen_xiaozhiui_bg, 80*30);
-    lv_animimg_set_repeat_count(ui->screen_xiaozhiui_bg, LV_ANIM_REPEAT_INFINITE);
-    lv_animimg_start(ui->screen_xiaozhiui_bg);
+    //Write codes screen_img_1
+    ui->screen_img_1 = lv_image_create(ui->screen);
+    lv_obj_set_pos(ui->screen_img_1, 0, 0);
+    lv_obj_set_size(ui->screen_img_1, 390, 450);
+    lv_obj_add_flag(ui->screen_img_1, LV_OBJ_FLAG_CLICKABLE);
+    lv_image_set_src(ui->screen_img_1, &_preview_RGB565A8_390x450);
+    lv_image_set_pivot(ui->screen_img_1, 50,50);
+    lv_image_set_rotation(ui->screen_img_1, 0);
+
+    //Write style for screen_img_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_image_recolor_opa(ui->screen_img_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_image_opa(ui->screen_img_1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes screen_xiaozhiui_txt
     ui->screen_xiaozhiui_txt = lv_label_create(ui->screen);
-    lv_obj_set_pos(ui->screen_xiaozhiui_txt, 247, 260);
+    lv_obj_set_pos(ui->screen_xiaozhiui_txt, 18, 254);
     lv_obj_set_size(ui->screen_xiaozhiui_txt, 100, 32);
     lv_label_set_text(ui->screen_xiaozhiui_txt, "Waiting XiaoZhi Connect");
     lv_label_set_long_mode(ui->screen_xiaozhiui_txt, LV_LABEL_LONG_SCROLL_CIRCULAR);
@@ -97,7 +101,7 @@ void setup_scr_screen(lv_ui *ui)
 
     //Write codes screen_xiaozhiui_time
     ui->screen_xiaozhiui_time = lv_label_create(ui->screen);
-    lv_obj_set_pos(ui->screen_xiaozhiui_time, 72, 56);
+    lv_obj_set_pos(ui->screen_xiaozhiui_time, 79, 84);
     lv_obj_set_size(ui->screen_xiaozhiui_time, 244, 80);
     lv_label_set_text(ui->screen_xiaozhiui_time, "00:00");
     lv_label_set_long_mode(ui->screen_xiaozhiui_time, LV_LABEL_LONG_WRAP);
@@ -201,8 +205,8 @@ void setup_scr_screen(lv_ui *ui)
 
     //Write codes screen_xiaozhiui_data
     ui->screen_xiaozhiui_data = lv_label_create(ui->screen);
-    lv_obj_set_pos(ui->screen_xiaozhiui_data, 116, 136);
-    lv_obj_set_size(ui->screen_xiaozhiui_data, 159, 34);
+    lv_obj_set_pos(ui->screen_xiaozhiui_data, 279, 172);
+    lv_obj_set_size(ui->screen_xiaozhiui_data, 99, 69);
     lv_label_set_text(ui->screen_xiaozhiui_data, "2024/04/22");
     lv_obj_set_style_text_align(ui->screen_xiaozhiui_data, LV_TEXT_ALIGN_CENTER, 0);
     lv_obj_add_flag(ui->screen_xiaozhiui_data, LV_OBJ_FLAG_CLICKABLE);

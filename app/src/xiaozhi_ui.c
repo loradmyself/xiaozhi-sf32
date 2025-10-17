@@ -28,7 +28,7 @@
 #include "./user_ui/gui_guider.h"
 #include "./user_ui/events_init.h"
 
-lv_ui standby_screen;
+extern lv_ui standby_screen;
 
 
 // 定义UI消息类型

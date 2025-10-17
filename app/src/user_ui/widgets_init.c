@@ -93,39 +93,6 @@ void digital_clock_count(int * hour, int * minute, int * seconds, char * meridie
     }
 }
 
-
-const lv_image_dsc_t * screen_xiaozhiui_bg_imgs[30] = {
-    &screen_xiaozhiui_bgpreview6_13,
-    &screen_xiaozhiui_bgpreview6_14,
-    &screen_xiaozhiui_bgpreview6_15,
-    &screen_xiaozhiui_bgpreview6_16,
-    &screen_xiaozhiui_bgpreview6_17,
-    &screen_xiaozhiui_bgpreview6_18,
-    &screen_xiaozhiui_bgpreview6_19,
-    &screen_xiaozhiui_bgpreview6_20,
-    &screen_xiaozhiui_bgpreview6_21,
-    &screen_xiaozhiui_bgpreview6_22,
-    &screen_xiaozhiui_bgpreview6_23,
-    &screen_xiaozhiui_bgpreview6_27,
-    &screen_xiaozhiui_bgpreview6_30,
-    &screen_xiaozhiui_bgpreview6_31,
-    &screen_xiaozhiui_bgpreview6_32,
-    &screen_xiaozhiui_bgpreview6_33,
-    &screen_xiaozhiui_bgpreview6_34,
-    &screen_xiaozhiui_bgpreview6_35,
-    &screen_xiaozhiui_bgpreview6_36,
-    &screen_xiaozhiui_bgpreview6_37,
-    &screen_xiaozhiui_bgpreview6_38,
-    &screen_xiaozhiui_bgpreview6_39,
-    &screen_xiaozhiui_bgpreview6_40,
-    &screen_xiaozhiui_bgpreview6_41,
-    &screen_xiaozhiui_bgpreview6_42,
-    &screen_xiaozhiui_bgpreview6_43,
-    &screen_xiaozhiui_bgpreview6_5,
-    &screen_xiaozhiui_bgpreview6_6,
-    &screen_xiaozhiui_bgpreview6_7,
-    &screen_xiaozhiui_bgpreview6_8,
-};
 static lv_obj_t * screen_xiaozhiui_data_calendar;
 
 void screen_xiaozhiui_data_event_handler(lv_event_t *e)

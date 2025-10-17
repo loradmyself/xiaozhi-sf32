@@ -21,7 +21,7 @@ typedef struct
   
 	lv_obj_t *screen;
 	bool screen_del;
-	lv_obj_t *screen_xiaozhiui_bg;
+	lv_obj_t *screen_img_1;
 	lv_obj_t *screen_xiaozhiui_txt;
 	lv_obj_t *screen_xiaozhiui_weather;
 	lv_obj_t *screen_xiaozhiui_time;
@@ -59,36 +59,7 @@ extern lv_ui standby_screen;
 
 
 void setup_scr_screen(lv_ui *ui);
-LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_13);
-LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_14);
-LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_15);
-LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_16);
-LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_17);
-LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_18);
-LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_19);
-LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_20);
-LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_21);
-LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_22);
-LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_23);
-LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_27);
-LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_30);
-LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_31);
-LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_32);
-LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_33);
-LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_34);
-LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_35);
-LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_36);
-LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_37);
-LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_38);
-LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_39);
-LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_40);
-LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_41);
-LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_42);
-LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_43);
-LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_5);
-LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_6);
-LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_7);
-LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_8);
+LV_IMAGE_DECLARE(_preview_RGB565A8_390x450);
 LV_IMAGE_DECLARE(_bluetooth1_RGB565A8_25x25);
 LV_IMAGE_DECLARE(_bluetooth2_RGB565A8_25x25);
 LV_IMAGE_DECLARE(_WiFi_Y_RGB565A8_25x25);
