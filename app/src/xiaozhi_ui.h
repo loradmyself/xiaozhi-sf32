@@ -255,63 +255,63 @@ const lv_image_dsc_t * cool[] =
 /*---------------------cool*/
 
 
-extern const lv_image_dsc_t crying_1;
-extern const lv_image_dsc_t crying_2;
-extern const lv_image_dsc_t crying_3;
-extern const lv_image_dsc_t crying_4;
-extern const lv_image_dsc_t crying_5;
-extern const lv_image_dsc_t crying_6;
-extern const lv_image_dsc_t crying_7;
-extern const lv_image_dsc_t crying_8;
-extern const lv_image_dsc_t crying_9;
-extern const lv_image_dsc_t crying_10;
-extern const lv_image_dsc_t crying_11;
-extern const lv_image_dsc_t crying_12;
-extern const lv_image_dsc_t crying_13;
-extern const lv_image_dsc_t crying_14;
-extern const lv_image_dsc_t crying_15;
-extern const lv_image_dsc_t crying_16;
-extern const lv_image_dsc_t crying_17;
-extern const lv_image_dsc_t crying_18;
-extern const lv_image_dsc_t crying_19;
-extern const lv_image_dsc_t crying_20;
-extern const lv_image_dsc_t crying_21;
-extern const lv_image_dsc_t crying_22;
-extern const lv_image_dsc_t crying_23;
-extern const lv_image_dsc_t crying_24;
-extern const lv_image_dsc_t crying_25;
-extern const lv_image_dsc_t crying_26;
+// extern const lv_image_dsc_t crying_1;
+// extern const lv_image_dsc_t crying_2;
+// extern const lv_image_dsc_t crying_3;
+// extern const lv_image_dsc_t crying_4;
+// extern const lv_image_dsc_t crying_5;
+// extern const lv_image_dsc_t crying_6;
+// extern const lv_image_dsc_t crying_7;
+// extern const lv_image_dsc_t crying_8;
+// extern const lv_image_dsc_t crying_9;
+// extern const lv_image_dsc_t crying_10;
+// extern const lv_image_dsc_t crying_11;
+// extern const lv_image_dsc_t crying_12;
+// extern const lv_image_dsc_t crying_13;
+// extern const lv_image_dsc_t crying_14;
+// extern const lv_image_dsc_t crying_15;
+// extern const lv_image_dsc_t crying_16;
+// extern const lv_image_dsc_t crying_17;
+// extern const lv_image_dsc_t crying_18;
+// extern const lv_image_dsc_t crying_19;
+// extern const lv_image_dsc_t crying_20;
+// extern const lv_image_dsc_t crying_21;
+// extern const lv_image_dsc_t crying_22;
+// extern const lv_image_dsc_t crying_23;
+// extern const lv_image_dsc_t crying_24;
+// extern const lv_image_dsc_t crying_25;
+// extern const lv_image_dsc_t crying_26;
 
-const lv_image_dsc_t * crying[] =
-{
-  &crying_1,
-  &crying_2,
-  &crying_3,
-  &crying_4,
-  &crying_5,
-  &crying_6,
-  &crying_7,
-  &crying_8,
-  &crying_9,
-  &crying_10,
-  &crying_11,
-  &crying_12,
-  &crying_13,
-  &crying_14,
-  &crying_15,
-  &crying_16,
-  &crying_17,
-  &crying_18,
-  &crying_19,
-  &crying_20,
-  &crying_21,
-  &crying_22,
-  &crying_23,
-  &crying_24,
-  &crying_25,
-  &crying_26
-};
-/*---------------------crying*/
+// const lv_image_dsc_t * crying[] =
+// {
+//   &crying_1,
+//   &crying_2,
+//   &crying_3,
+//   &crying_4,
+//   &crying_5,
+//   &crying_6,
+//   &crying_7,
+//   &crying_8,
+//   &crying_9,
+//   &crying_10,
+//   &crying_11,
+//   &crying_12,
+//   &crying_13,
+//   &crying_14,
+//   &crying_15,
+//   &crying_16,
+//   &crying_17,
+//   &crying_18,
+//   &crying_19,
+//   &crying_20,
+//   &crying_21,
+//   &crying_22,
+//   &crying_23,
+//   &crying_24,
+//   &crying_25,
+//   &crying_26
+// };
+// /*---------------------crying*/
 
 
 // extern const lv_image_dsc_t embarrassed_1;
@@ -798,378 +798,378 @@ const lv_image_dsc_t * crying[] =
 
 // /*-----------------loving*/
 
-extern const lv_image_dsc_t neutral_1;
-extern const lv_image_dsc_t neutral_2;
-extern const lv_image_dsc_t neutral_3;
-extern const lv_image_dsc_t neutral_4;
-extern const lv_image_dsc_t neutral_5;
-extern const lv_image_dsc_t neutral_6;
-extern const lv_image_dsc_t neutral_7;
-extern const lv_image_dsc_t neutral_8;
-extern const lv_image_dsc_t neutral_9;
-extern const lv_image_dsc_t neutral_10;
-extern const lv_image_dsc_t neutral_11;
-extern const lv_image_dsc_t neutral_12;
-extern const lv_image_dsc_t neutral_13;
-extern const lv_image_dsc_t neutral_14;
-extern const lv_image_dsc_t neutral_15;
-extern const lv_image_dsc_t neutral_16;
-extern const lv_image_dsc_t neutral_17;
-extern const lv_image_dsc_t neutral_18;
-extern const lv_image_dsc_t neutral_19;
-extern const lv_image_dsc_t neutral_20;
-extern const lv_image_dsc_t neutral_21;
-extern const lv_image_dsc_t neutral_22;
-extern const lv_image_dsc_t neutral_23;
-extern const lv_image_dsc_t neutral_24;
-extern const lv_image_dsc_t neutral_25;
-extern const lv_image_dsc_t neutral_26;
-extern const lv_image_dsc_t neutral_27;
-extern const lv_image_dsc_t neutral_28;
-extern const lv_image_dsc_t neutral_29;
-extern const lv_image_dsc_t neutral_30;
-extern const lv_image_dsc_t neutral_31;
-extern const lv_image_dsc_t neutral_32;
-extern const lv_image_dsc_t neutral_33;
-extern const lv_image_dsc_t neutral_34;
-extern const lv_image_dsc_t neutral_35;
-extern const lv_image_dsc_t neutral_36;
-extern const lv_image_dsc_t neutral_37;
-extern const lv_image_dsc_t neutral_38;
-extern const lv_image_dsc_t neutral_39;
-extern const lv_image_dsc_t neutral_40;
-extern const lv_image_dsc_t neutral_41;
-extern const lv_image_dsc_t neutral_42;
-extern const lv_image_dsc_t neutral_43;
-extern const lv_image_dsc_t neutral_44;
-extern const lv_image_dsc_t neutral_45;
-extern const lv_image_dsc_t neutral_46;
-extern const lv_image_dsc_t neutral_47;
-extern const lv_image_dsc_t neutral_48;
-extern const lv_image_dsc_t neutral_49;
-extern const lv_image_dsc_t neutral_50;
-extern const lv_image_dsc_t neutral_51;
-extern const lv_image_dsc_t neutral_52;
-extern const lv_image_dsc_t neutral_53;
-extern const lv_image_dsc_t neutral_54;
-// extern const lv_image_dsc_t neutral_55;
-// extern const lv_image_dsc_t neutral_56;
-// extern const lv_image_dsc_t neutral_57;
+// extern const lv_image_dsc_t neutral_1;
+// extern const lv_image_dsc_t neutral_2;
+// extern const lv_image_dsc_t neutral_3;
+// extern const lv_image_dsc_t neutral_4;
+// extern const lv_image_dsc_t neutral_5;
+// extern const lv_image_dsc_t neutral_6;
+// extern const lv_image_dsc_t neutral_7;
+// extern const lv_image_dsc_t neutral_8;
+// extern const lv_image_dsc_t neutral_9;
+// extern const lv_image_dsc_t neutral_10;
+// extern const lv_image_dsc_t neutral_11;
+// extern const lv_image_dsc_t neutral_12;
+// extern const lv_image_dsc_t neutral_13;
+// extern const lv_image_dsc_t neutral_14;
+// extern const lv_image_dsc_t neutral_15;
+// extern const lv_image_dsc_t neutral_16;
+// extern const lv_image_dsc_t neutral_17;
+// extern const lv_image_dsc_t neutral_18;
+// extern const lv_image_dsc_t neutral_19;
+// extern const lv_image_dsc_t neutral_20;
+// extern const lv_image_dsc_t neutral_21;
+// extern const lv_image_dsc_t neutral_22;
+// extern const lv_image_dsc_t neutral_23;
+// extern const lv_image_dsc_t neutral_24;
+// extern const lv_image_dsc_t neutral_25;
+// extern const lv_image_dsc_t neutral_26;
+// extern const lv_image_dsc_t neutral_27;
+// extern const lv_image_dsc_t neutral_28;
+// extern const lv_image_dsc_t neutral_29;
+// extern const lv_image_dsc_t neutral_30;
+// extern const lv_image_dsc_t neutral_31;
+// extern const lv_image_dsc_t neutral_32;
+// extern const lv_image_dsc_t neutral_33;
+// extern const lv_image_dsc_t neutral_34;
+// extern const lv_image_dsc_t neutral_35;
+// extern const lv_image_dsc_t neutral_36;
+// extern const lv_image_dsc_t neutral_37;
+// extern const lv_image_dsc_t neutral_38;
+// extern const lv_image_dsc_t neutral_39;
+// extern const lv_image_dsc_t neutral_40;
+// extern const lv_image_dsc_t neutral_41;
+// extern const lv_image_dsc_t neutral_42;
+// extern const lv_image_dsc_t neutral_43;
+// extern const lv_image_dsc_t neutral_44;
+// extern const lv_image_dsc_t neutral_45;
+// extern const lv_image_dsc_t neutral_46;
+// extern const lv_image_dsc_t neutral_47;
+// extern const lv_image_dsc_t neutral_48;
+// extern const lv_image_dsc_t neutral_49;
+// extern const lv_image_dsc_t neutral_50;
+// extern const lv_image_dsc_t neutral_51;
+// extern const lv_image_dsc_t neutral_52;
+// extern const lv_image_dsc_t neutral_53;
+// extern const lv_image_dsc_t neutral_54;
+// // extern const lv_image_dsc_t neutral_55;
+// // extern const lv_image_dsc_t neutral_56;
+// // extern const lv_image_dsc_t neutral_57;
 
 
 
 
-const lv_image_dsc_t * neutral[] =
-{
-  &neutral_1,
-  &neutral_2,
-  &neutral_3,
-  &neutral_4,
-  &neutral_5,
-  &neutral_6,
-  &neutral_7,
-  &neutral_8,
-  &neutral_9,
-  &neutral_10,
-  &neutral_11,
-  &neutral_12,
-  &neutral_13,
-  &neutral_14,
-  &neutral_15,
-  &neutral_16,
-  &neutral_17,
-  &neutral_18,
-  &neutral_19,
-  &neutral_20,
-  &neutral_21,
-  &neutral_22,
-  &neutral_23,
-  &neutral_24,
-  &neutral_25,
-  &neutral_26,
-  &neutral_27,
-  &neutral_28,
-  &neutral_29,
-  &neutral_30,
-  &neutral_31,
-  &neutral_32,
-  &neutral_33,
-  &neutral_34,
-  &neutral_35,
-  &neutral_36,
-  &neutral_37,
-  &neutral_38,
-  &neutral_39,
-  &neutral_40,
-  &neutral_41,
-  &neutral_42,
-  &neutral_43,
-  &neutral_44,
-  &neutral_45,
-  &neutral_46,
-  &neutral_47,
-  &neutral_48,
-  &neutral_49,
-  &neutral_50,
-  &neutral_51,
-  &neutral_52,
-  &neutral_53,
-  &neutral_54,
-  // &neutral_55,
-  // &neutral_56,
-  // &neutral_57
-};
-/*---------------------neutra*/
+// const lv_image_dsc_t * neutral[] =
+// {
+//   &neutral_1,
+//   &neutral_2,
+//   &neutral_3,
+//   &neutral_4,
+//   &neutral_5,
+//   &neutral_6,
+//   &neutral_7,
+//   &neutral_8,
+//   &neutral_9,
+//   &neutral_10,
+//   &neutral_11,
+//   &neutral_12,
+//   &neutral_13,
+//   &neutral_14,
+//   &neutral_15,
+//   &neutral_16,
+//   &neutral_17,
+//   &neutral_18,
+//   &neutral_19,
+//   &neutral_20,
+//   &neutral_21,
+//   &neutral_22,
+//   &neutral_23,
+//   &neutral_24,
+//   &neutral_25,
+//   &neutral_26,
+//   &neutral_27,
+//   &neutral_28,
+//   &neutral_29,
+//   &neutral_30,
+//   &neutral_31,
+//   &neutral_32,
+//   &neutral_33,
+//   &neutral_34,
+//   &neutral_35,
+//   &neutral_36,
+//   &neutral_37,
+//   &neutral_38,
+//   &neutral_39,
+//   &neutral_40,
+//   &neutral_41,
+//   &neutral_42,
+//   &neutral_43,
+//   &neutral_44,
+//   &neutral_45,
+//   &neutral_46,
+//   &neutral_47,
+//   &neutral_48,
+//   &neutral_49,
+//   &neutral_50,
+//   &neutral_51,
+//   &neutral_52,
+//   &neutral_53,
+//   &neutral_54,
+//   // &neutral_55,
+//   // &neutral_56,
+//   // &neutral_57
+// };
+// /*---------------------neutra*/
 
 
-extern const lv_image_dsc_t sleepy_1;
-extern const lv_image_dsc_t sleepy_2;
-extern const lv_image_dsc_t sleepy_3;
-extern const lv_image_dsc_t sleepy_4;
-extern const lv_image_dsc_t sleepy_5;
-extern const lv_image_dsc_t sleepy_6;
-extern const lv_image_dsc_t sleepy_7;
-extern const lv_image_dsc_t sleepy_8;
-extern const lv_image_dsc_t sleepy_9;
-extern const lv_image_dsc_t sleepy_10;
-extern const lv_image_dsc_t sleepy_11;
-extern const lv_image_dsc_t sleepy_12;
-extern const lv_image_dsc_t sleepy_13;
-extern const lv_image_dsc_t sleepy_14;
-extern const lv_image_dsc_t sleepy_15;
-extern const lv_image_dsc_t sleepy_16;
-extern const lv_image_dsc_t sleepy_17;
-extern const lv_image_dsc_t sleepy_18;
-extern const lv_image_dsc_t sleepy_19;
-extern const lv_image_dsc_t sleepy_20;
-extern const lv_image_dsc_t sleepy_21;
-extern const lv_image_dsc_t sleepy_22;
-extern const lv_image_dsc_t sleepy_23;
-extern const lv_image_dsc_t sleepy_24;
-extern const lv_image_dsc_t sleepy_25;
-extern const lv_image_dsc_t sleepy_26;
-extern const lv_image_dsc_t sleepy_27;
-extern const lv_image_dsc_t sleepy_28;
-extern const lv_image_dsc_t sleepy_29;
-extern const lv_image_dsc_t sleepy_30;
-extern const lv_image_dsc_t sleepy_31;
-extern const lv_image_dsc_t sleepy_32;
-extern const lv_image_dsc_t sleepy_33;
-extern const lv_image_dsc_t sleepy_34;
-extern const lv_image_dsc_t sleepy_35;
-extern const lv_image_dsc_t sleepy_36;
-extern const lv_image_dsc_t sleepy_37;
-extern const lv_image_dsc_t sleepy_38;
-extern const lv_image_dsc_t sleepy_39;
-extern const lv_image_dsc_t sleepy_40;
-extern const lv_image_dsc_t sleepy_41;
-extern const lv_image_dsc_t sleepy_42;
-extern const lv_image_dsc_t sleepy_43;
-extern const lv_image_dsc_t sleepy_44;
-extern const lv_image_dsc_t sleepy_45;
-extern const lv_image_dsc_t sleepy_46;
-extern const lv_image_dsc_t sleepy_47;
-extern const lv_image_dsc_t sleepy_48;
-extern const lv_image_dsc_t sleepy_49;
-extern const lv_image_dsc_t sleepy_50;
-extern const lv_image_dsc_t sleepy_51;
-extern const lv_image_dsc_t sleepy_52;
-extern const lv_image_dsc_t sleepy_53;
-extern const lv_image_dsc_t sleepy_54;
-extern const lv_image_dsc_t sleepy_55;
-extern const lv_image_dsc_t sleepy_56;
-extern const lv_image_dsc_t sleepy_57;
-
-
-
-
-const lv_image_dsc_t * sleepy[] =
-{
-  &sleepy_1,
-  &sleepy_2,
-  &sleepy_3,
-  &sleepy_4,
-  &sleepy_5,
-  &sleepy_6,
-  &sleepy_7,
-  &sleepy_8,
-  &sleepy_9,
-  &sleepy_10,
-  &sleepy_11,
-  &sleepy_12,
-  &sleepy_13,
-  &sleepy_14,
-  &sleepy_15,
-  &sleepy_16,
-  &sleepy_17,
-  &sleepy_18,
-  &sleepy_19,
-  &sleepy_20,
-  &sleepy_21,
-  &sleepy_22,
-  &sleepy_23,
-  &sleepy_24,
-  &sleepy_25,
-  &sleepy_26,
-  &sleepy_27,
-  &sleepy_28,
-  &sleepy_29,
-  &sleepy_30,
-  &sleepy_31,
-  &sleepy_32,
-  &sleepy_33,
-  &sleepy_34,
-  &sleepy_35,
-  &sleepy_36,
-  &sleepy_37,
-  &sleepy_38,
-  &sleepy_39,
-  &sleepy_40,
-  &sleepy_41,
-  &sleepy_42,
-  &sleepy_43,
-  &sleepy_44,
-  &sleepy_45,
-  &sleepy_46,
-  &sleepy_47,
-  &sleepy_48,
-  &sleepy_49,
-  &sleepy_50,
-  &sleepy_51,
-  &sleepy_52,
-  &sleepy_53,
-  &sleepy_54,
-  &sleepy_55,
-  &sleepy_56,
-  &sleepy_57
-};
-
-/*---------------------sleepy*/
-
-
-extern const lv_image_dsc_t surprised_1;
-extern const lv_image_dsc_t surprised_2;
-extern const lv_image_dsc_t surprised_3;
-extern const lv_image_dsc_t surprised_4;
-extern const lv_image_dsc_t surprised_5;
-extern const lv_image_dsc_t surprised_6;
-extern const lv_image_dsc_t surprised_7;
-extern const lv_image_dsc_t surprised_8;
-extern const lv_image_dsc_t surprised_9;
-extern const lv_image_dsc_t surprised_10;
-extern const lv_image_dsc_t surprised_11;
-extern const lv_image_dsc_t surprised_12;
-extern const lv_image_dsc_t surprised_13;
-extern const lv_image_dsc_t surprised_14;
-extern const lv_image_dsc_t surprised_15;
-extern const lv_image_dsc_t surprised_16;
-extern const lv_image_dsc_t surprised_17;
-extern const lv_image_dsc_t surprised_18;
-extern const lv_image_dsc_t surprised_19;
-extern const lv_image_dsc_t surprised_20;
-extern const lv_image_dsc_t surprised_21;
-extern const lv_image_dsc_t surprised_22;
-extern const lv_image_dsc_t surprised_23;
-extern const lv_image_dsc_t surprised_24;
-extern const lv_image_dsc_t surprised_25;
-extern const lv_image_dsc_t surprised_26;
-extern const lv_image_dsc_t surprised_27;
-extern const lv_image_dsc_t surprised_28;
-extern const lv_image_dsc_t surprised_29;
-extern const lv_image_dsc_t surprised_30;
-extern const lv_image_dsc_t surprised_31;
-extern const lv_image_dsc_t surprised_32;
-extern const lv_image_dsc_t surprised_33;
-extern const lv_image_dsc_t surprised_34;
-extern const lv_image_dsc_t surprised_35;
-extern const lv_image_dsc_t surprised_36;
-extern const lv_image_dsc_t surprised_37;
-extern const lv_image_dsc_t surprised_38;
-extern const lv_image_dsc_t surprised_39;
-extern const lv_image_dsc_t surprised_40;
-extern const lv_image_dsc_t surprised_41;
-extern const lv_image_dsc_t surprised_42;
-extern const lv_image_dsc_t surprised_43;
-extern const lv_image_dsc_t surprised_44;
-extern const lv_image_dsc_t surprised_45;
-extern const lv_image_dsc_t surprised_46;
-extern const lv_image_dsc_t surprised_47;
-extern const lv_image_dsc_t surprised_48;
-extern const lv_image_dsc_t surprised_49;
-extern const lv_image_dsc_t surprised_50;
-extern const lv_image_dsc_t surprised_51;
-extern const lv_image_dsc_t surprised_52;
-extern const lv_image_dsc_t surprised_53;
-extern const lv_image_dsc_t surprised_54;
-extern const lv_image_dsc_t surprised_55;
-extern const lv_image_dsc_t surprised_56;
-extern const lv_image_dsc_t surprised_57;
+// extern const lv_image_dsc_t sleepy_1;
+// extern const lv_image_dsc_t sleepy_2;
+// extern const lv_image_dsc_t sleepy_3;
+// extern const lv_image_dsc_t sleepy_4;
+// extern const lv_image_dsc_t sleepy_5;
+// extern const lv_image_dsc_t sleepy_6;
+// extern const lv_image_dsc_t sleepy_7;
+// extern const lv_image_dsc_t sleepy_8;
+// extern const lv_image_dsc_t sleepy_9;
+// extern const lv_image_dsc_t sleepy_10;
+// extern const lv_image_dsc_t sleepy_11;
+// extern const lv_image_dsc_t sleepy_12;
+// extern const lv_image_dsc_t sleepy_13;
+// extern const lv_image_dsc_t sleepy_14;
+// extern const lv_image_dsc_t sleepy_15;
+// extern const lv_image_dsc_t sleepy_16;
+// extern const lv_image_dsc_t sleepy_17;
+// extern const lv_image_dsc_t sleepy_18;
+// extern const lv_image_dsc_t sleepy_19;
+// extern const lv_image_dsc_t sleepy_20;
+// extern const lv_image_dsc_t sleepy_21;
+// extern const lv_image_dsc_t sleepy_22;
+// extern const lv_image_dsc_t sleepy_23;
+// extern const lv_image_dsc_t sleepy_24;
+// extern const lv_image_dsc_t sleepy_25;
+// extern const lv_image_dsc_t sleepy_26;
+// extern const lv_image_dsc_t sleepy_27;
+// extern const lv_image_dsc_t sleepy_28;
+// extern const lv_image_dsc_t sleepy_29;
+// extern const lv_image_dsc_t sleepy_30;
+// extern const lv_image_dsc_t sleepy_31;
+// extern const lv_image_dsc_t sleepy_32;
+// extern const lv_image_dsc_t sleepy_33;
+// extern const lv_image_dsc_t sleepy_34;
+// extern const lv_image_dsc_t sleepy_35;
+// extern const lv_image_dsc_t sleepy_36;
+// extern const lv_image_dsc_t sleepy_37;
+// extern const lv_image_dsc_t sleepy_38;
+// extern const lv_image_dsc_t sleepy_39;
+// extern const lv_image_dsc_t sleepy_40;
+// extern const lv_image_dsc_t sleepy_41;
+// extern const lv_image_dsc_t sleepy_42;
+// extern const lv_image_dsc_t sleepy_43;
+// extern const lv_image_dsc_t sleepy_44;
+// extern const lv_image_dsc_t sleepy_45;
+// extern const lv_image_dsc_t sleepy_46;
+// extern const lv_image_dsc_t sleepy_47;
+// extern const lv_image_dsc_t sleepy_48;
+// extern const lv_image_dsc_t sleepy_49;
+// extern const lv_image_dsc_t sleepy_50;
+// extern const lv_image_dsc_t sleepy_51;
+// extern const lv_image_dsc_t sleepy_52;
+// extern const lv_image_dsc_t sleepy_53;
+// extern const lv_image_dsc_t sleepy_54;
+// extern const lv_image_dsc_t sleepy_55;
+// extern const lv_image_dsc_t sleepy_56;
+// extern const lv_image_dsc_t sleepy_57;
 
 
 
 
-const lv_image_dsc_t * surprised[] =
-{
-  &surprised_1,
-  &surprised_2,
-  &surprised_3,
-  &surprised_4,
-  &surprised_5,
-  &surprised_6,
-  &surprised_7,
-  &surprised_8,
-  &surprised_9,
-  &surprised_10,
-  &surprised_11,
-  &surprised_12,
-  &surprised_13,
-  &surprised_14,
-  &surprised_15,
-  &surprised_16,
-  &surprised_17,
-  &surprised_18,
-  &surprised_19,
-  &surprised_20,
-  &surprised_21,
-  &surprised_22,
-  &surprised_23,
-  &surprised_24,
-  &surprised_25,
-  &surprised_26,
-  &surprised_27,
-  &surprised_28,
-  &surprised_29,
-  &surprised_30,
-  &surprised_31,
-  &surprised_32,
-  &surprised_33,
-  &surprised_34,
-  &surprised_35,
-  &surprised_36,
-  &surprised_37,
-  &surprised_38,
-  &surprised_39,
-  &surprised_40,
-  &surprised_41,
-  &surprised_42,
-  &surprised_43,
-  &surprised_44,
-  &surprised_45,
-  &surprised_46,
-  &surprised_47,
-  &surprised_48,
-  &surprised_49,
-  &surprised_50,
-  &surprised_51,
-  &surprised_52,
-  &surprised_53,
-  &surprised_54,
-  &surprised_55,
-  &surprised_56,
-  &surprised_57
-};
+// const lv_image_dsc_t * sleepy[] =
+// {
+//   &sleepy_1,
+//   &sleepy_2,
+//   &sleepy_3,
+//   &sleepy_4,
+//   &sleepy_5,
+//   &sleepy_6,
+//   &sleepy_7,
+//   &sleepy_8,
+//   &sleepy_9,
+//   &sleepy_10,
+//   &sleepy_11,
+//   &sleepy_12,
+//   &sleepy_13,
+//   &sleepy_14,
+//   &sleepy_15,
+//   &sleepy_16,
+//   &sleepy_17,
+//   &sleepy_18,
+//   &sleepy_19,
+//   &sleepy_20,
+//   &sleepy_21,
+//   &sleepy_22,
+//   &sleepy_23,
+//   &sleepy_24,
+//   &sleepy_25,
+//   &sleepy_26,
+//   &sleepy_27,
+//   &sleepy_28,
+//   &sleepy_29,
+//   &sleepy_30,
+//   &sleepy_31,
+//   &sleepy_32,
+//   &sleepy_33,
+//   &sleepy_34,
+//   &sleepy_35,
+//   &sleepy_36,
+//   &sleepy_37,
+//   &sleepy_38,
+//   &sleepy_39,
+//   &sleepy_40,
+//   &sleepy_41,
+//   &sleepy_42,
+//   &sleepy_43,
+//   &sleepy_44,
+//   &sleepy_45,
+//   &sleepy_46,
+//   &sleepy_47,
+//   &sleepy_48,
+//   &sleepy_49,
+//   &sleepy_50,
+//   &sleepy_51,
+//   &sleepy_52,
+//   &sleepy_53,
+//   &sleepy_54,
+//   &sleepy_55,
+//   &sleepy_56,
+//   &sleepy_57
+// };
 
-/*---------------------surprised*/
+// /*---------------------sleepy*/
+
+
+// extern const lv_image_dsc_t surprised_1;
+// extern const lv_image_dsc_t surprised_2;
+// extern const lv_image_dsc_t surprised_3;
+// extern const lv_image_dsc_t surprised_4;
+// extern const lv_image_dsc_t surprised_5;
+// extern const lv_image_dsc_t surprised_6;
+// extern const lv_image_dsc_t surprised_7;
+// extern const lv_image_dsc_t surprised_8;
+// extern const lv_image_dsc_t surprised_9;
+// extern const lv_image_dsc_t surprised_10;
+// extern const lv_image_dsc_t surprised_11;
+// extern const lv_image_dsc_t surprised_12;
+// extern const lv_image_dsc_t surprised_13;
+// extern const lv_image_dsc_t surprised_14;
+// extern const lv_image_dsc_t surprised_15;
+// extern const lv_image_dsc_t surprised_16;
+// extern const lv_image_dsc_t surprised_17;
+// extern const lv_image_dsc_t surprised_18;
+// extern const lv_image_dsc_t surprised_19;
+// extern const lv_image_dsc_t surprised_20;
+// extern const lv_image_dsc_t surprised_21;
+// extern const lv_image_dsc_t surprised_22;
+// extern const lv_image_dsc_t surprised_23;
+// extern const lv_image_dsc_t surprised_24;
+// extern const lv_image_dsc_t surprised_25;
+// extern const lv_image_dsc_t surprised_26;
+// extern const lv_image_dsc_t surprised_27;
+// extern const lv_image_dsc_t surprised_28;
+// extern const lv_image_dsc_t surprised_29;
+// extern const lv_image_dsc_t surprised_30;
+// extern const lv_image_dsc_t surprised_31;
+// extern const lv_image_dsc_t surprised_32;
+// extern const lv_image_dsc_t surprised_33;
+// extern const lv_image_dsc_t surprised_34;
+// extern const lv_image_dsc_t surprised_35;
+// extern const lv_image_dsc_t surprised_36;
+// extern const lv_image_dsc_t surprised_37;
+// extern const lv_image_dsc_t surprised_38;
+// extern const lv_image_dsc_t surprised_39;
+// extern const lv_image_dsc_t surprised_40;
+// extern const lv_image_dsc_t surprised_41;
+// extern const lv_image_dsc_t surprised_42;
+// extern const lv_image_dsc_t surprised_43;
+// extern const lv_image_dsc_t surprised_44;
+// extern const lv_image_dsc_t surprised_45;
+// extern const lv_image_dsc_t surprised_46;
+// extern const lv_image_dsc_t surprised_47;
+// extern const lv_image_dsc_t surprised_48;
+// extern const lv_image_dsc_t surprised_49;
+// extern const lv_image_dsc_t surprised_50;
+// extern const lv_image_dsc_t surprised_51;
+// extern const lv_image_dsc_t surprised_52;
+// extern const lv_image_dsc_t surprised_53;
+// extern const lv_image_dsc_t surprised_54;
+// extern const lv_image_dsc_t surprised_55;
+// extern const lv_image_dsc_t surprised_56;
+// extern const lv_image_dsc_t surprised_57;
+
+
+
+
+// const lv_image_dsc_t * surprised[] =
+// {
+//   &surprised_1,
+//   &surprised_2,
+//   &surprised_3,
+//   &surprised_4,
+//   &surprised_5,
+//   &surprised_6,
+//   &surprised_7,
+//   &surprised_8,
+//   &surprised_9,
+//   &surprised_10,
+//   &surprised_11,
+//   &surprised_12,
+//   &surprised_13,
+//   &surprised_14,
+//   &surprised_15,
+//   &surprised_16,
+//   &surprised_17,
+//   &surprised_18,
+//   &surprised_19,
+//   &surprised_20,
+//   &surprised_21,
+//   &surprised_22,
+//   &surprised_23,
+//   &surprised_24,
+//   &surprised_25,
+//   &surprised_26,
+//   &surprised_27,
+//   &surprised_28,
+//   &surprised_29,
+//   &surprised_30,
+//   &surprised_31,
+//   &surprised_32,
+//   &surprised_33,
+//   &surprised_34,
+//   &surprised_35,
+//   &surprised_36,
+//   &surprised_37,
+//   &surprised_38,
+//   &surprised_39,
+//   &surprised_40,
+//   &surprised_41,
+//   &surprised_42,
+//   &surprised_43,
+//   &surprised_44,
+//   &surprised_45,
+//   &surprised_46,
+//   &surprised_47,
+//   &surprised_48,
+//   &surprised_49,
+//   &surprised_50,
+//   &surprised_51,
+//   &surprised_52,
+//   &surprised_53,
+//   &surprised_54,
+//   &surprised_55,
+//   &surprised_56,
+//   &surprised_57
+// };
+
+// /*---------------------surprised*/
 
 
 // extern const lv_image_dsc_t thinking_1;
