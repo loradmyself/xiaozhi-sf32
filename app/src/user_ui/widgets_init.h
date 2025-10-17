@@ -24,7 +24,7 @@ void digital_clock_count(int * hour, int * minute, int * seconds, char * meridie
 #endif
 
 
-extern const lv_image_dsc_t * screen_xiaozhiui_bg_imgs[40];
+extern const lv_image_dsc_t * screen_xiaozhiui_bg_imgs[30];
 void screen_xiaozhiui_data_event_handler(lv_event_t *e);
 void screen_xiaozhiui_data_calendar_event_handler(lv_event_t *e);
 void screen_xiaozhiui_data_init_calendar(lv_obj_t *obj, char * s);
