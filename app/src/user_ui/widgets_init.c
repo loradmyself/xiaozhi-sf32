@@ -186,7 +186,7 @@ void screen_xiaozhiui_data_calendar_event_handler(lv_event_t *e)
         lv_calendar_get_pressed_date(obj,&date);
         char buf[16];
         lv_snprintf(buf,sizeof(buf),"%d/%02d/%02d", date.year, date.month,date.day);
-        lv_label_set_text(guider_ui.screen_xiaozhiui_data, buf);
+        lv_label_set_text(standby_screen.screen_xiaozhiui_data, buf);
         lv_obj_remove_flag(lv_layer_top(), LV_OBJ_FLAG_CLICKABLE);
         lv_obj_set_style_bg_opa(lv_layer_top(), LV_OPA_TRANSP, 0);
         lv_obj_delete(screen_xiaozhiui_data_calendar);

@@ -55,7 +55,7 @@ void video_play(lv_ui *ui);
 
 void init_keyboard(lv_ui *ui);
 
-extern lv_ui guider_ui;
+extern lv_ui standby_screen;
 
 
 void setup_scr_screen(lv_ui *ui);
