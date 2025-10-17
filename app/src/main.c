@@ -24,7 +24,7 @@
 
 #include "./user_ui/gui_guider.h"
 #include "./user_ui/events_init.h"
-extern lv_ui standby_screen;
+//extern lv_ui standby_screen;
 
 extern void xiaozhi_ui_update_ble(char *string);
 extern void xiaozhi_ui_update_emoji(char *string);
