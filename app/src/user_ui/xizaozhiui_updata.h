@@ -1,3 +1,5 @@
 #include <stdio.h>
+#include "xiaozhi_weather.h"
 
-#define TIME_DATA "14:00"
+extern date_time_t g_current_time ;
+#define TIME_DATA g_current_time.tm_time_str
