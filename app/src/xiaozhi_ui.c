@@ -701,7 +701,8 @@ lv_obj_t * ui_Image9 = NULL;
 rt_err_t xiaozhi_ui_obj_init()
 {
 
-
+    setup_ui(&standby_screen);           
+    events_init(&standby_screen);     
 
         // 获取屏幕分辨率
     lv_coord_t scr_width = lv_disp_get_hor_res(NULL);
