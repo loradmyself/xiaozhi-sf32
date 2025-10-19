@@ -24,9 +24,6 @@ void digital_clock_count(int * hour, int * minute, int * seconds, char * meridie
 #endif
 
 
-void screen_xiaozhiui_data_event_handler(lv_event_t *e);
-void screen_xiaozhiui_data_calendar_event_handler(lv_event_t *e);
-void screen_xiaozhiui_data_init_calendar(lv_obj_t *obj, char * s);
 
 
 #ifdef __cplusplus

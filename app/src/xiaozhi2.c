@@ -41,7 +41,7 @@
 #include "./user_ui/gui_guider.h"
 #include "./user_ui/events_init.h"
 
-//extern lv_ui standby_screen;
+extern lv_ui standby_screen;
 #define MAX_WSOCK_HDR_LEN 4096
 extern void xiaozhi_ui_update_ble(char *string);
 extern void xiaozhi_ui_chat_status(char *string);

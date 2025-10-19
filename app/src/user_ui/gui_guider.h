@@ -22,15 +22,6 @@ typedef struct
 	lv_obj_t *screen;
 	bool screen_del;
 	lv_obj_t *screen_img_1;
-	lv_obj_t *screen_xiaozhiui_txt;
-	lv_obj_t *screen_xiaozhiui_weather;
-	lv_obj_t *screen_xiaozhiui_time;
-	lv_obj_t *screen_xiaozhiui_bleC;
-	lv_obj_t *screen_xiaozhiui_bleN;
-	lv_obj_t *screen_xiaozhiui_wifiC;
-	lv_obj_t *screen_xiaozhiui_wifiN;
-	lv_obj_t *screen_xiaozhiui_battery;
-	lv_obj_t *screen_xiaozhiui_data;
 }lv_ui;
 
 typedef void (*ui_setup_scr_t)(lv_ui * ui);
@@ -55,20 +46,12 @@ void video_play(lv_ui *ui);
 
 void init_keyboard(lv_ui *ui);
 
-lv_ui standby_screen;
+extern lv_ui guider_ui;
 
 
 void setup_scr_screen(lv_ui *ui);
 LV_IMAGE_DECLARE(_preview_RGB565A8_390x450);
-LV_IMAGE_DECLARE(_bluetooth1_RGB565A8_25x25);
-LV_IMAGE_DECLARE(_bluetooth2_RGB565A8_25x25);
-LV_IMAGE_DECLARE(_WiFi_Y_RGB565A8_25x25);
-LV_IMAGE_DECLARE(_WiFi_N_RGB565A8_25x25);
 
-LV_FONT_DECLARE(lv_font_AlexBrush_Regular_20)
-LV_FONT_DECLARE(lv_font_montserratMedium_16)
-LV_FONT_DECLARE(lv_font_AlexBrush_Regular_16)
-LV_FONT_DECLARE(lv_font_AlexBrush_Regular_70)
 
 
 #ifdef __cplusplus
