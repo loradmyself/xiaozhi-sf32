@@ -43,6 +43,7 @@ void setup_scr_screen(lv_ui *ui)
     ui->screen_xiazhiui_time = lv_label_create(ui->screen);
     lv_obj_set_pos(ui->screen_xiazhiui_time, 83, 62);
     lv_obj_set_size(ui->screen_xiazhiui_time, 220, 63);
+    TIME_GET;
     lv_label_set_text(ui->screen_xiazhiui_time, TIME_DATA);
     lv_label_set_long_mode(ui->screen_xiazhiui_time, LV_LABEL_LONG_WRAP);
 
