@@ -33,6 +33,7 @@ lv_ui standby_screen;
 
 // 定义UI消息类型
 typedef enum {
+    USER_UI_MSG_UPDATE,
     UI_MSG_CHAT_STATUS,
     UI_MSG_CHAT_OUTPUT,
     UI_MSG_UPDATE_EMOJI,
@@ -693,12 +694,14 @@ lv_obj_t * ui_Container2 = NULL;
 lv_obj_t * ui_Container3 = NULL;
 lv_obj_t * ui_Image9 = NULL;
 
+
+
+
+
 rt_err_t xiaozhi_ui_obj_init()
 {
 
-    //add guider_ui code
-    setup_ui(&standby_screen);           
-    events_init(&standby_screen);  
+
 
         // 获取屏幕分辨率
     lv_coord_t scr_width = lv_disp_get_hor_res(NULL);
@@ -1189,6 +1192,9 @@ rt_err_t xiaozhi_ui_obj_init()
     return RT_EOK;
 }
 
+
+
+
 // 音量进度条更新函数
 void xiaozhi_ui_update_volume(int volume)
 {
@@ -1267,6 +1273,7 @@ void ui_update_real_weather_and_time(void)
     
 }
 
+
 void ui_swith_to_standby_screen(void)
 {
                   if (ui_msg_queue != RT_NULL) {
@@ -1301,6 +1308,33 @@ void ui_swith_to_xiaozhi_screen(void)
 extern date_time_t g_current_time ;
 extern weather_info_t g_current_weather;
 
+
+void user_xiaozhi_ui_callback(void)
+{
+    //add guider_ui code
+    setup_ui(&standby_screen);           
+    events_init(&standby_screen);  
+}
+//add user ui msg update
+void update_user_xiaozhi_ui(void *parameter)
+{
+    extern rt_mq_t ui_msg_queue;
+    if (ui_msg_queue != RT_NULL) {
+        ui_msg_t* msg = (ui_msg_t*)rt_malloc(sizeof(ui_msg_t));
+        if (msg != RT_NULL) {
+            msg->type = USER_UI_MSG_UPDATE;  
+            msg->data = RT_NULL;  
+            
+            if (rt_mq_send(ui_msg_queue, &msg, sizeof(ui_msg_t*)) != RT_EOK) {
+                LOG_E("Failed to send  update USER-UI message");
+                rt_free(msg);
+            }
+        }
+    } else {
+        // 如果没有消息队列，回退到直接调用（保持向后兼容）
+        user_xiaozhi_ui_callback();
+    }
+}
 
 void update_xiaozhi_ui_time(void *parameter)
 {
@@ -1873,6 +1907,9 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
                     {
                         lv_label_set_text(global_label1, msg->data);
                     }
+                    break;
+                case USER_UI_MSG_UPDATE:
+                    user_xiaozhi_ui_callback();
                     break;
                 case UI_MSG_CHAT_OUTPUT:
                     if(msg->data)
