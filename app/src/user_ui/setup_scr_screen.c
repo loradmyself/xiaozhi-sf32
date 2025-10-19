@@ -14,7 +14,7 @@
 #include "widgets_init.h"
 #include "custom.h"
 
-
+#include "xizaozhiui_updata.h"
 
 void setup_scr_screen(lv_ui *ui)
 {
@@ -43,7 +43,7 @@ void setup_scr_screen(lv_ui *ui)
     ui->screen_xiazhiui_time = lv_label_create(ui->screen);
     lv_obj_set_pos(ui->screen_xiazhiui_time, 83, 62);
     lv_obj_set_size(ui->screen_xiazhiui_time, 220, 63);
-    lv_label_set_text(ui->screen_xiazhiui_time, "00:00");
+    lv_label_set_text(ui->screen_xiazhiui_time, TIME_DATA);
     lv_label_set_long_mode(ui->screen_xiazhiui_time, LV_LABEL_LONG_WRAP);
 
     //Write style for screen_xiazhiui_time, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
