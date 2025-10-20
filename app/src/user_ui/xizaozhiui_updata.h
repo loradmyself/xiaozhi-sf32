@@ -17,7 +17,7 @@ extern weather_info_t g_current_weather;
 #define TIME_DATA g_current_time.time_str
 #define Current_Date g_current_time.date_str
 
-#define user_ui_time_text_set lv_label_set_text(standby_screen.screen_xiazhiui_time, TIME_DATA)
+#define user_ui_time_text_set lv_label_set_text(standby_screen.screen_xiaozhiui_time, TIME_DATA)
 #define user_ui_data_text_set lv_label_set_text(standby_screen.screen_xiaozhiui_weather, Current_Date)
 
 
