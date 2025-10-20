@@ -1357,7 +1357,7 @@ void update_xiaozhi_ui_time(void *parameter)
         }
     } else {
         // 如果没有消息队列，回退到直接调用（保持向后兼容）
-        time_ui_update_callback();
+        //time_ui_update_callback();
     }
         
 }
