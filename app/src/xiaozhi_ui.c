@@ -1313,8 +1313,7 @@ extern weather_info_t g_current_weather;
 void user_xiaozhi_ui_callback(void)
 {
     //add guider_ui code
-    setup_ui(&standby_screen);           
-    events_init(&standby_screen);  
+    setup_scr_screen(standby_screen);           
 }
 //add user ui msg update
 void update_user_xiaozhi_ui(void *parameter)
@@ -1727,7 +1726,7 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
 
     //每秒更新时间的ui
     if (!update_time_ui_timer) 
-    {update_time_ui_timer = rt_timer_create("update_ui_time", update_xiaozhi_ui_time, NULL,
+    {update_time_ui_timer = rt_timer_create("update_ui_time", update_user_xiaozhi_ui, NULL,
                                     rt_tick_from_millisecond(1000), //每秒更新time的ui
                                     RT_TIMER_FLAG_PERIODIC  | RT_TIMER_FLAG_SOFT_TIMER);
     } else 
