@@ -23,6 +23,7 @@ typedef struct
 	bool screen_del;
 	lv_obj_t *screen_img_1;
 	lv_obj_t *screen_xiazhiui_time;
+	lv_obj_t *screen_xiaozhiui_weather;
 }lv_ui;
 
 typedef void (*ui_setup_scr_t)(lv_ui * ui);
@@ -55,6 +56,7 @@ LV_IMAGE_DECLARE(_preview_RGB565A8_390x450);
 
 LV_FONT_DECLARE(lv_font_AlexBrush_Regular_70)
 LV_FONT_DECLARE(lv_font_montserratMedium_16)
+LV_FONT_DECLARE(lv_font_AlexBrush_Regular_16)
 
 
 #ifdef __cplusplus

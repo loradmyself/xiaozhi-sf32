@@ -1312,7 +1312,7 @@ extern weather_info_t g_current_weather;
 
 void user_xiaozhi_ui_callback(void)
 {
-    TIME_GET;
+    //TIME_GET;
     user_ui_time_text_set;
     user_ui_update;
     //add guider_ui code
@@ -1321,6 +1321,8 @@ void user_xiaozhi_ui_callback(void)
 //add user ui msg update
 void update_user_xiaozhi_ui(void *parameter)
 {
+    xiaozhi_time_get_current(&g_current_time);
+
     extern rt_mq_t ui_msg_queue;
     if (ui_msg_queue != RT_NULL) {
         ui_msg_t* msg = (ui_msg_t*)rt_malloc(sizeof(ui_msg_t));
@@ -1342,7 +1344,7 @@ void update_user_xiaozhi_ui(void *parameter)
 void update_xiaozhi_ui_time(void *parameter)
 {
 
-// 获取当前时间
+    // 获取当前时间
     xiaozhi_time_get_current(&g_current_time);
 
     // 使用消息队列发送更新UI的消息到UI线程

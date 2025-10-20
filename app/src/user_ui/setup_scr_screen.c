@@ -14,7 +14,7 @@
 #include "widgets_init.h"
 #include "custom.h"
 
-#include "xizaozhiui_updata.h"
+
 
 void setup_scr_screen(lv_ui *ui)
 {
@@ -41,10 +41,9 @@ void setup_scr_screen(lv_ui *ui)
 
     //Write codes screen_xiazhiui_time
     ui->screen_xiazhiui_time = lv_label_create(ui->screen);
-    lv_obj_set_pos(ui->screen_xiazhiui_time, 83, 62);
-    lv_obj_set_size(ui->screen_xiazhiui_time, 220, 63);
-    TIME_GET;
-    lv_label_set_text(ui->screen_xiazhiui_time, TIME_DATA);
+    lv_obj_set_pos(ui->screen_xiazhiui_time, 93, 64);
+    lv_obj_set_size(ui->screen_xiazhiui_time, 222, 130);
+    lv_label_set_text(ui->screen_xiazhiui_time, "00:00:00");
     lv_label_set_long_mode(ui->screen_xiazhiui_time, LV_LABEL_LONG_WRAP);
 
     //Write style for screen_xiazhiui_time, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
@@ -62,6 +61,31 @@ void setup_scr_screen(lv_ui *ui)
     lv_obj_set_style_pad_bottom(ui->screen_xiazhiui_time, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_pad_left(ui->screen_xiazhiui_time, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->screen_xiazhiui_time, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+    //Write codes screen_xiaozhiui_weather
+    ui->screen_xiaozhiui_weather = lv_label_create(ui->screen);
+    lv_obj_set_pos(ui->screen_xiaozhiui_weather, 100, 16);
+    lv_obj_set_size(ui->screen_xiaozhiui_weather, 211, 24);
+    lv_label_set_text(ui->screen_xiaozhiui_weather, "xiaozhiui_weather information");
+    lv_label_set_long_mode(ui->screen_xiaozhiui_weather, LV_LABEL_LONG_SCROLL_CIRCULAR);
+
+    //Write style for screen_xiaozhiui_weather, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_border_width(ui->screen_xiaozhiui_weather, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_radius(ui->screen_xiaozhiui_weather, 10, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_color(ui->screen_xiaozhiui_weather, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui->screen_xiaozhiui_weather, &lv_font_AlexBrush_Regular_16, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui->screen_xiaozhiui_weather, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_letter_space(ui->screen_xiaozhiui_weather, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_line_space(ui->screen_xiaozhiui_weather, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_align(ui->screen_xiaozhiui_weather, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui->screen_xiaozhiui_weather, 48, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui->screen_xiaozhiui_weather, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_grad_dir(ui->screen_xiaozhiui_weather, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui->screen_xiaozhiui_weather, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui->screen_xiaozhiui_weather, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui->screen_xiaozhiui_weather, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_left(ui->screen_xiaozhiui_weather, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_shadow_width(ui->screen_xiaozhiui_weather, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //The custom code of screen.
 

@@ -16,4 +16,7 @@ extern date_time_t g_current_time ;
 
 
 #define user_ui_time_text_set lv_label_set_text(standby_screen.screen_xiazhiui_time, TIME_DATA)
+
+
+
 #define user_ui_update lv_obj_update_layout(standby_screen.screen)
