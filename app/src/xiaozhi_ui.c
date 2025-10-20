@@ -1313,7 +1313,7 @@ extern weather_info_t g_current_weather;
 void user_xiaozhi_ui_callback(void)
 {
     //add guider_ui code
-    setup_scr_screen(standby_screen);           
+    setup_scr_screen(&standby_screen);           
 }
 //add user ui msg update
 void update_user_xiaozhi_ui(void *parameter)
