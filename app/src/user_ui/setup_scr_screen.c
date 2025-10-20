@@ -26,47 +26,47 @@ void setup_scr_screen(lv_ui *ui)
     //Write style for screen, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
     lv_obj_set_style_bg_opa(ui->screen, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
-    //Write codes screen_img_1
-    ui->screen_img_1 = lv_image_create(ui->screen);
-    lv_obj_set_pos(ui->screen_img_1, 0, 0);
-    lv_obj_set_size(ui->screen_img_1, 390, 450);
-    lv_obj_add_flag(ui->screen_img_1, LV_OBJ_FLAG_CLICKABLE);
-    lv_image_set_src(ui->screen_img_1, &_preview_RGB565A8_390x450);
-    lv_image_set_pivot(ui->screen_img_1, 50,50);
-    lv_image_set_rotation(ui->screen_img_1, 0);
+    //Write codes screen_xiaozhiui_bg
+    ui->screen_xiaozhiui_bg = lv_image_create(ui->screen);
+    lv_obj_set_pos(ui->screen_xiaozhiui_bg, 0, 0);
+    lv_obj_set_size(ui->screen_xiaozhiui_bg, 390, 450);
+    lv_obj_add_flag(ui->screen_xiaozhiui_bg, LV_OBJ_FLAG_CLICKABLE);
+    lv_image_set_src(ui->screen_xiaozhiui_bg, &_preview_RGB565A8_390x450);
+    lv_image_set_pivot(ui->screen_xiaozhiui_bg, 50,50);
+    lv_image_set_rotation(ui->screen_xiaozhiui_bg, 0);
 
-    //Write style for screen_img_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_image_recolor_opa(ui->screen_img_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_image_opa(ui->screen_img_1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    //Write style for screen_xiaozhiui_bg, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_image_recolor_opa(ui->screen_xiaozhiui_bg, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_image_opa(ui->screen_xiaozhiui_bg, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 
-    //Write codes screen_xiazhiui_time
-    ui->screen_xiazhiui_time = lv_label_create(ui->screen);
-    lv_obj_set_pos(ui->screen_xiazhiui_time, 95, 60);
-    lv_obj_set_size(ui->screen_xiazhiui_time, 200, 60);
-    lv_label_set_text(ui->screen_xiazhiui_time, "00:00");
-    lv_label_set_long_mode(ui->screen_xiazhiui_time, LV_LABEL_LONG_WRAP);
+    //Write codes screen_xiaozhiui_time
+    ui->screen_xiaozhiui_time = lv_label_create(ui->screen);
+    lv_obj_set_pos(ui->screen_xiaozhiui_time, 95, 60);
+    lv_obj_set_size(ui->screen_xiaozhiui_time, 200, 60);
+    lv_label_set_text(ui->screen_xiaozhiui_time, "00:00");
+    lv_label_set_long_mode(ui->screen_xiaozhiui_time, LV_LABEL_LONG_WRAP);
 
-    //Write style for screen_xiazhiui_time, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->screen_xiazhiui_time, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->screen_xiazhiui_time, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->screen_xiazhiui_time, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->screen_xiazhiui_time, &lv_font_AlexBrush_Regular_70, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui->screen_xiazhiui_time, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_letter_space(ui->screen_xiazhiui_time, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_line_space(ui->screen_xiazhiui_time, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui->screen_xiazhiui_time, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->screen_xiazhiui_time, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->screen_xiazhiui_time, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->screen_xiazhiui_time, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->screen_xiazhiui_time, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->screen_xiazhiui_time, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->screen_xiazhiui_time, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    //Write style for screen_xiaozhiui_time, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_border_width(ui->screen_xiaozhiui_time, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_radius(ui->screen_xiaozhiui_time, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_color(ui->screen_xiaozhiui_time, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui->screen_xiaozhiui_time, &lv_font_AlexBrush_Regular_70, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui->screen_xiaozhiui_time, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_letter_space(ui->screen_xiaozhiui_time, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_line_space(ui->screen_xiaozhiui_time, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_align(ui->screen_xiaozhiui_time, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui->screen_xiaozhiui_time, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui->screen_xiaozhiui_time, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui->screen_xiaozhiui_time, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui->screen_xiaozhiui_time, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_left(ui->screen_xiaozhiui_time, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_shadow_width(ui->screen_xiaozhiui_time, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes screen_xiaozhiui_weather
     ui->screen_xiaozhiui_weather = lv_label_create(ui->screen);
     lv_obj_set_pos(ui->screen_xiaozhiui_weather, 95, 15);
     lv_obj_set_size(ui->screen_xiaozhiui_weather, 200, 25);
-    lv_label_set_text(ui->screen_xiaozhiui_weather, "xiaozhiui_weather information 年月日 天气 晴雨雪大小中风");
+    lv_label_set_text(ui->screen_xiaozhiui_weather, "xiaozhiui_weather information 年月日 天气 晴雨雪大小中风冰雾沙 周一二三四五六末");
     lv_label_set_long_mode(ui->screen_xiaozhiui_weather, LV_LABEL_LONG_SCROLL_CIRCULAR);
 
     //Write style for screen_xiaozhiui_weather, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
@@ -94,7 +94,7 @@ void setup_scr_screen(lv_ui *ui)
     ui->screen_xiaozhiui_connect = lv_label_create(ui->screen);
     lv_obj_set_pos(ui->screen_xiaozhiui_connect, 258, 205);
     lv_obj_set_size(ui->screen_xiaozhiui_connect, 91, 29);
-    lv_label_set_text(ui->screen_xiaozhiui_connect, "连接中...");
+    lv_label_set_text(ui->screen_xiaozhiui_connect, "连接中...请按按键连接小智...初始化请稍等");
     lv_label_set_long_mode(ui->screen_xiaozhiui_connect, LV_LABEL_LONG_SCROLL_CIRCULAR);
 
     //Write style for screen_xiaozhiui_connect, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
@@ -120,9 +120,9 @@ void setup_scr_screen(lv_ui *ui)
 
     //Write codes screen_xiaozhiui_date
     ui->screen_xiaozhiui_date = lv_label_create(ui->screen);
-    lv_obj_set_pos(ui->screen_xiaozhiui_date, 240, 125);
-    lv_obj_set_size(ui->screen_xiaozhiui_date, 140, 20);
-    lv_label_set_text(ui->screen_xiaozhiui_date, "2025年12月30日");
+    lv_obj_set_pos(ui->screen_xiaozhiui_date, 255, 126);
+    lv_obj_set_size(ui->screen_xiaozhiui_date, 123, 36);
+    lv_label_set_text(ui->screen_xiaozhiui_date, "2025年12月30日 周三");
     lv_label_set_long_mode(ui->screen_xiaozhiui_date, LV_LABEL_LONG_WRAP);
 
     //Write style for screen_xiaozhiui_date, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
@@ -195,50 +195,50 @@ void setup_scr_screen(lv_ui *ui)
     lv_obj_set_style_image_recolor_opa(ui->screen_xiaozhiui_wifi_N, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_image_opa(ui->screen_xiaozhiui_wifi_N, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 
-    //Write codes screen_bar_1
-    ui->screen_bar_1 = lv_bar_create(ui->screen);
-    lv_obj_set_pos(ui->screen_bar_1, 300, 17);
-    lv_obj_set_size(ui->screen_bar_1, 50, 20);
-    lv_obj_set_style_anim_duration(ui->screen_bar_1, 1000, 0);
-    lv_bar_set_mode(ui->screen_bar_1, LV_BAR_MODE_NORMAL);
-    lv_bar_set_range(ui->screen_bar_1, 0, 100);
-    lv_bar_set_value(ui->screen_bar_1, 50, LV_ANIM_OFF);
+    //Write codes screen_xiazhiui_battery
+    ui->screen_xiazhiui_battery = lv_bar_create(ui->screen);
+    lv_obj_set_pos(ui->screen_xiazhiui_battery, 300, 17);
+    lv_obj_set_size(ui->screen_xiazhiui_battery, 50, 20);
+    lv_obj_set_style_anim_duration(ui->screen_xiazhiui_battery, 1000, 0);
+    lv_bar_set_mode(ui->screen_xiazhiui_battery, LV_BAR_MODE_NORMAL);
+    lv_bar_set_range(ui->screen_xiazhiui_battery, 0, 100);
+    lv_bar_set_value(ui->screen_xiazhiui_battery, 50, LV_ANIM_OFF);
 
-    //Write style for screen_bar_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_bg_opa(ui->screen_bar_1, 60, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui->screen_bar_1, lv_color_hex(0x2c2c2c), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_grad_dir(ui->screen_bar_1, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->screen_bar_1, 10, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->screen_bar_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    //Write style for screen_xiazhiui_battery, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_bg_opa(ui->screen_xiazhiui_battery, 60, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui->screen_xiazhiui_battery, lv_color_hex(0x2c2c2c), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_grad_dir(ui->screen_xiazhiui_battery, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_radius(ui->screen_xiazhiui_battery, 10, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_shadow_width(ui->screen_xiazhiui_battery, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
-    //Write style for screen_bar_1, Part: LV_PART_INDICATOR, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_bg_opa(ui->screen_bar_1, 255, LV_PART_INDICATOR|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui->screen_bar_1, lv_color_hex(0x000000), LV_PART_INDICATOR|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_grad_dir(ui->screen_bar_1, LV_GRAD_DIR_NONE, LV_PART_INDICATOR|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->screen_bar_1, 10, LV_PART_INDICATOR|LV_STATE_DEFAULT);
+    //Write style for screen_xiazhiui_battery, Part: LV_PART_INDICATOR, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_bg_opa(ui->screen_xiazhiui_battery, 255, LV_PART_INDICATOR|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui->screen_xiazhiui_battery, lv_color_hex(0x000000), LV_PART_INDICATOR|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_grad_dir(ui->screen_xiazhiui_battery, LV_GRAD_DIR_NONE, LV_PART_INDICATOR|LV_STATE_DEFAULT);
+    lv_obj_set_style_radius(ui->screen_xiazhiui_battery, 10, LV_PART_INDICATOR|LV_STATE_DEFAULT);
 
-    //Write codes screen_label_1
-    ui->screen_label_1 = lv_label_create(ui->screen);
-    lv_obj_set_pos(ui->screen_label_1, 349, 23);
-    lv_obj_set_size(ui->screen_label_1, 28, 18);
-    lv_label_set_text(ui->screen_label_1, "100%");
-    lv_label_set_long_mode(ui->screen_label_1, LV_LABEL_LONG_WRAP);
+    //Write codes screen_xiaozhiui_battery_percent
+    ui->screen_xiaozhiui_battery_percent = lv_label_create(ui->screen);
+    lv_obj_set_pos(ui->screen_xiaozhiui_battery_percent, 349, 23);
+    lv_obj_set_size(ui->screen_xiaozhiui_battery_percent, 28, 18);
+    lv_label_set_text(ui->screen_xiaozhiui_battery_percent, "100%");
+    lv_label_set_long_mode(ui->screen_xiaozhiui_battery_percent, LV_LABEL_LONG_WRAP);
 
-    //Write style for screen_label_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_border_width(ui->screen_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_radius(ui->screen_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_color(ui->screen_label_1, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->screen_label_1, &lv_font_SourceHanSerifSC_Regular_10, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui->screen_label_1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_letter_space(ui->screen_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_line_space(ui->screen_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_align(ui->screen_label_1, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui->screen_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->screen_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_right(ui->screen_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_bottom(ui->screen_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_left(ui->screen_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_shadow_width(ui->screen_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    //Write style for screen_xiaozhiui_battery_percent, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_border_width(ui->screen_xiaozhiui_battery_percent, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_radius(ui->screen_xiaozhiui_battery_percent, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_color(ui->screen_xiaozhiui_battery_percent, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui->screen_xiaozhiui_battery_percent, &lv_font_SourceHanSerifSC_Regular_10, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui->screen_xiaozhiui_battery_percent, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_letter_space(ui->screen_xiaozhiui_battery_percent, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_line_space(ui->screen_xiaozhiui_battery_percent, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_align(ui->screen_xiaozhiui_battery_percent, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui->screen_xiaozhiui_battery_percent, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui->screen_xiaozhiui_battery_percent, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui->screen_xiaozhiui_battery_percent, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui->screen_xiaozhiui_battery_percent, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_left(ui->screen_xiaozhiui_battery_percent, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_shadow_width(ui->screen_xiaozhiui_battery_percent, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //The custom code of screen.
 

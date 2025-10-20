@@ -21,8 +21,8 @@ typedef struct
   
 	lv_obj_t *screen;
 	bool screen_del;
-	lv_obj_t *screen_img_1;
-	lv_obj_t *screen_xiazhiui_time;
+	lv_obj_t *screen_xiaozhiui_bg;
+	lv_obj_t *screen_xiaozhiui_time;
 	lv_obj_t *screen_xiaozhiui_weather;
 	lv_obj_t *screen_xiaozhiui_connect;
 	lv_obj_t *screen_xiaozhiui_date;
@@ -30,8 +30,8 @@ typedef struct
 	lv_obj_t *screen_xiaozhiui_ble_Y;
 	lv_obj_t *screen_xiaozhiui_wifi_Y;
 	lv_obj_t *screen_xiaozhiui_wifi_N;
-	lv_obj_t *screen_bar_1;
-	lv_obj_t *screen_label_1;
+	lv_obj_t *screen_xiazhiui_battery;
+	lv_obj_t *screen_xiaozhiui_battery_percent;
 }lv_ui;
 
 typedef void (*ui_setup_scr_t)(lv_ui * ui);
