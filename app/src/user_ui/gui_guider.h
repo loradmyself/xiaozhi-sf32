@@ -24,8 +24,14 @@ typedef struct
 	lv_obj_t *screen_img_1;
 	lv_obj_t *screen_xiazhiui_time;
 	lv_obj_t *screen_xiaozhiui_weather;
+	lv_obj_t *screen_xiaozhiui_connect;
+	lv_obj_t *screen_xiaozhiui_date;
+	lv_obj_t *screen_xiaozhiui_ble_N;
+	lv_obj_t *screen_xiaozhiui_ble_Y;
+	lv_obj_t *screen_xiaozhiui_wifi_Y;
+	lv_obj_t *screen_xiaozhiui_wifi_N;
+	lv_obj_t *screen_bar_1;
 	lv_obj_t *screen_label_1;
-	lv_obj_t *screen_label_2;
 }lv_ui;
 
 typedef void (*ui_setup_scr_t)(lv_ui * ui);
@@ -55,10 +61,15 @@ extern lv_ui guider_ui;
 
 void setup_scr_screen(lv_ui *ui);
 LV_IMAGE_DECLARE(_preview_RGB565A8_390x450);
+LV_IMAGE_DECLARE(_bluetooth2_RGB565A8_25x25);
+LV_IMAGE_DECLARE(_bluetooth1_RGB565A8_25x25);
+LV_IMAGE_DECLARE(_WiFi_Y_RGB565A8_25x25);
+LV_IMAGE_DECLARE(_WiFi_N_RGB565A8_25x25);
 
 LV_FONT_DECLARE(lv_font_AlexBrush_Regular_70)
 LV_FONT_DECLARE(lv_font_montserratMedium_16)
 LV_FONT_DECLARE(lv_font_SourceHanSerifSC_Regular_16)
+LV_FONT_DECLARE(lv_font_SourceHanSerifSC_Regular_10)
 
 
 #ifdef __cplusplus
