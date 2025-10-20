@@ -18,6 +18,7 @@
         }
     ],
     "files.associations": {
-        "xizaozhiui_updata.h": "c"
+        "xizaozhiui_updata.h": "c",
+        "gui_guider.h": "c"
     }
 }

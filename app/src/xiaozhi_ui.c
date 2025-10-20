@@ -1308,7 +1308,7 @@ void ui_swith_to_xiaozhi_screen(void)
 
 extern date_time_t g_current_time ;
 extern weather_info_t g_current_weather;
-#include "xizaozhiui_updata.h"
+#include "./user_ui/xizaozhiui_updata.h"
 
 void user_xiaozhi_ui_callback(void)
 {
