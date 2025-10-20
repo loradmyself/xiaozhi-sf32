@@ -1314,6 +1314,7 @@ void user_xiaozhi_ui_callback(void)
 {
     //TIME_GET;
     user_ui_time_text_set;
+    user_ui_data_text_set;
     user_ui_update;
     //add guider_ui code
     //setup_scr_screen(&standby_screen);           
