@@ -1308,12 +1308,15 @@ void ui_swith_to_xiaozhi_screen(void)
 
 extern date_time_t g_current_time ;
 extern weather_info_t g_current_weather;
-
+#include "xizaozhiui_updata.h"
 
 void user_xiaozhi_ui_callback(void)
 {
+    TIME_GET;
+    user_ui_time_text_set;
+    user_ui_update;
     //add guider_ui code
-    setup_scr_screen(&standby_screen);           
+    //setup_scr_screen(&standby_screen);           
 }
 //add user ui msg update
 void update_user_xiaozhi_ui(void *parameter)
@@ -1357,7 +1360,7 @@ void update_xiaozhi_ui_time(void *parameter)
         }
     } else {
         // 如果没有消息队列，回退到直接调用（保持向后兼容）
-        //time_ui_update_callback();
+        time_ui_update_callback();
     }
         
 }
