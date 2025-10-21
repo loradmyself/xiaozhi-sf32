@@ -18,18 +18,12 @@ char battery_percent_str[8];               /*电池电量字符串*/
 #define Current_Date    g_current_time.date_str                        /*获取当前日期字符串*/
 #define Current_Weather g_current_weather.weather_str                  /*获取当前天气文本信息*/
 #define Current_Battery(percent) rt_snprintf(battery_percent_str, sizeof(battery_percent_str), "%d%%", percent) /*获取当前电池电量字符串*/
-//#define Current_Connect  (g_bt_app_env.bt_connected ? "已连接" : "未连接") /*获取当前连接状态字符串*/
-//#define Current_BLE     (g_bt_app_env.bt_connected ? "蓝牙已连接" : "蓝牙未连接") /*获取当前蓝牙连接状态字符串*/
-//#define Current_wifi    (g_pan_connected ? "WiFi已连接" : "WiFi未连接") /*获取当前WiFi连接状态字符串*/
-//#define Current_Battery g_battery_level_str                          /*获取当前电池电量字符串*/
-//
 
 
-/*设置时间/日期/天气*/
 #define user_ui_time_text_set    lv_label_set_text(standby_screen.screen_xiaozhiui_time, Current_Time)              /*设置时间标签文本*/
 #define user_ui_date_text_set    lv_label_set_text(standby_screen.screen_xiaozhiui_date, Current_Date)              /*设置日期标签文本*/
 #define user_ui_weather_text_set lv_label_set_text(standby_screen.screen_xiaozhiui_weather, Current_Weather)        /*设置天气标签文本*/
 #define user_ui_battery_text_set lv_label_set_text(standby_screen.screen_xiaozhiui_battery_percent, battery_percent_str) /*设置电池标签文本*/
-//#define user_ui_connect_text_set lv_label_set_text(standby_screen.screen_xiaozhiui_connect, Current_Connect) /*设置连接标签文本*/
+#define user_ui_connect_text_set(connect_text) lv_label_set_text(standby_screen.screen_xiaozhiui_connect, connect_text) /*设置连接标签文本*/
 
 #define user_ui_update lv_obj_update_layout(standby_screen.screen)

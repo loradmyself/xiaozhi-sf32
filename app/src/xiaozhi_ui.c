@@ -159,7 +159,7 @@ lv_obj_t *ui_Label_day = NULL;//日期
 lv_obj_t *ui_Label_second =NULL;//秒
 lv_obj_t *ui_Image_second = NULL;//秒的图片
 lv_obj_t * ui_Arc2 = NULL;//电池容器
-lv_obj_t * ui_Label3 = NULL;
+//lv_obj_t * ui_Label3 = NULL;
 
 static lv_timer_t* standby_update_timer = NULL;
 static rt_timer_t bg_update_timer = NULL;
@@ -924,14 +924,14 @@ rt_err_t xiaozhi_ui_obj_init()
     // lv_img_set_zoom(ui_Image_second,(int)(300 * g_scale));
 
 
-    ui_Label3 = lv_label_create(standby_screen.screen);
-    lv_obj_set_width(ui_Label3, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_Label3, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_Label3, (int)(2 * g_scale));
-    lv_obj_set_y(ui_Label3, (int)(189 * g_scale));
-    lv_obj_set_align(ui_Label3, LV_ALIGN_CENTER);
-    lv_obj_add_style(ui_Label3, &style2, 0);
-    lv_label_set_text(ui_Label3, "等待连接");
+    // ui_Label3 = lv_label_create(standby_screen.screen);
+    // lv_obj_set_width(ui_Label3, LV_SIZE_CONTENT);   /// 1
+    // lv_obj_set_height(ui_Label3, LV_SIZE_CONTENT);    /// 1
+    // lv_obj_set_x(ui_Label3, (int)(2 * g_scale));
+    // lv_obj_set_y(ui_Label3, (int)(189 * g_scale));
+    // lv_obj_set_align(ui_Label3, LV_ALIGN_CENTER);
+    // lv_obj_add_style(ui_Label3, &style2, 0);
+    // lv_label_set_text(ui_Label3, "等待连接");
 
     // LV_IMAGE_DECLARE(ble);
     // LV_IMAGE_DECLARE(ble_close);
@@ -1830,7 +1830,8 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
                 case UI_MSG_STANDBY_CHAT_OUTPUT:
                     if(msg->data)
                     {
-                        lv_label_set_text(ui_Label3, msg->data);    
+                        user_ui_connect_text_set(msg->data);
+                        //lv_label_set_text(ui_Label3, msg->data);    //xiaozhi connect lianjie 
                     }
                     break;
                 case UI_MSG_UPDATE_WEATHER_AND_TIME:
