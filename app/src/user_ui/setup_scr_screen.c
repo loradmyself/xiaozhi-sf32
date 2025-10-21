@@ -221,7 +221,7 @@ void setup_scr_screen(lv_ui *ui)
     ui->screen_xiaozhiui_battery_percent = lv_label_create(ui->screen);
     lv_obj_set_pos(ui->screen_xiaozhiui_battery_percent, 349, 23);
     lv_obj_set_size(ui->screen_xiaozhiui_battery_percent, 28, 18);
-    lv_label_set_text(ui->screen_xiaozhiui_battery_percent, "100%");
+    lv_label_set_text(ui->screen_xiaozhiui_battery_percent, "40%");
     lv_label_set_long_mode(ui->screen_xiaozhiui_battery_percent, LV_LABEL_LONG_WRAP);
 
     //Write style for screen_xiaozhiui_battery_percent, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.

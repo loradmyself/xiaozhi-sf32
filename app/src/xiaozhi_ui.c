@@ -1317,6 +1317,7 @@ void user_xiaozhi_ui_callback(void)
     user_ui_date_text_set;
     user_ui_weather_text_set;
     user_ui_update;
+    user_ui_battery_text_set;
     //add guider_ui code
     //setup_scr_screen(&standby_screen);           
 }
@@ -1590,6 +1591,9 @@ void pm_ui_init()
     gui_pm_init(lcd_device, pm_event_handler);
 #endif
 }
+
+
+
 void xiaozhi_update_battery_level(int level)
 {
     // 确保电量在 0 到 100 之间
@@ -1814,7 +1818,8 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
         if (rt_mb_recv(g_battery_mb, &battery_level, 0) == RT_EOK)
         {
            // rt_kprintf("Battery level received: %d\n", battery_level);
-            xiaozhi_update_battery_level(battery_level);
+           // xiaozhi_update_battery_level(battery_level);
+           Current_Battery(battery_level);//更新电池电量百分比字符串
         }
         // 处理UI消息队列中的消息
         ui_msg_t* msg;
@@ -2056,7 +2061,7 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
                         {
                             lv_img_set_src(global_img_ble, &ble_close);
                         }
-                    }
+                    }//no need
                     break;
                 case UI_MSG_TTS_OUTPUT:
                     if(msg->data)
