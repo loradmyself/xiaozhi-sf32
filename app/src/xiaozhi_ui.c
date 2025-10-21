@@ -1819,6 +1819,7 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
         {
            // rt_kprintf("Battery level received: %d\n", battery_level);
            xiaozhi_update_battery_level(battery_level);
+           user_ui_battery_bar_set(battery_level); //更新电池电量进度条
            Current_Battery(battery_level);//更新电池电量百分比字符串
         }
         // 处理UI消息队列中的消息

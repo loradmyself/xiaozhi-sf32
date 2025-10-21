@@ -19,11 +19,12 @@ char battery_percent_str[8];               /*电池电量字符串*/
 #define Current_Weather g_current_weather.weather_str                  /*获取当前天气文本信息*/
 #define Current_Battery(percent) rt_snprintf(battery_percent_str, sizeof(battery_percent_str), "%d%%", percent) /*获取当前电池电量字符串*/
 
-
 #define user_ui_time_text_set    lv_label_set_text(standby_screen.screen_xiaozhiui_time, Current_Time)              /*设置时间标签文本*/
 #define user_ui_date_text_set    lv_label_set_text(standby_screen.screen_xiaozhiui_date, Current_Date)              /*设置日期标签文本*/
 #define user_ui_weather_text_set lv_label_set_text(standby_screen.screen_xiaozhiui_weather, Current_Weather)        /*设置天气标签文本*/
 #define user_ui_battery_text_set lv_label_set_text(standby_screen.screen_xiaozhiui_battery_percent, battery_percent_str) /*设置电池标签文本*/
+#define user_ui_battery_bar_set(percent) lv_bar_set_value(standby_screen.screen_xiazhiui_battery, percent, LV_ANIM_OFF) /*设置电池进度条值*/
 #define user_ui_connect_text_set(connect_text) lv_label_set_text(standby_screen.screen_xiaozhiui_connect, connect_text) /*设置连接标签文本*/
+
 
 #define user_ui_update lv_obj_update_layout(standby_screen.screen)
