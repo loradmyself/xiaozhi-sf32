@@ -1314,7 +1314,8 @@ void user_xiaozhi_ui_callback(void)
 {
     //TIME_GET;
     user_ui_time_text_set;
-    user_ui_data_text_set;//半小时一次
+    user_ui_date_text_set;
+    user_ui_weather_text_set;
     user_ui_update;
     //add guider_ui code
     //setup_scr_screen(&standby_screen);           
@@ -1323,7 +1324,7 @@ void user_xiaozhi_ui_callback(void)
 void update_user_xiaozhi_ui(void *parameter)
 {
     xiaozhi_time_get_current(&g_current_time);
-
+    //天气信息读取
     extern rt_mq_t ui_msg_queue;
     if (ui_msg_queue != RT_NULL) {
         ui_msg_t* msg = (ui_msg_t*)rt_malloc(sizeof(ui_msg_t));

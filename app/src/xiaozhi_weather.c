@@ -464,9 +464,16 @@ __exit:
     // 清除同步进行标志
     g_weather_sync_in_progress = 0;
 
+    rt_snprintf(weather_info->weather_str, sizeof(weather_info->weather_str), 
+                "城市：%s 天气：%s 温度：%d°C 更新时间：%s", 
+                weather_info->location, weather_info->text, weather_info->temperature, ctime(&weather_info->last_update));
+
     return ret;
 }
 
+
+
+/*不需要了*/
 void time_ui_update_callback(void)
 {
     static int last_year = -1;
@@ -602,6 +609,9 @@ void time_ui_update_callback(void)
 }
 
 
+
+
+/*不需要了*/
 void weather_ui_update_callback(void)
 {
          // 更新天气信息
