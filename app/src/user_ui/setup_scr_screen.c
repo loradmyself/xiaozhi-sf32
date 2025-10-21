@@ -92,9 +92,9 @@ void setup_scr_screen(lv_ui *ui)
 
     //Write codes screen_xiaozhiui_connect
     ui->screen_xiaozhiui_connect = lv_label_create(ui->screen);
-    lv_obj_set_pos(ui->screen_xiaozhiui_connect, 258, 205);
-    lv_obj_set_size(ui->screen_xiaozhiui_connect, 91, 29);
-    lv_label_set_text(ui->screen_xiaozhiui_connect, "连接中...请按按键连接小智...初始化请稍等");
+    lv_obj_set_pos(ui->screen_xiaozhiui_connect, 258, 204);
+    lv_obj_set_size(ui->screen_xiaozhiui_connect, 111, 31);
+    lv_label_set_text(ui->screen_xiaozhiui_connect, "连接中...请按键小智...初始化请稍等 蓝牙断开 PAN成功 尝试唤醒重新 重启 ");
     lv_label_set_long_mode(ui->screen_xiaozhiui_connect, LV_LABEL_LONG_SCROLL_CIRCULAR);
 
     //Write style for screen_xiaozhiui_connect, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
@@ -168,33 +168,6 @@ void setup_scr_screen(lv_ui *ui)
     lv_obj_set_style_image_recolor_opa(ui->screen_xiaozhiui_ble_Y, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_image_opa(ui->screen_xiaozhiui_ble_Y, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 
-    //Write codes screen_xiaozhiui_wifi_Y
-    ui->screen_xiaozhiui_wifi_Y = lv_image_create(ui->screen);
-    lv_obj_set_pos(ui->screen_xiaozhiui_wifi_Y, 30, 15);
-    lv_obj_set_size(ui->screen_xiaozhiui_wifi_Y, 25, 25);
-    lv_obj_add_flag(ui->screen_xiaozhiui_wifi_Y, LV_OBJ_FLAG_HIDDEN);
-    lv_obj_add_flag(ui->screen_xiaozhiui_wifi_Y, LV_OBJ_FLAG_CLICKABLE);
-    lv_image_set_src(ui->screen_xiaozhiui_wifi_Y, &_WiFi_Y_RGB565A8_25x25);
-    lv_image_set_pivot(ui->screen_xiaozhiui_wifi_Y, 50,50);
-    lv_image_set_rotation(ui->screen_xiaozhiui_wifi_Y, 0);
-
-    //Write style for screen_xiaozhiui_wifi_Y, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_image_recolor_opa(ui->screen_xiaozhiui_wifi_Y, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_image_opa(ui->screen_xiaozhiui_wifi_Y, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes screen_xiaozhiui_wifi_N
-    ui->screen_xiaozhiui_wifi_N = lv_image_create(ui->screen);
-    lv_obj_set_pos(ui->screen_xiaozhiui_wifi_N, 30, 15);
-    lv_obj_set_size(ui->screen_xiaozhiui_wifi_N, 25, 25);
-    lv_obj_add_flag(ui->screen_xiaozhiui_wifi_N, LV_OBJ_FLAG_CLICKABLE);
-    lv_image_set_src(ui->screen_xiaozhiui_wifi_N, &_WiFi_N_RGB565A8_25x25);
-    lv_image_set_pivot(ui->screen_xiaozhiui_wifi_N, 50,50);
-    lv_image_set_rotation(ui->screen_xiaozhiui_wifi_N, 0);
-
-    //Write style for screen_xiaozhiui_wifi_N, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_image_recolor_opa(ui->screen_xiaozhiui_wifi_N, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_image_opa(ui->screen_xiaozhiui_wifi_N, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-
     //Write codes screen_xiazhiui_battery
     ui->screen_xiazhiui_battery = lv_bar_create(ui->screen);
     lv_obj_set_pos(ui->screen_xiazhiui_battery, 300, 17);
@@ -221,7 +194,7 @@ void setup_scr_screen(lv_ui *ui)
     ui->screen_xiaozhiui_battery_percent = lv_label_create(ui->screen);
     lv_obj_set_pos(ui->screen_xiaozhiui_battery_percent, 349, 23);
     lv_obj_set_size(ui->screen_xiaozhiui_battery_percent, 28, 18);
-    lv_label_set_text(ui->screen_xiaozhiui_battery_percent, "40%");
+    lv_label_set_text(ui->screen_xiaozhiui_battery_percent, "100%");
     lv_label_set_long_mode(ui->screen_xiaozhiui_battery_percent, LV_LABEL_LONG_WRAP);
 
     //Write style for screen_xiaozhiui_battery_percent, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.

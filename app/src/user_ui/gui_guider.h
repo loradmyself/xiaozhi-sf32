@@ -28,8 +28,6 @@ typedef struct
 	lv_obj_t *screen_xiaozhiui_date;
 	lv_obj_t *screen_xiaozhiui_ble_N;
 	lv_obj_t *screen_xiaozhiui_ble_Y;
-	lv_obj_t *screen_xiaozhiui_wifi_Y;
-	lv_obj_t *screen_xiaozhiui_wifi_N;
 	lv_obj_t *screen_xiazhiui_battery;
 	lv_obj_t *screen_xiaozhiui_battery_percent;
 }lv_ui;
@@ -63,8 +61,6 @@ void setup_scr_screen(lv_ui *ui);
 LV_IMAGE_DECLARE(_preview_RGB565A8_390x450);
 LV_IMAGE_DECLARE(_bluetooth2_RGB565A8_25x25);
 LV_IMAGE_DECLARE(_bluetooth1_RGB565A8_25x25);
-LV_IMAGE_DECLARE(_WiFi_Y_RGB565A8_25x25);
-LV_IMAGE_DECLARE(_WiFi_N_RGB565A8_25x25);
 
 LV_FONT_DECLARE(lv_font_AlexBrush_Regular_70)
 LV_FONT_DECLARE(lv_font_montserratMedium_16)

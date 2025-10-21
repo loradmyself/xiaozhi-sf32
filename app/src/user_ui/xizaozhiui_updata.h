@@ -10,7 +10,7 @@
 extern lv_ui standby_screen;                /*小智的待机界面*/
 extern date_time_t g_current_time ;         /*当前时间结构体*/
 extern weather_info_t g_current_weather;    /*当前天气结构体*/
-char battery_percent_str[8];               /*电池电量字符串*/
+char battery_percent_str[8];                /*电池电量字符串*/
 //time_ui_update_callback
 #define TIME_GET xiaozhi_time_get_current(&g_current_time)          /*获取当前时间信息*/
 
@@ -26,9 +26,10 @@ char battery_percent_str[8];               /*电池电量字符串*/
 #define user_ui_battery_bar_set(percent) lv_bar_set_value(standby_screen.screen_xiazhiui_battery, percent, LV_ANIM_OFF) /*设置电池进度条值*/
 #define user_ui_connect_text_set(connect_text) lv_label_set_text(standby_screen.screen_xiaozhiui_connect, connect_text) /*设置连接标签文本*/
 
+/*蓝牙状态*/
 #define user_ui_ble_open lv_obj_clear_flag(standby_screen.screen_xiaozhiui_ble_Y, LV_OBJ_FLAG_HIDDEN); \
                          lv_obj_add_flag(standby_screen.screen_xiaozhiui_ble_N, LV_OBJ_FLAG_HIDDEN);
 #define user_ui_ble_close lv_obj_add_flag(standby_screen.screen_xiaozhiui_ble_Y, LV_OBJ_FLAG_HIDDEN); \
                           lv_obj_clear_flag(standby_screen.screen_xiaozhiui_ble_N, LV_OBJ_FLAG_HIDDEN);
-
+/*ui更新*/
 #define user_ui_update lv_obj_update_layout(standby_screen.screen)
