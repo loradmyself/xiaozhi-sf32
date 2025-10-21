@@ -802,25 +802,25 @@ rt_err_t xiaozhi_ui_obj_init()
     // lv_img_set_zoom(network_icon, (int)(384 * g_scale));
 
     // 电池环形
-    battery_arc = lv_arc_create(standby_screen.screen);
-    lv_obj_set_size(battery_arc, (int)(60 * g_scale), (int)(60 * g_scale)); // 设置圆弧大小
-    lv_obj_set_x(battery_arc, (int)(134 * g_scale));
-    lv_obj_set_y(battery_arc, (int)(133 * g_scale));
-    lv_obj_set_align(battery_arc, LV_ALIGN_CENTER);
-    lv_arc_set_rotation(battery_arc, 270); // 从顶部开始
-    lv_arc_set_bg_angles(battery_arc, 0, 360); // 背景圆环完整
-    lv_arc_set_value(battery_arc, g_battery_level); // 全局电量
-    lv_obj_remove_style(battery_arc, NULL, LV_PART_KNOB); // 移除旋钮
-    lv_obj_set_style_arc_color(battery_arc, lv_color_hex(0x333333), LV_PART_MAIN); // 背景圆环颜色
-    lv_obj_set_style_arc_color(battery_arc, lv_color_hex(0x00CC00), LV_PART_INDICATOR); // 电量颜色(绿色)
-    lv_obj_set_style_arc_width(battery_arc, (int)(8 * g_scale), LV_PART_MAIN); // 背景圆环宽度
-    lv_obj_set_style_arc_width(battery_arc, (int)(6 * g_scale), LV_PART_INDICATOR); // 电量指示宽度
-    // 电池电量百分比文本
-    battery_percent_label = lv_label_create(battery_arc);
-    lv_label_set_text_fmt(battery_percent_label, "%d%%", g_battery_level);
-    lv_obj_set_style_text_color(battery_percent_label, lv_color_white(), 0);
-    lv_obj_set_style_text_font(battery_percent_label, font_medium, 0);
-    lv_obj_align(battery_percent_label, LV_ALIGN_CENTER, 0, 0); // 在圆弧中心
+    // battery_arc = lv_arc_create(standby_screen.screen);
+    // lv_obj_set_size(battery_arc, (int)(60 * g_scale), (int)(60 * g_scale)); // 设置圆弧大小
+    // lv_obj_set_x(battery_arc, (int)(134 * g_scale));
+    // lv_obj_set_y(battery_arc, (int)(133 * g_scale));
+    // lv_obj_set_align(battery_arc, LV_ALIGN_CENTER);
+    // lv_arc_set_rotation(battery_arc, 270); // 从顶部开始
+    // lv_arc_set_bg_angles(battery_arc, 0, 360); // 背景圆环完整
+    // lv_arc_set_value(battery_arc, g_battery_level); // 全局电量
+    // lv_obj_remove_style(battery_arc, NULL, LV_PART_KNOB); // 移除旋钮
+    // lv_obj_set_style_arc_color(battery_arc, lv_color_hex(0x333333), LV_PART_MAIN); // 背景圆环颜色
+    // lv_obj_set_style_arc_color(battery_arc, lv_color_hex(0x00CC00), LV_PART_INDICATOR); // 电量颜色(绿色)
+    // lv_obj_set_style_arc_width(battery_arc, (int)(8 * g_scale), LV_PART_MAIN); // 背景圆环宽度
+    // lv_obj_set_style_arc_width(battery_arc, (int)(6 * g_scale), LV_PART_INDICATOR); // 电量指示宽度
+    // // 电池电量百分比文本
+    // battery_percent_label = lv_label_create(battery_arc);
+    // lv_label_set_text_fmt(battery_percent_label, "%d%%", g_battery_level);
+    // lv_obj_set_style_text_color(battery_percent_label, lv_color_white(), 0);
+    // lv_obj_set_style_text_font(battery_percent_label, font_medium, 0);
+    // lv_obj_align(battery_percent_label, LV_ALIGN_CENTER, 0, 0); // 在圆弧中心
 
 
 //天气
@@ -1633,27 +1633,27 @@ void xiaozhi_update_battery_level(int level)
                               g_battery_level); // 更新电量标签
     }
 
-    // 状态栏的环形电池显示
-    if (battery_arc) {
-        lv_arc_set_value(battery_arc, g_battery_level); // 更新圆弧电量显示
+    // // 状态栏的环形电池显示
+    // if (battery_arc) {
+    //     lv_arc_set_value(battery_arc, g_battery_level); // 更新圆弧电量显示
         
-        // 根据电量改变颜色
-        if (g_battery_level <= 20) {
-            // 低电量红色
-            lv_obj_set_style_arc_color(battery_arc, lv_color_hex(0xCC0000), LV_PART_INDICATOR);
-        } else if (g_battery_level <= 50) {
-            // 中等电量黄色
-            lv_obj_set_style_arc_color(battery_arc, lv_color_hex(0xCCCC00), LV_PART_INDICATOR);
-        } else {
-            // 高电量绿色
-            lv_obj_set_style_arc_color(battery_arc, lv_color_hex(0x00CC00), LV_PART_INDICATOR);
-        }
-    }
+    //     // 根据电量改变颜色
+    //     if (g_battery_level <= 20) {
+    //         // 低电量红色
+    //         lv_obj_set_style_arc_color(battery_arc, lv_color_hex(0xCC0000), LV_PART_INDICATOR);
+    //     } else if (g_battery_level <= 50) {
+    //         // 中等电量黄色
+    //         lv_obj_set_style_arc_color(battery_arc, lv_color_hex(0xCCCC00), LV_PART_INDICATOR);
+    //     } else {
+    //         // 高电量绿色
+    //         lv_obj_set_style_arc_color(battery_arc, lv_color_hex(0x00CC00), LV_PART_INDICATOR);
+    //     }
+    // }
     
-    // 更新电池电量百分比文本
-    if (battery_percent_label) {
-        lv_label_set_text_fmt(battery_percent_label, "%d%%", g_battery_level);
-    }
+    // // 更新电池电量百分比文本
+    // if (battery_percent_label) {
+    //     lv_label_set_text_fmt(battery_percent_label, "%d%%", g_battery_level);
+    // }
 
 }
 extern rt_mailbox_t g_bt_app_mb;
@@ -1818,7 +1818,7 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
         if (rt_mb_recv(g_battery_mb, &battery_level, 0) == RT_EOK)
         {
            // rt_kprintf("Battery level received: %d\n", battery_level);
-           // xiaozhi_update_battery_level(battery_level);
+           xiaozhi_update_battery_level(battery_level);
            Current_Battery(battery_level);//更新电池电量百分比字符串
         }
         // 处理UI消息队列中的消息
