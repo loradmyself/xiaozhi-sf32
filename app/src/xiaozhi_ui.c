@@ -849,24 +849,24 @@ rt_err_t xiaozhi_ui_obj_init()
     // lv_obj_clear_flag(weather_icon, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     // lv_img_set_zoom(weather_icon, (int)(LV_SCALE_NONE * g_scale)); // 根据缩放因子缩放
 
-    ui_Label_ip = lv_label_create(standby_screen.screen);
-    lv_obj_set_width(ui_Label_ip, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_Label_ip, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_Label_ip, (int)(80 * g_scale));
-    lv_obj_set_y(ui_Label_ip, (int)(31 * g_scale));
-    lv_obj_set_align(ui_Label_ip, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label_ip, "IP.00°");
-    lv_obj_add_style(ui_Label_ip, &style2, 0);
+    // ui_Label_ip = lv_label_create(standby_screen.screen);
+    // lv_obj_set_width(ui_Label_ip, LV_SIZE_CONTENT);   /// 1
+    // lv_obj_set_height(ui_Label_ip, LV_SIZE_CONTENT);    /// 1
+    // lv_obj_set_x(ui_Label_ip, (int)(80 * g_scale));
+    // lv_obj_set_y(ui_Label_ip, (int)(31 * g_scale));
+    // lv_obj_set_align(ui_Label_ip, LV_ALIGN_CENTER);
+    // lv_label_set_text(ui_Label_ip, "IP.00°");
+    // lv_obj_add_style(ui_Label_ip, &style2, 0);
 
 
-    last_time = lv_label_create(standby_screen.screen);
-    lv_obj_set_width(last_time, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(last_time, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(last_time, (int)(80 * g_scale));
-    lv_obj_set_y(last_time, (int)(69 * g_scale));
-    lv_obj_set_align(last_time, LV_ALIGN_CENTER);
-    lv_label_set_text(last_time, "00:00");
-    lv_obj_add_style(last_time, &style2, 0);
+    // last_time = lv_label_create(standby_screen.screen);
+    // lv_obj_set_width(last_time, LV_SIZE_CONTENT);   /// 1
+    // lv_obj_set_height(last_time, LV_SIZE_CONTENT);    /// 1
+    // lv_obj_set_x(last_time, (int)(80 * g_scale));
+    // lv_obj_set_y(last_time, (int)(69 * g_scale));
+    // lv_obj_set_align(last_time, LV_ALIGN_CENTER);
+    // lv_label_set_text(last_time, "00:00");
+    // lv_obj_add_style(last_time, &style2, 0);
 
 
 // 日历
@@ -2058,10 +2058,12 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
                         if (strcmp(msg->data, "open") == 0)
                         {
                             lv_img_set_src(global_img_ble, &ble);
+                            user_ui_ble_open;
                         }
                         else if (strcmp(msg->data, "close") == 0)
                         {
                             lv_img_set_src(global_img_ble, &ble_close);
+                            user_ui_ble_close;
                         }
                     }//no need
                     break;
