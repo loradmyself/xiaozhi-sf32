@@ -59,7 +59,13 @@ extern lv_ui guider_ui;
 
 
 void setup_scr_screen(lv_ui *ui);
-LV_IMAGE_DECLARE(_preview6_0_RGB565A8_390x450);
+LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_10);
+LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_11);
+LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_12);
+LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_13);
+LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_14);
+LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_15);
+LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_16);
 LV_IMAGE_DECLARE(_bluetooth2_RGB565A8_40x40);
 LV_IMAGE_DECLARE(_bluetooth1_RGB565A8_40x40);
 

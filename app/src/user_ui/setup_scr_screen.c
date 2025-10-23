@@ -27,17 +27,13 @@ void setup_scr_screen(lv_ui *ui)
     lv_obj_set_style_bg_opa(ui->screen, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes screen_xiaozhiui_bg
-    ui->screen_xiaozhiui_bg = lv_image_create(ui->screen);
+    ui->screen_xiaozhiui_bg = lv_animimg_create(ui->screen);
     lv_obj_set_pos(ui->screen_xiaozhiui_bg, 0, 0);
     lv_obj_set_size(ui->screen_xiaozhiui_bg, 390, 450);
-    lv_obj_add_flag(ui->screen_xiaozhiui_bg, LV_OBJ_FLAG_CLICKABLE);
-    lv_image_set_src(ui->screen_xiaozhiui_bg, &_preview6_0_RGB565A8_390x450);
-    lv_image_set_pivot(ui->screen_xiaozhiui_bg, 50,50);
-    lv_image_set_rotation(ui->screen_xiaozhiui_bg, 0);
-
-    //Write style for screen_xiaozhiui_bg, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_image_recolor_opa(ui->screen_xiaozhiui_bg, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_image_opa(ui->screen_xiaozhiui_bg, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_animimg_set_src(ui->screen_xiaozhiui_bg, (const void **) screen_xiaozhiui_bg_imgs, 7, false);
+    lv_animimg_set_duration(ui->screen_xiaozhiui_bg, 150*7);
+    lv_animimg_set_repeat_count(ui->screen_xiaozhiui_bg, LV_ANIM_REPEAT_INFINITE);
+    lv_animimg_start(ui->screen_xiaozhiui_bg);
 
     //Write codes screen_xiaozhiui_time
     ui->screen_xiaozhiui_time = lv_label_create(ui->screen);

@@ -1,1 +1,1 @@
-GEN_CSRCS += _preview6_0_RGB565A8_390x450.c _bluetooth2_RGB565A8_40x40.c _bluetooth1_RGB565A8_40x40.c
+GEN_CSRCS += screen_xiaozhiui_bgpreview6_10.c screen_xiaozhiui_bgpreview6_11.c screen_xiaozhiui_bgpreview6_12.c screen_xiaozhiui_bgpreview6_13.c screen_xiaozhiui_bgpreview6_14.c screen_xiaozhiui_bgpreview6_15.c screen_xiaozhiui_bgpreview6_16.c _bluetooth2_RGB565A8_40x40.c _bluetooth1_RGB565A8_40x40.c
