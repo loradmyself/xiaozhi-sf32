@@ -467,8 +467,8 @@ __exit:
     g_weather_sync_in_progress = 0;
 
     rt_snprintf(weather_info->weather_str, sizeof(weather_info->weather_str), 
-                "城市：%s 天气：%s 温度：%d°C 更新时间：%s", 
-                weather_info->location, weather_info->text, weather_info->temperature, ctime(&weather_info->last_update));
+                "城市：%s 天气：%s 温度：%d°C       ", 
+                weather_info->location, weather_info->text, weather_info->temperature);
 
     return ret;
 }
