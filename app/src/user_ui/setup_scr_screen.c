@@ -66,7 +66,7 @@ void setup_scr_screen(lv_ui *ui)
     ui->screen_xiaozhiui_weather = lv_label_create(ui->screen);
     lv_obj_set_pos(ui->screen_xiaozhiui_weather, 95, 15);
     lv_obj_set_size(ui->screen_xiaozhiui_weather, 200, 40);
-    lv_label_set_text(ui->screen_xiaozhiui_weather, "年月日天气雨雪大小中风冰雾沙周一二三四五六末晴多云阵雷伴有雹夹暴特冻\n尘到浮扬强上海黄浦徐汇区长宁静安普陀虹口杨闵行宝山嘉定东新区金山松江青奉贤崇明");
+    lv_label_set_text(ui->screen_xiaozhiui_weather, "IP °年月日天气雨雪大小中风冰雾沙晴多云转阵雷伴有雹夹暴特冻尘到浮扬强上海黄浦徐汇区长宁静安普陀虹口杨闵行宝山嘉定东新区金山松江青奉贤崇明");
     lv_label_set_long_mode(ui->screen_xiaozhiui_weather, LV_LABEL_LONG_SCROLL_CIRCULAR);
 
     //Write style for screen_xiaozhiui_weather, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
@@ -122,7 +122,7 @@ void setup_scr_screen(lv_ui *ui)
     ui->screen_xiaozhiui_date = lv_label_create(ui->screen);
     lv_obj_set_pos(ui->screen_xiaozhiui_date, 255, 152);
     lv_obj_set_size(ui->screen_xiaozhiui_date, 123, 36);
-    lv_label_set_text(ui->screen_xiaozhiui_date, "2025年12月30日 周三");
+    lv_label_set_text(ui->screen_xiaozhiui_date, "2025年12月30日 周三    一二三四五六末");
     lv_label_set_long_mode(ui->screen_xiaozhiui_date, LV_LABEL_LONG_WRAP);
 
     //Write style for screen_xiaozhiui_date, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
@@ -132,7 +132,7 @@ void setup_scr_screen(lv_ui *ui)
     lv_obj_set_style_text_font(ui->screen_xiaozhiui_date, &lv_font_SourceHanSerifSC_Regular_16, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui->screen_xiaozhiui_date, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_letter_space(ui->screen_xiaozhiui_date, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_line_space(ui->screen_xiaozhiui_date, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_line_space(ui->screen_xiaozhiui_date, 5, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_align(ui->screen_xiaozhiui_date, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_opa(ui->screen_xiaozhiui_date, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_pad_top(ui->screen_xiaozhiui_date, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
