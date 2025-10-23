@@ -31,7 +31,7 @@ void setup_scr_screen(lv_ui *ui)
     lv_obj_set_pos(ui->screen_xiaozhiui_bg, 0, 0);
     lv_obj_set_size(ui->screen_xiaozhiui_bg, 390, 450);
     lv_obj_add_flag(ui->screen_xiaozhiui_bg, LV_OBJ_FLAG_CLICKABLE);
-    lv_image_set_src(ui->screen_xiaozhiui_bg, &_preview_RGB565A8_390x450);
+    lv_image_set_src(ui->screen_xiaozhiui_bg, &_preview6_0_RGB565A8_390x450);
     lv_image_set_pivot(ui->screen_xiaozhiui_bg, 50,50);
     lv_image_set_rotation(ui->screen_xiaozhiui_bg, 0);
 
@@ -66,7 +66,7 @@ void setup_scr_screen(lv_ui *ui)
     ui->screen_xiaozhiui_weather = lv_label_create(ui->screen);
     lv_obj_set_pos(ui->screen_xiaozhiui_weather, 95, 15);
     lv_obj_set_size(ui->screen_xiaozhiui_weather, 200, 40);
-    lv_label_set_text(ui->screen_xiaozhiui_weather, "IP °年月日天气雨雪大小中风冰雾沙晴多云转阵雷伴有雹夹暴特冻尘到浮扬强上海黄浦徐汇区长宁静安普陀虹口杨闵行宝山嘉定东新区金山松江青奉贤崇明");
+    lv_label_set_text(ui->screen_xiaozhiui_weather, "IP °城市天气温度： 年月日天气雨雪大小中风冰雾沙晴多云转阵雷伴有雹夹暴特冻尘到浮扬强上海黄浦徐汇区长宁静安普陀虹口杨闵行宝山嘉定东新区金山松江青奉贤崇明");
     lv_label_set_long_mode(ui->screen_xiaozhiui_weather, LV_LABEL_LONG_SCROLL_CIRCULAR);
 
     //Write style for screen_xiaozhiui_weather, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
@@ -92,7 +92,7 @@ void setup_scr_screen(lv_ui *ui)
 
     //Write codes screen_xiaozhiui_connect
     ui->screen_xiaozhiui_connect = lv_label_create(ui->screen);
-    lv_obj_set_pos(ui->screen_xiaozhiui_connect, 258, 204);
+    lv_obj_set_pos(ui->screen_xiaozhiui_connect, 255, 251);
     lv_obj_set_size(ui->screen_xiaozhiui_connect, 110, 42);
     lv_label_set_text(ui->screen_xiaozhiui_connect, "连接中...按键小智...初始化请稍等蓝牙断开PAN成功尝试唤醒重新启正在确保设备开启了共享网络新发起");
     lv_label_set_long_mode(ui->screen_xiaozhiui_connect, LV_LABEL_LONG_SCROLL_CIRCULAR);
