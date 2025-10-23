@@ -30,7 +30,7 @@ void setup_scr_screen(lv_ui *ui)
     ui->screen_xiaozhiui_bg = lv_animimg_create(ui->screen);
     lv_obj_set_pos(ui->screen_xiaozhiui_bg, 0, 0);
     lv_obj_set_size(ui->screen_xiaozhiui_bg, 390, 450);
-    lv_animimg_set_src(ui->screen_xiaozhiui_bg, (const void **) screen_xiaozhiui_bg_imgs, 7, false);
+    lv_animimg_set_src(ui->screen_xiaozhiui_bg, (const void **) screen_xiaozhiui_bg_imgs, 7);
     lv_animimg_set_duration(ui->screen_xiaozhiui_bg, 150*7);
     lv_animimg_set_repeat_count(ui->screen_xiaozhiui_bg, LV_ANIM_REPEAT_INFINITE);
     lv_animimg_start(ui->screen_xiaozhiui_bg);
