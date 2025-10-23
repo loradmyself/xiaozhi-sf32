@@ -158,7 +158,7 @@ void xiaozhi_time_format_strings(date_time_t *time_info)
     rt_snprintf(time_info->time_str, sizeof(time_info->time_str),
                 "%02d:%02d", time_info->hour, time_info->minute);
 
-    // 格式化时间字符串: "14:30:25"
+    // 格式化时间字符串: "25"
     rt_snprintf(time_info->second_str, sizeof(time_info->second_str),
                 "%02d", time_info->second);
 
