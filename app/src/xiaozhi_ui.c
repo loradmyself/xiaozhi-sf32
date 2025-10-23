@@ -1314,6 +1314,7 @@ void user_xiaozhi_ui_callback(void)
 {
     //TIME_GET;
     user_ui_time_text_set;
+    user_ui_second_text_set
     user_ui_date_text_set;
     user_ui_weather_text_set;
     user_ui_update;

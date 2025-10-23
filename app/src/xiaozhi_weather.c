@@ -154,11 +154,13 @@ void xiaozhi_time_format_strings(date_time_t *time_info)
                 time_info->day,
                 xiaozhi_time_get_weekday_str(time_info->weekday));
 
-    // 格式化时间字符串: "14:30:25"
+    // 格式化时间字符串: "14:30"
     rt_snprintf(time_info->time_str, sizeof(time_info->time_str),
-                "%02d:%02d:%02d", time_info->hour, time_info->minute,
-                time_info->second);
+                "%02d:%02d", time_info->hour, time_info->minute);
 
+    // 格式化时间字符串: "14:30:25"
+    rt_snprintf(time_info->second_str, sizeof(time_info->second_str),
+                "%02d", time_info->second);
 
 }
 

@@ -19,6 +19,7 @@ typedef struct date_time
     char weekday_str[10];
     char date_str[64];    // 增大缓冲区大小
     char time_str[32];    // 增大缓冲区大小
+    char second_str[16];
 } date_time_t;
 
 
