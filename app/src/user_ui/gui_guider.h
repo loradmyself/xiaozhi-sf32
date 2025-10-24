@@ -21,7 +21,8 @@ typedef struct
   
 	lv_obj_t *screen;
 	bool screen_del;
-	lv_obj_t *screen_xiaozhiui_bg;
+	lv_obj_t *screen_xiaozhiui_bg1;
+	lv_obj_t *screen_xiaozhiui_bg2;
 	lv_obj_t *screen_xiaozhiui_time;
 	lv_obj_t *screen_xiaozhiui_weather;
 	lv_obj_t *screen_xiaozhiui_connect;
@@ -59,10 +60,8 @@ extern lv_ui guider_ui;
 
 
 void setup_scr_screen(lv_ui *ui);
-LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_10);
-LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_11);
-LV_IMAGE_DECLARE(screen_xiaozhiui_bgpreview6_12);
-
+LV_IMAGE_DECLARE(_1_RGB565A8_390x450);
+LV_IMAGE_DECLARE(_preview6_0_RGB565A8_390x450);
 LV_IMAGE_DECLARE(_bluetooth2_RGB565A8_40x40);
 LV_IMAGE_DECLARE(_bluetooth1_RGB565A8_40x40);
 
