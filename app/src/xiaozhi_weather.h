@@ -30,7 +30,7 @@ typedef struct {
     char code[8];           // 天气现象代码，如"4"
     int temperature;        // 温度，摄氏度
     time_t last_update;     // 最后更新时间
-    char weather_str[64];   // user 天气信息
+    char weather_str[128];   // user 天气信息
 } weather_info_t;
 
 

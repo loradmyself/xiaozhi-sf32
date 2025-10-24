@@ -30,8 +30,8 @@ void setup_scr_screen(lv_ui *ui)
     ui->screen_xiaozhiui_bg = lv_animimg_create(ui->screen);
     lv_obj_set_pos(ui->screen_xiaozhiui_bg, 0, 0);
     lv_obj_set_size(ui->screen_xiaozhiui_bg, 390, 450);
-    lv_animimg_set_src(ui->screen_xiaozhiui_bg, (const void **) screen_xiaozhiui_bg_imgs, 7);
-    lv_animimg_set_duration(ui->screen_xiaozhiui_bg, 150*7);
+    lv_animimg_set_src(ui->screen_xiaozhiui_bg, (const void **) screen_xiaozhiui_bg_imgs, 3);
+    lv_animimg_set_duration(ui->screen_xiaozhiui_bg, 150*3);
     lv_animimg_set_repeat_count(ui->screen_xiaozhiui_bg, LV_ANIM_REPEAT_INFINITE);
     lv_animimg_start(ui->screen_xiaozhiui_bg);
 
@@ -211,7 +211,7 @@ void setup_scr_screen(lv_ui *ui)
 
     //Write codes screen_xiaozhiui_second
     ui->screen_xiaozhiui_second = lv_label_create(ui->screen);
-    lv_obj_set_pos(ui->screen_xiaozhiui_second, 304, 114);
+    lv_obj_set_pos(ui->screen_xiaozhiui_second, 304, 113);
     lv_obj_set_size(ui->screen_xiaozhiui_second, 30, 30);
     lv_label_set_text(ui->screen_xiaozhiui_second, "00");
     lv_label_set_long_mode(ui->screen_xiaozhiui_second, LV_LABEL_LONG_WRAP);
@@ -223,7 +223,7 @@ void setup_scr_screen(lv_ui *ui)
     lv_obj_set_style_border_side(ui->screen_xiaozhiui_second, LV_BORDER_SIDE_FULL, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_radius(ui->screen_xiaozhiui_second, 15, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_color(ui->screen_xiaozhiui_second, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->screen_xiaozhiui_second, &lv_font_AlexBrush_Regular_16, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui->screen_xiaozhiui_second, &lv_font_SourceHanSerifSC_Regular_16, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui->screen_xiaozhiui_second, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_letter_space(ui->screen_xiaozhiui_second, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_line_space(ui->screen_xiaozhiui_second, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
@@ -231,7 +231,7 @@ void setup_scr_screen(lv_ui *ui)
     lv_obj_set_style_bg_opa(ui->screen_xiaozhiui_second, 22, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_color(ui->screen_xiaozhiui_second, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_bg_grad_dir(ui->screen_xiaozhiui_second, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_pad_top(ui->screen_xiaozhiui_second, 7, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui->screen_xiaozhiui_second, 5, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_pad_right(ui->screen_xiaozhiui_second, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_pad_bottom(ui->screen_xiaozhiui_second, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_pad_left(ui->screen_xiaozhiui_second, 0, LV_PART_MAIN|LV_STATE_DEFAULT);

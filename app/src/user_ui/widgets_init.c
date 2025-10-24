@@ -98,8 +98,5 @@ const lv_image_dsc_t * screen_xiaozhiui_bg_imgs[7] = {
     &screen_xiaozhiui_bgpreview6_10,
     &screen_xiaozhiui_bgpreview6_11,
     &screen_xiaozhiui_bgpreview6_12,
-    &screen_xiaozhiui_bgpreview6_13,
-    &screen_xiaozhiui_bgpreview6_14,
-    &screen_xiaozhiui_bgpreview6_15,
-    &screen_xiaozhiui_bgpreview6_16,
+
 };
