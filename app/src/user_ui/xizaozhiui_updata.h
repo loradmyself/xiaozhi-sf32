@@ -33,5 +33,12 @@ char battery_percent_str[8];                /*电池电量字符串*/
                          lv_obj_add_flag(standby_screen.screen_xiaozhiui_ble_N, LV_OBJ_FLAG_HIDDEN);
 #define user_ui_ble_close lv_obj_add_flag(standby_screen.screen_xiaozhiui_ble_Y, LV_OBJ_FLAG_HIDDEN); \
                           lv_obj_clear_flag(standby_screen.screen_xiaozhiui_ble_N, LV_OBJ_FLAG_HIDDEN);
+
+#define user_ui_bg2_anim(bg_opa) lv_obj_set_style_image_recolor_opa(standby_screen.screen_xiaozhiui_bg2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);\
+                        lv_obj_set_style_image_opa(standby_screen.screen_xiaozhiui_bg2, bg_opa, LV_PART_MAIN|LV_STATE_DEFAULT); 
+                            
+ 
 /*ui更新*/
 #define user_ui_update lv_obj_update_layout(standby_screen.screen)
+
+

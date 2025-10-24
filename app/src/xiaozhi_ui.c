@@ -34,6 +34,8 @@ lv_ui standby_screen;
 // 定义UI消息类型
 typedef enum {
     USER_UI_MSG_ANIM,
+    USER_UI_MSG_FADEOUT,
+    USER_UI_MSG_FADEIN,
     USER_UI_MSG_UPDATE,
     UI_MSG_CHAT_STATUS,
     UI_MSG_CHAT_OUTPUT,
@@ -699,69 +701,14 @@ lv_obj_t * ui_Container2 = NULL;
 lv_obj_t * ui_Container3 = NULL;
 lv_obj_t * ui_Image9 = NULL;
 
-
-// 动画淡入淡出回调
-static void user_ui_fade_anim_cb(void *var, int32_t value)
-{
-    if (standby_screen.screen_xiaozhiui_bg2) {
-        lv_obj_set_style_img_opa(standby_screen.screen_xiaozhiui_bg2, (lv_opa_t)value, 0);
-    }
-}
-
-void user_ui_fadein_timer_cb(lv_timer_t *timer);
-// 淡出完成回调
-static void user_ui_fadeout_ready_cb(struct _lv_anim_t* anim)
-{
-    // 使用LVGL定时器代替rt_thread_mdelay，避免在动画回调中阻塞
-    lv_timer_t *fadeout_timer = lv_timer_create(user_ui_fadein_timer_cb, 1500, NULL);
-    lv_timer_set_repeat_count(fadeout_timer, 1); // 只执行一次
-    
-    rt_kprintf("Startup fadein completed, waiting 1.5s before fadeout\n");
-
-}
-
-// 定时器回调：用于延时后开始淡出动画
-static void user_ui_fadeout_timer_cb(lv_timer_t *timer)
-{
-    // 停止定时器
-    lv_timer_del(timer);
-    
-    // 开始淡出动画
-    lv_anim_init(&g_startup_anim);
-    lv_anim_set_var(&g_startup_anim, standby_screen.screen_xiaozhiui_bg2);
-    lv_anim_set_values(&g_startup_anim, 255, 0); // 淡出
-    lv_anim_set_time(&g_startup_anim, 800); // 0.8秒淡出
-    lv_anim_set_exec_cb(&g_startup_anim, user_ui_fade_anim_cb);
-    lv_anim_set_ready_cb(&g_startup_anim, user_ui_fadeout_ready_cb);
-    lv_anim_start(&g_startup_anim);
-    
-    rt_kprintf("Starting fadeout animation\n");
-}
-
-// 淡入完成回调
-static void user_ui_fadein_ready_cb(struct _lv_anim_t* anim)
-{
-     // 使用LVGL定时器代替rt_thread_mdelay，避免在动画回调中阻塞
-    lv_timer_t *fadeout_timer = lv_timer_create(user_ui_fadeout_timer_cb, 1500, NULL);
-    lv_timer_set_repeat_count(fadeout_timer, 1); // 只执行一次
-    
-    rt_kprintf("Startup fadein completed, waiting 1.5s before fadeout\n");
-}
-
-//淡入
-void user_ui_fadein_timer_cb(lv_timer_t *timer)
-{
-    // 停止定时器
-    lv_timer_del(timer);
-    // 开始淡入动画
-    lv_anim_init(&g_startup_anim);
-    lv_anim_set_var(&g_startup_anim, standby_screen.screen_xiaozhiui_bg2);
-    lv_anim_set_values(&g_startup_anim, 0, 255); // 淡入
-    lv_anim_set_time(&g_startup_anim, 800); // 0.8秒淡入
-    lv_anim_set_exec_cb(&g_startup_anim, user_ui_fade_anim_cb);
-    lv_anim_set_ready_cb(&g_startup_anim, user_ui_fadein_ready_cb);
-    lv_anim_start(&g_startup_anim);
-}
+int32_t fade_value = 0;
+// // 动画淡入淡出回调
+// static void user_ui_fade_anim_cb(void *var, int32_t value)
+// {
+//     if (standby_screen.screen_xiaozhiui_bg2) {
+//         lv_obj_set_style_img_opa(standby_screen.screen_xiaozhiui_bg2, (lv_opa_t)fade_value++, 0);
+//     }
+// }
 
 
 rt_err_t xiaozhi_ui_obj_init()
@@ -769,8 +716,8 @@ rt_err_t xiaozhi_ui_obj_init()
 
     setup_ui(&standby_screen);
     events_init(&standby_screen);
-    lv_timer_t *user_ui_fadein_timer = lv_timer_create(user_ui_fadein_timer_cb, 1000, NULL);
-    lv_timer_set_repeat_count(user_ui_fadein_timer,1);
+    // lv_timer_t *user_ui_fadein_timer = lv_timer_create(user_ui_fadein_timer_cb, 1000, NULL);
+    // lv_timer_set_repeat_count(user_ui_fadein_timer,1);
 
         // 获取屏幕分辨率
     lv_coord_t scr_width = lv_disp_get_hor_res(NULL);
@@ -1399,7 +1346,7 @@ void ui_swith_to_xiaozhi_screen(void)
 extern date_time_t g_current_time ;
 extern weather_info_t g_current_weather;
 #include "./user_ui/xizaozhiui_updata.h"
-
+uint8_t opa = 255;
 void user_xiaozhi_ui_callback(void)
 {
     //TIME_GET;
@@ -1407,6 +1354,9 @@ void user_xiaozhi_ui_callback(void)
     user_ui_second_text_set;
     user_ui_date_text_set;
     user_ui_weather_text_set;
+    user_ui_bg2_anim(50);
+    opa-=50;
+    if(opa <0) opa =255;
     user_ui_update;
     user_ui_battery_text_set;
     //add guider_ui code
@@ -2035,6 +1985,7 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
                 case USER_UI_MSG_ANIM:
                     //user_ui_anim_cb(&standby_screen);
                     break;
+
                 case UI_MSG_CHAT_OUTPUT:
                     if(msg->data)
                     {
