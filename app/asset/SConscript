@@ -9,7 +9,7 @@ objs = []
 objs_ezip = []
 
 objs_ezip += Glob('*.png')
-# objs_ezip += Glob('./angry/*.png')
+objs_ezip += Glob('./user_ui_bg/*.png')
 # objs_ezip += Glob('./confident/*.png')
 # objs_ezip += Glob('./confused/*.png')
 objs_ezip += Glob('./cool/*.png')
