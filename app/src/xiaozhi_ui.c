@@ -1354,10 +1354,12 @@ void user_xiaozhi_ui_callback(void)
     user_ui_second_text_set;
     user_ui_date_text_set;
     user_ui_weather_text_set;
-    user_ui_bg2_anim(50);
+    //user_ui_bg2_anim(50);
+
+    user_ui_bg2_set_opa(opa);
     opa-=50;
     if(opa <0) opa =255;
-    user_ui_update;
+    //user_ui_update;
     user_ui_battery_text_set;
     //add guider_ui code
     //setup_scr_screen(&standby_screen);           

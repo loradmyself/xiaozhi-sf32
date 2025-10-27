@@ -21,6 +21,7 @@
         "xizaozhiui_updata.h": "c",
         "gui_guider.h": "c",
         "xiaozhi_weather.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "lvgl.h": "c"
     }
 }

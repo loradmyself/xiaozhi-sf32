@@ -7,6 +7,7 @@
 #include "custom.h"
 #include "gui_guider.h"
 
+
 extern lv_ui standby_screen;                /*小智的待机界面*/
 extern date_time_t g_current_time ;         /*当前时间结构体*/
 extern weather_info_t g_current_weather;    /*当前天气结构体*/
@@ -37,7 +38,8 @@ char battery_percent_str[8];                /*电池电量字符串*/
 #define user_ui_bg2_anim(bg_opa) lv_obj_set_style_image_recolor_opa(standby_screen.screen_xiaozhiui_bg2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);\
                         lv_obj_set_style_image_opa(standby_screen.screen_xiaozhiui_bg2, bg_opa, LV_PART_MAIN|LV_STATE_DEFAULT); 
                             
- 
+#define user_ui_bg2_set_opa(bg_opa) lv_obj_set_style_image_recolor_opa(standby_screen.screen_xiaozhiui_bg2, bg_opa, LV_PART_MAIN|LV_STATE_DEFAULT);\
+
 /*ui更新*/
 #define user_ui_update lv_obj_update_layout(standby_screen.screen)
 

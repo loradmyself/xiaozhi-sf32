@@ -50,7 +50,7 @@ void setup_scr_screen(lv_ui *ui)
 
     //Write style for screen_xiaozhiui_bg2, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
     lv_obj_set_style_image_recolor_opa(ui->screen_xiaozhiui_bg2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_image_opa(ui->screen_xiaozhiui_bg2, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_image_opa(ui->screen_xiaozhiui_bg2, 100, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes screen_xiaozhiui_time
     ui->screen_xiaozhiui_time = lv_label_create(ui->screen);
