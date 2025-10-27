@@ -702,16 +702,9 @@ lv_obj_t * ui_Image9 = NULL;
 
 int32_t fade_value = 0;
 
-static lv_anim_t user_ui_bg_anim;
-// 动画淡入淡出回调
-static void user_ui_fade_anim_cb(void *var, int32_t value)
-{
-    if (standby_screen.screen_xiaozhiui_bg2) {
-        lv_obj_set_style_image_recolor_opa(standby_screen.screen_xiaozhiui_bg2, (lv_opa_t)value, 0);
-    }
-}
 
-static void user_ui_bg_fadein_timer_cb(lv_timer_t *timer);
+#include "xiaozhi_ui.h"
+//void user_ui_bg_fadein_timer_cb(lv_timer_t *timer);
 void update_user_xiaozhi_ui_opa(void *parameter)
 {
     extern rt_mq_t ui_msg_queue;
@@ -728,7 +721,7 @@ void update_user_xiaozhi_ui_opa(void *parameter)
         }
     } else {
         // 如果没有消息队列，回退到直接调用（保持向后兼容）
-        user_ui_bg_fadein_timer_cb(NULL);
+        //user_ui_bg_fadein_timer_cb(NULL);
     }
 }
 
@@ -743,47 +736,35 @@ static void user_ui_bg_fadeout_ready_cb(struct _lv_anim_t* anim)
 }
 
 // 定时器回调：用于延时后开始淡出动画
-static void user_ui_bg_fadeout_timer_cb(lv_timer_t *timer)
-{
-    // 停止定时器
-    lv_timer_del(timer);
+// static void user_ui_bg_fadeout_timer_cb(lv_timer_t *timer)
+// {
+//     // 停止定时器
+//     lv_timer_del(timer);
     
-    // 开始淡出动画
-    lv_anim_init(&user_ui_bg_anim);
-    lv_anim_set_var(&user_ui_bg_anim, standby_screen.screen_xiaozhiui_bg2);
-    lv_anim_set_values(&user_ui_bg_anim, 255, 0); // 淡出
-    lv_anim_set_time(&user_ui_bg_anim, 800); // 0.8秒淡出
-    lv_anim_set_exec_cb(&user_ui_bg_anim, user_ui_fade_anim_cb);
-    lv_anim_set_ready_cb(&user_ui_bg_anim, user_ui_bg_fadeout_ready_cb);
-    lv_anim_start(&user_ui_bg_anim);
+//     // 开始淡出动画
+//     lv_anim_init(&user_ui_bg_anim);
+//     lv_anim_set_var(&user_ui_bg_anim, standby_screen.screen_xiaozhiui_bg2);
+//     lv_anim_set_values(&user_ui_bg_anim, 255, 0); // 淡出
+//     lv_anim_set_time(&user_ui_bg_anim, 800); // 0.8秒淡出
+//     lv_anim_set_exec_cb(&user_ui_bg_anim, user_ui_fade_anim_cb);
+//     lv_anim_set_ready_cb(&user_ui_bg_anim, user_ui_bg_fadeout_ready_cb);
+//     lv_anim_start(&user_ui_bg_anim);
     
-    rt_kprintf("Starting fadeout animation\n");
-}
+//     rt_kprintf("Starting fadeout animation\n");
+// }
 
 
-// 开机动画淡入完成回调
-static void user_ui_bg_anim_ready_cb(struct _lv_anim_t* anim)
-{
-    // 使用LVGL定时器代替rt_thread_mdelay，避免在动画回调中阻塞
-    lv_timer_t *fadeout_timer = lv_timer_create(user_ui_bg_fadeout_timer_cb, 1500, NULL);
-    lv_timer_set_repeat_count(fadeout_timer, 1); // 只执行一次
+// // 开机动画淡入完成回调
+// static void user_ui_bg_anim_ready_cb(struct _lv_anim_t* anim)
+// {
+//     // 使用LVGL定时器代替rt_thread_mdelay，避免在动画回调中阻塞
+//     lv_timer_t *fadeout_timer = lv_timer_create(user_ui_bg_fadeout_timer_cb, 1500, NULL);
+//     lv_timer_set_repeat_count(fadeout_timer, 1); // 只执行一次
     
-    rt_kprintf("Startup fadein completed, waiting 1.5s before fadeout\n");
-}
+//     rt_kprintf("Startup fadein completed, waiting 1.5s before fadeout\n");
+// }
 
-static void user_ui_bg_fadein_timer_cb(lv_timer_t *timer)
-{
-    
-    lv_anim_init(&user_ui_bg_anim);
-    lv_anim_set_var(&user_ui_bg_anim, standby_screen.screen_xiaozhiui_bg2);
-    lv_anim_set_values(&user_ui_bg_anim, 0, 255); // 淡入
-    lv_anim_set_time(&user_ui_bg_anim, 2000); // 2秒淡入
-    lv_anim_set_exec_cb(&user_ui_bg_anim, user_ui_fade_anim_cb);
-    //lv_anim_set_ready_cb(&user_ui_bg_anim, user_ui_bg_anim_ready_cb);
-    lv_anim_start(&user_ui_bg_anim);
-    
-    rt_kprintf("Starting fadeout animation\n");
-}
+
 
 
 rt_err_t xiaozhi_ui_obj_init()
@@ -1410,11 +1391,11 @@ void user_xiaozhi_ui_callback(void)
 
     //user_ui_update;
     user_ui_battery_text_set;
-    if(tick_count > 3)
-    {
-        tick_count = 0;
-        user_ui_bg_fadein_timer_cb(NULL);
-    }
+    // if(tick_count > 3)
+    // {
+    //     tick_count = 0;
+    //     user_ui_bg_fadein_timer_cb(NULL);
+    // }
     
     //add guider_ui code
     //setup_scr_screen(&standby_screen);           
@@ -2039,7 +2020,7 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
                     user_xiaozhi_ui_callback();
                     break;
                 case USER_UI_BG_UPDATE:
-                    user_ui_bg_fadein_timer_cb(NULL);
+                    //user_ui_bg_fadein_timer_cb(NULL);
                     break;
 
                 case UI_MSG_CHAT_OUTPUT:
