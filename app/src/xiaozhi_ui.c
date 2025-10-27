@@ -34,8 +34,7 @@ lv_ui standby_screen;
 // 定义UI消息类型
 typedef enum {
     USER_UI_MSG_ANIM,
-    USER_UI_MSG_FADEOUT,
-    USER_UI_MSG_FADEIN,
+    USER_UI_BG_UPDATE,
     USER_UI_MSG_UPDATE,
     UI_MSG_CHAT_STATUS,
     UI_MSG_CHAT_OUTPUT,
@@ -702,13 +701,89 @@ lv_obj_t * ui_Container3 = NULL;
 lv_obj_t * ui_Image9 = NULL;
 
 int32_t fade_value = 0;
-// // 动画淡入淡出回调
-// static void user_ui_fade_anim_cb(void *var, int32_t value)
-// {
-//     if (standby_screen.screen_xiaozhiui_bg2) {
-//         lv_obj_set_style_img_opa(standby_screen.screen_xiaozhiui_bg2, (lv_opa_t)fade_value++, 0);
-//     }
-// }
+
+static lv_anim_t user_ui_bg_anim;
+// 动画淡入淡出回调
+static void user_ui_fade_anim_cb(void *var, int32_t value)
+{
+    if (standby_screen.screen_xiaozhiui_bg2) {
+        lv_obj_set_style_image_recolor_opa(standby_screen.screen_xiaozhiui_bg2, (lv_opa_t)value, 0);
+    }
+}
+
+static void user_ui_bg_fadein_timer_cb(lv_timer_t *timer);
+void update_user_xiaozhi_ui_opa(void *parameter)
+{
+    extern rt_mq_t ui_msg_queue;
+    if (ui_msg_queue != RT_NULL) {
+        ui_msg_t* msg = (ui_msg_t*)rt_malloc(sizeof(ui_msg_t));
+        if (msg != RT_NULL) {
+            msg->type = USER_UI_BG_UPDATE;  
+            msg->data = RT_NULL;  
+            
+            if (rt_mq_send(ui_msg_queue, &msg, sizeof(ui_msg_t*)) != RT_EOK) {
+                LOG_E("Failed to send  update USER-UI-BG message");
+                rt_free(msg);
+            }
+        }
+    } else {
+        // 如果没有消息队列，回退到直接调用（保持向后兼容）
+        user_ui_bg_fadein_timer_cb(NULL);
+    }
+}
+
+static void user_ui_bg_fadeout_ready_cb(struct _lv_anim_t* anim)
+{
+    update_user_xiaozhi_ui_opa(NULL);
+    // lv_timer_t *fadeout_timer = lv_timer_create(user_ui_bg_fadein_timer_cb, 1500, NULL);
+    // lv_timer_set_repeat_count(fadeout_timer, 1); // 只执行一次
+    
+    // rt_kprintf("Startup fadein completed, waiting 1.5s before fadeout\n");
+
+}
+
+// 定时器回调：用于延时后开始淡出动画
+static void user_ui_bg_fadeout_timer_cb(lv_timer_t *timer)
+{
+    // 停止定时器
+    lv_timer_del(timer);
+    
+    // 开始淡出动画
+    lv_anim_init(&user_ui_bg_anim);
+    lv_anim_set_var(&user_ui_bg_anim, standby_screen.screen_xiaozhiui_bg2);
+    lv_anim_set_values(&user_ui_bg_anim, 255, 0); // 淡出
+    lv_anim_set_time(&user_ui_bg_anim, 800); // 0.8秒淡出
+    lv_anim_set_exec_cb(&user_ui_bg_anim, user_ui_fade_anim_cb);
+    lv_anim_set_ready_cb(&user_ui_bg_anim, user_ui_bg_fadeout_ready_cb);
+    lv_anim_start(&user_ui_bg_anim);
+    
+    rt_kprintf("Starting fadeout animation\n");
+}
+
+
+// 开机动画淡入完成回调
+static void user_ui_bg_anim_ready_cb(struct _lv_anim_t* anim)
+{
+    // 使用LVGL定时器代替rt_thread_mdelay，避免在动画回调中阻塞
+    lv_timer_t *fadeout_timer = lv_timer_create(user_ui_bg_fadeout_timer_cb, 1500, NULL);
+    lv_timer_set_repeat_count(fadeout_timer, 1); // 只执行一次
+    
+    rt_kprintf("Startup fadein completed, waiting 1.5s before fadeout\n");
+}
+
+static void user_ui_bg_fadein_timer_cb(lv_timer_t *timer)
+{
+    
+    lv_anim_init(&user_ui_bg_anim);
+    lv_anim_set_var(&user_ui_bg_anim, standby_screen.screen_xiaozhiui_bg2);
+    lv_anim_set_values(&user_ui_bg_anim, 0, 255); // 淡入
+    lv_anim_set_time(&user_ui_bg_anim, 2000); // 2秒淡入
+    lv_anim_set_exec_cb(&user_ui_bg_anim, user_ui_fade_anim_cb);
+    //lv_anim_set_ready_cb(&user_ui_bg_anim, user_ui_bg_anim_ready_cb);
+    lv_anim_start(&user_ui_bg_anim);
+    
+    rt_kprintf("Starting fadeout animation\n");
+}
 
 
 rt_err_t xiaozhi_ui_obj_init()
@@ -1204,33 +1279,8 @@ rt_err_t xiaozhi_ui_obj_init()
     rt_kprintf("Startup animation started\n");
 
 
-
     return RT_EOK;
 }
-
-
-
-// void update_user_anim(void *parameter)
-// {
-//     extern rt_mq_t ui_msg_queue;
-//     if (ui_msg_queue != RT_NULL) {
-//         ui_msg_t* msg = (ui_msg_t*)rt_malloc(sizeof(ui_msg_t));
-//         if (msg != RT_NULL) {
-//             msg->type = USER_UI_MSG_ANIM;  
-//             msg->data = RT_NULL;  
-            
-//             if (rt_mq_send(ui_msg_queue, &msg, sizeof(ui_msg_t*)) != RT_EOK) {
-//                 LOG_E("Failed to send  update USER-UI message");
-//                 rt_free(msg);
-//             }
-//         }
-//     } else {
-//         // 如果没有消息队列，回退到直接调用（保持向后兼容）
-//         user_ui_anim_cb(&standby_screen);
-//     }
-// }
-
-
 
 
 // 音量进度条更新函数
@@ -1346,21 +1396,26 @@ void ui_swith_to_xiaozhi_screen(void)
 extern date_time_t g_current_time ;
 extern weather_info_t g_current_weather;
 #include "./user_ui/xizaozhiui_updata.h"
-uint8_t opa = 255;
+uint8_t tick_count = 0;
 void user_xiaozhi_ui_callback(void)
 {
     //TIME_GET;
+    tick_count++;
     user_ui_time_text_set;
     user_ui_second_text_set;
     user_ui_date_text_set;
     user_ui_weather_text_set;
     //user_ui_bg2_anim(50);
 
-    user_ui_bg2_set_opa(opa);
-    opa-=50;
-    if(opa <0) opa =255;
+
     //user_ui_update;
     user_ui_battery_text_set;
+    if(tick_count > 3)
+    {
+        tick_count = 0;
+        user_ui_bg_fadein_timer_cb(NULL);
+    }
+    
     //add guider_ui code
     //setup_scr_screen(&standby_screen);           
 }
@@ -1386,6 +1441,31 @@ void update_user_xiaozhi_ui(void *parameter)
         user_xiaozhi_ui_callback();
     }
 }
+
+// int16_t opa = 255;
+// uint8_t bg_dir = 1; //0减淡 1加深
+
+// void user_ui_bg_update_callback(void)
+// {
+//     user_ui_bg2_set_opa(opa);
+//     bg_dir == 0 ? (opa += 1) : (opa -= 1);
+//     if(opa < 0)
+//     {
+//         opa = 0;
+//         bg_dir = 0;
+//     }
+//     else if(opa > 255)
+//     {
+//         opa = 255;
+//         bg_dir = 1;
+//     }
+
+// }
+
+
+
+
+
 
 void update_xiaozhi_ui_time(void *parameter)
 {
@@ -1794,16 +1874,8 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
     }
     rt_timer_start(update_time_ui_timer);
 
-    //     //每秒更新时间的ui
-    // if (!user_ui_anim_timer) 
-    // {user_ui_anim_timer = rt_timer_create("user_ui_anim", update_user_anim, NULL,
-    //                                 rt_tick_from_millisecond(3000), //每3秒更新一次
-    //                                 RT_TIMER_FLAG_PERIODIC  | RT_TIMER_FLAG_SOFT_TIMER);
-    // } else 
-    // {
-    //     rt_timer_stop(user_ui_anim_timer);
-    // }
-    // rt_timer_start(user_ui_anim_timer);
+
+    //update_user_xiaozhi_ui_opa(NULL);
 
 
 
@@ -1898,25 +1970,7 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
                     LOG_I("update weather and time\n");
                     rt_mb_send(g_bt_app_mb, UPDATE_REAL_WEATHER_AND_TIME);
                     break;
-                // case UI_MSG_STANDBY_EMOJI:
-                //     if(msg->data)
-                //     {
-                //         if (strcmp(msg->data, "sleepy") == 0)
-                //         {
-                //             if (img_emoji) 
-                //             {
-                //                 lv_img_set_src(img_emoji, &sleepy2); // 使用睡眠表情表示小智未连接
-                //             }
-                //         }
-                //         else if (strcmp(msg->data, "funny") == 0)
-                //         {
-                //             if (img_emoji) 
-                //             {
-                //                 lv_img_set_src(img_emoji, &funny2); // 使用睡眠表情表示小智未连接
-                //             }
-                //         }
-                //     }
-                //     break;
+
                 case UI_MSG_SWITCH_TO_STANDBY:
                     if (standby_screen.screen) {
                         lv_screen_load(standby_screen.screen);
@@ -1984,8 +2038,8 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
                 case USER_UI_MSG_UPDATE:
                     user_xiaozhi_ui_callback();
                     break;
-                case USER_UI_MSG_ANIM:
-                    //user_ui_anim_cb(&standby_screen);
+                case USER_UI_BG_UPDATE:
+                    user_ui_bg_fadein_timer_cb(NULL);
                     break;
 
                 case UI_MSG_CHAT_OUTPUT:
@@ -2022,99 +2076,7 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
                         }
                     }
                     break;      
-                // case UI_MSG_UPDATE_EMOJI:
-                //     if(msg->data)
-                //     {
-                //         if (strcmp(msg->data, "neutral") == 0)
-                //         {
-                //             lv_seqimg_src_array(seqimg, neutral, sizeof(neutral) / sizeof(neutral[0]));
-                //         }
-                //         // else if (strcmp(msg->data, "happy") == 0)
-                //         // {
-                //         //     lv_seqimg_src_array(seqimg, funny, sizeof(funny) / sizeof(funny[0]));
-                //         // }
-                //         // else if (strcmp(msg->data, "laughing") == 0)
-                //         // {
-                //         //     lv_seqimg_src_array(seqimg, funny, sizeof(funny) / sizeof(funny[0]));
-                //         // }
-                //         // else if (strcmp(msg->data, "funny") == 0)
-                //         // {
-                //         //     lv_seqimg_src_array(seqimg, funny, sizeof(funny) / sizeof(funny[0]));
-                //         // }
-                //         else if (strcmp(msg->data, "sad") == 0)
-                //         {
-                //             lv_seqimg_src_array(seqimg, crying, sizeof(crying) / sizeof(crying[0]));
-                //         }
-                //         // else if (strcmp(msg->data, "angry") == 0)     //replace angry
-                //         // {
-                //         //     lv_seqimg_src_array(seqimg, angry, sizeof(angry) / sizeof(angry[0]));
-                //         // }
-                //         else if (strcmp(msg->data, "crying") == 0)
-                //         {
-                //             lv_seqimg_src_array(seqimg, crying, sizeof(crying) / sizeof(crying[0]));
-                //         }
-                //         // else if (strcmp(msg->data, "loving") == 0)
-                //         // {
-                //         //     lv_seqimg_src_array(seqimg, loving, sizeof(loving) / sizeof(loving[0]));
-                //         // }
-                //         // else if (strcmp(msg->data, "embarrassed") == 0)
-                //         // {
-                //         //     lv_seqimg_src_array(seqimg, embarrassed, sizeof(embarrassed) / sizeof(embarrassed[0]));
-                //         // }
-                //         // else if (strcmp(msg->data, "surprised") == 0)
-                //         // {
-                //         //     lv_seqimg_src_array(seqimg, surprised, sizeof(surprised) / sizeof(surprised[0]));
-                //         // }
-                //         // else if (strcmp(msg->data, "shocked") == 0)
-                //         // {
-                //         //     lv_seqimg_src_array(seqimg, surprised, sizeof(surprised) / sizeof(surprised[0]));
-                //         // }
-                //         // else if (strcmp(msg->data, "thinking") == 0)
-                //         // {
-                //         //     lv_seqimg_src_array(seqimg, thinking, sizeof(thinking) / sizeof(thinking[0]));
-                //         // }
-                //         // else if (strcmp(msg->data, "winking") == 0)
-                //         // {
-                //         //     lv_seqimg_src_array(seqimg, loving, sizeof(loving) / sizeof(loving[0]));
-                //         // }
-                //         // else if (strcmp(msg->data, "cool") == 0)
-                //         // {
-                //         //     lv_seqimg_src_array(seqimg, cool, sizeof(cool) / sizeof(cool[0]));
-                //         // }
-                //         // else if (strcmp(msg->data, "relaxed") == 0)
-                //         // {
-                //         //     lv_seqimg_src_array(seqimg, cool, sizeof(cool) / sizeof(cool[0]));
-                //         // }
-                //         // else if (strcmp(msg->data, "delicious") == 0)
-                //         // {
-                //         //     lv_seqimg_src_array(seqimg, loving, sizeof(loving) / sizeof(loving[0]));
-                //         // }
-                //         // else if (strcmp(msg->data, "kissy") == 0)
-                //         // {
-                //         //     lv_seqimg_src_array(seqimg, kissy, sizeof(kissy) / sizeof(kissy[0]));
-                //         // }
-                //         // else if (strcmp(msg->data, "confident") == 0)
-                //         // {
-                //         //     lv_seqimg_src_array(seqimg, cool, sizeof(cool) / sizeof(cool[0]));
-                //         // }
-                //         // else if (strcmp(msg->data, "sleepy") == 0)
-                //         // {
-                //         //     lv_seqimg_src_array(seqimg, sleepy, sizeof(sleepy) / sizeof(sleepy[0]));
-                //         // }
-                //         // else if (strcmp(msg->data, "silly") == 0)
-                //         // {
-                //         //     lv_seqimg_src_array(seqimg, thinking, sizeof(thinking) / sizeof(thinking[0]));
-                //         // }
-                //         // else if (strcmp(msg->data, "confused") == 0)
-                //         // {
-                //         //     lv_seqimg_src_array(seqimg, thinking, sizeof(thinking) / sizeof(thinking[0]));
-                //         // }
-                //         // else
-                //         // {
-                //         //     lv_seqimg_src_array(seqimg, neutral, sizeof(neutral) / sizeof(neutral[0])); // common emoji is neutral
-                //         // }
-                //     }
-                //     break;
+
                 case UI_MSG_UPDATE_BLE:
                     if(msg->data)
                     {
