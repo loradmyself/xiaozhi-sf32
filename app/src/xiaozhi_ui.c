@@ -115,34 +115,11 @@ lv_font_t *font_medium;
 
 
 
-
-/*待机画面*/
-// extern const lv_image_dsc_t ble_icon_img; // 蓝牙图标
-// extern const lv_image_dsc_t ble_icon_img_close;
-// extern const lv_image_dsc_t network_icon_img; // 网络图标
-// extern const lv_image_dsc_t network_icon_img_close;
-// extern const lv_image_dsc_t sunny;// 天气图标
+ 
 extern const lv_image_dsc_t strip;//天气栏
-// extern const lv_image_dsc_t funny2; // 表情图标
-// extern const lv_image_dsc_t sleepy2; // 表情图标
-extern const lv_image_dsc_t cool_gif;
-// extern const lv_image_dsc_t calendar;//日历
-// extern const lv_image_dsc_t second;
-// extern const lv_image_dsc_t img_0;  // 数字图片资源
-// extern const lv_image_dsc_t img_1;
-// extern const lv_image_dsc_t img_2;
-// extern const lv_image_dsc_t img_3;
-// extern const lv_image_dsc_t img_4;
-// extern const lv_image_dsc_t img_5;
-// extern const lv_image_dsc_t img_6;
-// extern const lv_image_dsc_t img_7;
-// extern const lv_image_dsc_t img_8;
-// extern const lv_image_dsc_t img_9;
 
-// lv_obj_t *hour_tens_img;     // 小时十位数图片
-// lv_obj_t *hour_units_img;    // 小时个位数图片
-// lv_obj_t *minute_tens_img;   // 分钟十位数图片
-// lv_obj_t *minute_units_img;  // 分钟个位数图片
+extern const lv_image_dsc_t cool_gif;
+
 lv_obj_t *temperature_label = NULL;  // 温度标签
 lv_obj_t *last_update_label = NULL;  // 上次更新时间标签
 lv_obj_t *battery_arc = NULL;           // 电池圆环显示
@@ -706,66 +683,6 @@ int32_t fade_value = 0;
 
 
 #include "xiaozhi_ui.h"
-//void user_ui_bg_fadein_timer_cb(lv_timer_t *timer);
-void update_user_xiaozhi_ui_opa(void *parameter)
-{
-    extern rt_mq_t ui_msg_queue;
-    if (ui_msg_queue != RT_NULL) {
-        ui_msg_t* msg = (ui_msg_t*)rt_malloc(sizeof(ui_msg_t));
-        if (msg != RT_NULL) {
-            msg->type = USER_UI_BG_UPDATE;  
-            msg->data = RT_NULL;  
-            
-            if (rt_mq_send(ui_msg_queue, &msg, sizeof(ui_msg_t*)) != RT_EOK) {
-                LOG_E("Failed to send  update USER-UI-BG message");
-                rt_free(msg);
-            }
-        }
-    } else {
-        // 如果没有消息队列，回退到直接调用（保持向后兼容）
-        //user_ui_bg_fadein_timer_cb(NULL);
-    }
-}
-
-static void user_ui_bg_fadeout_ready_cb(struct _lv_anim_t* anim)
-{
-    update_user_xiaozhi_ui_opa(NULL);
-    // lv_timer_t *fadeout_timer = lv_timer_create(user_ui_bg_fadein_timer_cb, 1500, NULL);
-    // lv_timer_set_repeat_count(fadeout_timer, 1); // 只执行一次
-    
-    // rt_kprintf("Startup fadein completed, waiting 1.5s before fadeout\n");
-
-}
-
-// 定时器回调：用于延时后开始淡出动画
-// static void user_ui_bg_fadeout_timer_cb(lv_timer_t *timer)
-// {
-//     // 停止定时器
-//     lv_timer_del(timer);
-    
-//     // 开始淡出动画
-//     lv_anim_init(&user_ui_bg_anim);
-//     lv_anim_set_var(&user_ui_bg_anim, standby_screen.screen_xiaozhiui_bg2);
-//     lv_anim_set_values(&user_ui_bg_anim, 255, 0); // 淡出
-//     lv_anim_set_time(&user_ui_bg_anim, 800); // 0.8秒淡出
-//     lv_anim_set_exec_cb(&user_ui_bg_anim, user_ui_fade_anim_cb);
-//     lv_anim_set_ready_cb(&user_ui_bg_anim, user_ui_bg_fadeout_ready_cb);
-//     lv_anim_start(&user_ui_bg_anim);
-    
-//     rt_kprintf("Starting fadeout animation\n");
-// }
-
-
-// // 开机动画淡入完成回调
-// static void user_ui_bg_anim_ready_cb(struct _lv_anim_t* anim)
-// {
-//     // 使用LVGL定时器代替rt_thread_mdelay，避免在动画回调中阻塞
-//     lv_timer_t *fadeout_timer = lv_timer_create(user_ui_bg_fadeout_timer_cb, 1500, NULL);
-//     lv_timer_set_repeat_count(fadeout_timer, 1); // 只执行一次
-    
-//     rt_kprintf("Startup fadein completed, waiting 1.5s before fadeout\n");
-// }
-
 
 
 
@@ -960,7 +877,7 @@ rt_err_t xiaozhi_ui_obj_init()
 ////////////////////////////////////////////////////////////////////////////////
     user_ui_bg_anim = lv_seqimg_create(standby_screen.screen_xiaozhi_ui_bg_cont);
     lv_seqimg_src_array(user_ui_bg_anim, user_ui_bg, 25);
-    lv_seqimg_set_period(user_ui_bg_anim, 30);          // 每帧间隔 100ms
+    lv_seqimg_set_period(user_ui_bg_anim, 100);          // 每帧间隔 
     lv_obj_align(user_ui_bg_anim, LV_ALIGN_CENTER, 0, 0);
     lv_img_set_zoom(user_ui_bg_anim, (int)(LV_SCALE_NONE) * g_scale);
     lv_seqimg_play(user_ui_bg_anim);
@@ -1171,19 +1088,8 @@ void user_xiaozhi_ui_callback(void)
     user_ui_second_text_set;
     user_ui_date_text_set;
     user_ui_weather_text_set;
-    //user_ui_bg2_anim(50);
-
-
-    //user_ui_update;
     user_ui_battery_text_set;
-    // if(tick_count > 3)
-    // {
-    //     tick_count = 0;
-    //     user_ui_bg_fadein_timer_cb(NULL);
-    // }
-    
-    //add guider_ui code
-    //setup_scr_screen(&standby_screen);           
+         
 }
 //add user ui msg update
 void update_user_xiaozhi_ui(void *parameter)
@@ -1207,26 +1113,6 @@ void update_user_xiaozhi_ui(void *parameter)
         user_xiaozhi_ui_callback();
     }
 }
-
-// int16_t opa = 255;
-// uint8_t bg_dir = 1; //0减淡 1加深
-
-// void user_ui_bg_update_callback(void)
-// {
-//     user_ui_bg2_set_opa(opa);
-//     bg_dir == 0 ? (opa += 1) : (opa -= 1);
-//     if(opa < 0)
-//     {
-//         opa = 0;
-//         bg_dir = 0;
-//     }
-//     else if(opa > 255)
-//     {
-//         opa = 255;
-//         bg_dir = 1;
-//     }
-
-// }
 
 
 
@@ -1641,7 +1527,6 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
     rt_timer_start(update_time_ui_timer);
 
 
-    //update_user_xiaozhi_ui_opa(NULL);
 
 
 

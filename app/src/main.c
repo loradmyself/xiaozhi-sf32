@@ -215,50 +215,7 @@ static void pulse_encoder_timeout_handle(void *parameter)
 }
 #endif
 
-////////////////////////////////////////////////////////////////////////////
 
-// #define DELAY_THREAD_STACK_SIZE (512)
-// static rt_uint8_t rt_thread_stack[DELAY_THREAD_STACK_SIZE];
-// rt_ubase_t  rt_delaytask_ctr = 0;
-// void rt_thread_delay_entry(void *parameter)
-// {
-//     parameter = parameter;
-//     while (1)
-//     {
-//         rt_delaytask_ctr ++;
-//     }
-// }
-
-
-// static lv_anim_t user_ui_bg_anim;
-
-// // 动画淡入淡出回调
-// static void user_ui_fade_anim_cb(void *var, int32_t value)
-// {
-//     if (standby_screen.screen_xiaozhiui_bg2) {
-//         lv_obj_set_style_image_recolor_opa(standby_screen.screen_xiaozhiui_bg2, (lv_opa_t)value, 0);
-//     }
-// }
-
-// static void user_ui_bg_fadein_timer_cb(void *parameter)
-// {
-//     while (1)
-//     {
-//         lv_anim_init(&user_ui_bg_anim);
-//         lv_anim_set_var(&user_ui_bg_anim, standby_screen.screen_xiaozhiui_bg2);
-//         lv_anim_set_values(&user_ui_bg_anim, 0, 255); // 淡入
-//         lv_anim_set_time(&user_ui_bg_anim, 2000); // 2秒淡入
-//         lv_anim_set_exec_cb(&user_ui_bg_anim, user_ui_fade_anim_cb);
-//         //lv_anim_set_ready_cb(&user_ui_bg_anim, user_ui_bg_anim_ready_cb);
-//         lv_anim_start(&user_ui_bg_anim);
-        
-//         rt_kprintf("Starting fadeout animation\n");/* code */
-//         //rt_thread_mdelay(3000);
-//     }
-    
-
-// }
-////////////////////////////////////////////////////////////////////////////
 
 static void battery_level_task(void *parameter)
 {
@@ -761,46 +718,6 @@ int main(void)
     {
         rt_kprintf("Failed to init xiaozhi UI thread\n");
     }
-//////////////////////////////////////////////////////////////////////////////////////////////////////////
-// rt_err_t user_ui_result = rt_thread_init(&user_ui_bg_thread,
-//                                      "user_ui_bg",
-//                                      user_ui_bg_fadein_timer_cb,
-//                                      NULL,
-//                                      &user_ui_bg_stack[0],
-//                                      USER_UI_BG_THREAD_STACK_SIZE,
-//                                      31,
-//                                      10);
-//     if (user_ui_result == RT_EOK)
-//     {
-//         rt_thread_startup(&user_ui_bg_thread);
-//     }
-//     else
-//     {
-//         rt_kprintf("Failed to init user_ui_bg thread\n");
-//     }
-
-//     /* 初始化线程 */                                 
-// rt_err_t delay_result = rt_thread_init(&rt_thread_delay_entry,
-//                                     "DELAY",
-//                                     rt_thread_delay_entry,
-//                                     NULL,
-//                                     &rt_thread_stack[0],
-//                                     sizeof(rt_thread_stack),            
-//                                     30,
-//                                     10
-//                 );
-
-//     if (delay_result == RT_EOK)
-//     {
-//         rt_thread_startup(&rt_thread_delay_entry);
-//     }
-//     else
-//     {
-//         rt_kprintf("Failed to init delay thread\n");
-//     }
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 
     // Connect BT PAN
