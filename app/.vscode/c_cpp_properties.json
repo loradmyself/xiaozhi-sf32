@@ -201,6 +201,7 @@
                 "D:\\xiaozhi_sf32\\xiaozhi-sf32\\sdk\\middleware\\bluetooth\\include",
                 "D:\\xiaozhi_sf32\\xiaozhi-sf32\\sdk\\middleware\\button",
                 "D:\\xiaozhi_sf32\\xiaozhi-sf32\\sdk\\middleware\\cpu_usage_profiler",
+                "D:\\xiaozhi_sf32\\xiaozhi-sf32\\sdk\\middleware\\ezipa_dec",
                 "D:\\xiaozhi_sf32\\xiaozhi-sf32\\sdk\\middleware\\ipc_queue\\common",
                 "D:\\xiaozhi_sf32\\xiaozhi-sf32\\sdk\\middleware\\ipc_queue\\porting\\os",
                 "D:\\xiaozhi_sf32\\xiaozhi-sf32\\sdk\\middleware\\ipc_queue\\porting\\os\\rtthread",

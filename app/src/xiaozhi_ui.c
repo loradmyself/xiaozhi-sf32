@@ -27,7 +27,7 @@
 
 #include "./user_ui/gui_guider.h"
 #include "./user_ui/events_init.h"
-
+//#include "agif.h"
 lv_ui standby_screen;
 
 
@@ -70,8 +70,10 @@ rt_mailbox_t g_ui_task_mb =RT_NULL;
 static lv_obj_t* wakeup_switch = NULL;
 static lv_obj_t* interrupt_switch = NULL;
 // 开机动画相关全局变量
+
+LV_IMG_DECLARE(startup_logo);
 static struct rt_semaphore update_ui_sema;
-extern const lv_image_dsc_t startup_logo;  //开机动画图标
+//extern const lv_image_dsc_t startup_logo;  //开机动画图标
 static lv_obj_t *g_startup_screen = NULL;
 static lv_obj_t *g_startup_img = NULL;
 static lv_anim_t g_startup_anim;

@@ -22,6 +22,8 @@
         "gui_guider.h": "c",
         "xiaozhi_weather.h": "c",
         "stdio.h": "c",
-        "lvgl.h": "c"
+        "lvgl.h": "c",
+        "lv_tiny_ttf.h": "c",
+        "littlevgl2rtt.h": "c"
     }
 }
