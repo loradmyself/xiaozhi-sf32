@@ -41,6 +41,9 @@
 #include "xiaozhi_audio.h"
 #include "log.h"
 
+#include "./user_ui/gui_guider.h"
+#include "./user_ui/events_init.h"
+
 #undef LOG_TAG
 #define LOG_TAG "xz"
 #define DBG_TAG "xz"
@@ -74,7 +77,7 @@ extern rt_mailbox_t g_bt_app_mb;
 extern uint8_t vad_enable;
 extern uint8_t Initiate_disconnection_flag;
 extern lv_obj_t *main_container;
-extern lv_obj_t *standby_screen;
+extern lv_ui standby_screen;
 
 struct udp_pcb *udp_pcb;
 xz_audio_t xz_audio;
@@ -388,7 +391,7 @@ static void xz_button_event_handler(int32_t pin, button_action_t action)
             lv_obj_t *now_screen = lv_screen_active();
             rt_kprintf("pressed\r\n");
             rt_kprintf("mqtt按键->对话\n");
-            if (now_screen == standby_screen)
+            if (now_screen == standby_screen.screen)
             {
                 ui_switch_to_xiaozhi_screen();
             }

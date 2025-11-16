@@ -40,6 +40,9 @@
 #include "xiaozhi_ui.h"
 #include "xiaozhi_audio.h"
 
+#include "./user_ui/gui_guider.h"
+#include "./user_ui/events_init.h"
+
 #define MAX_WSOCK_HDR_LEN 4096
 #define WEBSOC_RECONNECT 4
 
@@ -47,7 +50,7 @@ extern BOOL g_pan_connected;
 extern xz_audio_t *thiz;
 extern rt_mailbox_t g_bt_app_mb;
 extern lv_obj_t *main_container;
-extern lv_obj_t *standby_screen;
+extern lv_ui standby_screen;
 extern uint8_t Initiate_disconnection_flag;
 extern rt_mailbox_t g_ui_task_mb;
 extern rt_tick_t last_listen_tick;
@@ -320,7 +323,7 @@ static void xz_button_event_handler(int32_t pin, button_action_t action)
         lv_obj_t *now_screen = lv_screen_active();
         rt_kprintf("pressed\r\n");
         rt_kprintf("按键->对话");
-        if (now_screen == standby_screen)
+        if (now_screen == standby_screen.screen)
         {
             ui_switch_to_xiaozhi_screen();
         }
@@ -393,7 +396,7 @@ static void xz_button2_event_handler(int32_t pin, button_action_t action)
 
             // 长按3秒，直接发送关机消息到ui_task
         lv_obj_t *now_screen = lv_screen_active();
-        if (now_screen != standby_screen && g_activation_context.sem != RT_NULL)
+        if (now_screen != standby_screen.screen && g_activation_context.sem != RT_NULL)
         {
             rt_sem_release(g_activation_context.sem);
         }

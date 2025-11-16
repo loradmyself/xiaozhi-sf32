@@ -27,6 +27,10 @@
 #include "../board/board_hardware.h"
 #include "xiaozhi_screen.h"
 
+
+#include "./user_ui/gui_guider.h"
+#include "./user_ui/events_init.h"
+
 #define SCALE_DPX(val) LV_DPX((val) * get_scale_factor())
 
 lv_obj_t *shutdown_screen = NULL; 
@@ -72,7 +76,7 @@ extern const unsigned char xiaozhi_font[];
 extern const int xiaozhi_font_size;
 extern const lv_image_dsc_t cdian2; 
 extern const lv_image_dsc_t startup_logo;  //开机动画图标
-extern lv_obj_t *standby_screen;
+extern lv_ui standby_screen;
 extern lv_obj_t *cont;
 extern const lv_image_dsc_t no_power2;
 extern bool low_battery_shutdown_triggered;
@@ -207,7 +211,7 @@ static void low_battery_shutdown_countdown_cb(lv_timer_t *timer)
         
         rt_kprintf("在充电 不关机了\n");
         low_battery_shutdown_triggered = true;
-        if(g_screen_before_low_battery == standby_screen)
+        if(g_screen_before_low_battery == standby_screen.screen)
         {
             ui_swith_to_standby_screen();
         }
@@ -464,12 +468,12 @@ static void startup_fadeout_ready_cb(struct _lv_anim_t* anim)
 
     // 开机动画完成后显示待机画面
     lv_obj_t *now_screen = lv_screen_active();
-    if (standby_screen && now_screen != low_battery_shutdown_screen && 
+    if (standby_screen.screen && now_screen != low_battery_shutdown_screen && 
         now_screen != low_battery_warning_screen && now_screen != shutdown_screen && 
         now_screen != sleep_screen)
     {
         rt_kprintf("开机->待机");
-        lv_screen_load(standby_screen);
+        lv_screen_load(standby_screen.screen);
         if (cont) {
             lv_obj_set_parent(cont, lv_screen_active());
             lv_obj_move_foreground(cont);

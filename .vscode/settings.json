@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "gui_guider.h": "c",
+        "app_recorder_process.h": "c"
+    }
+}
