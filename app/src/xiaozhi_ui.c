@@ -1389,6 +1389,10 @@ void xiaozhi_update_battery_level(int level)
 }
 
 
+
+static uint8_t opa = 255;
+
+
 void xiaozhi_ui_task(void *args)
 {
     rt_err_t ret = RT_EOK;
@@ -1691,6 +1695,9 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
                     user_ui_time_text_set;         /* 设置时间标签文本*/
                     user_ui_second_text_set;      /* 设置秒标签文本*/
                     user_ui_date_text_set;        /* 设置日期标签文本*/
+                    if(opa<0) opa=255;
+                    user_ui_opa_set(opa);         /* 定时更新透明度*/
+                    opa -= 25;
                     break;
                 case UI_MSG_CHAT_STATUS:
                     if(msg->data)
