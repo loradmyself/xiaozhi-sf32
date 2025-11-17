@@ -29,7 +29,7 @@ void xiaozhi_ui_update_charge_status(uint8_t is_charging);
 float get_scale_factor(void);
 
 extern const lv_image_dsc_t * cool[60];
-
+extern const lv_image_dsc_t * user_ui_bg[25];
 
 extern const lv_image_dsc_t cool_1;
 extern const lv_image_dsc_t cool_2;
@@ -86,11 +86,39 @@ extern const lv_image_dsc_t cool_52;
 extern const lv_image_dsc_t cool_53;
 extern const lv_image_dsc_t cool_54;
 extern const lv_image_dsc_t cool_55;
-extern const lv_image_dsc_t cool_56;
-extern const lv_image_dsc_t cool_57;
-extern const lv_image_dsc_t cool_58;
-extern const lv_image_dsc_t cool_59;
-extern const lv_image_dsc_t cool_60;
+
+
+
+
+
+
+
+extern const lv_image_dsc_t user_ui_bg_1;
+extern const lv_image_dsc_t user_ui_bg_2;
+extern const lv_image_dsc_t user_ui_bg_3;
+extern const lv_image_dsc_t user_ui_bg_4;
+extern const lv_image_dsc_t user_ui_bg_5;
+extern const lv_image_dsc_t user_ui_bg_6;
+extern const lv_image_dsc_t user_ui_bg_7;
+extern const lv_image_dsc_t user_ui_bg_8;
+extern const lv_image_dsc_t user_ui_bg_9;
+extern const lv_image_dsc_t user_ui_bg_10;
+extern const lv_image_dsc_t user_ui_bg_11;
+extern const lv_image_dsc_t user_ui_bg_12;
+extern const lv_image_dsc_t user_ui_bg_13;
+extern const lv_image_dsc_t user_ui_bg_14;
+extern const lv_image_dsc_t user_ui_bg_15;
+extern const lv_image_dsc_t user_ui_bg_16;
+extern const lv_image_dsc_t user_ui_bg_17;
+extern const lv_image_dsc_t user_ui_bg_18;
+extern const lv_image_dsc_t user_ui_bg_19;
+extern const lv_image_dsc_t user_ui_bg_20;
+extern const lv_image_dsc_t user_ui_bg_21;
+extern const lv_image_dsc_t user_ui_bg_22;
+extern const lv_image_dsc_t user_ui_bg_23;
+extern const lv_image_dsc_t user_ui_bg_24;
+extern const lv_image_dsc_t user_ui_bg_25;
+
 
 
 #ifdef __cplusplus

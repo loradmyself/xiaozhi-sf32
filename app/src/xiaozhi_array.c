@@ -58,10 +58,33 @@ const lv_image_dsc_t * cool[] =
   &cool_53,
   &cool_54,
   &cool_55,
-  &cool_56,
-  &cool_57,
-  &cool_58,
-  &cool_59,
-  &cool_60
 };
 
+const lv_image_dsc_t * user_ui_bg[] =
+{
+  &user_ui_bg_1,
+  &user_ui_bg_2,
+  &user_ui_bg_3,
+  &user_ui_bg_4,
+  &user_ui_bg_5,
+  &user_ui_bg_6,
+  &user_ui_bg_7,
+  &user_ui_bg_8,
+  &user_ui_bg_9,
+  &user_ui_bg_10,
+  &user_ui_bg_11,
+  &user_ui_bg_12,
+  &user_ui_bg_13,
+  &user_ui_bg_14,
+  &user_ui_bg_15,
+  &user_ui_bg_16,
+  &user_ui_bg_17,
+  &user_ui_bg_18,
+  &user_ui_bg_19,
+  &user_ui_bg_20,
+  &user_ui_bg_21,
+  &user_ui_bg_22,
+  &user_ui_bg_23,
+  &user_ui_bg_24,
+  &user_ui_bg_25,
+};

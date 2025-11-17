@@ -26,36 +26,29 @@ void setup_scr_screen(lv_ui *ui)
     //Write style for screen, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
     lv_obj_set_style_bg_opa(ui->screen, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
-    //Write codes screen_xiaozhiui_bg1
-    ui->screen_xiaozhiui_bg1 = lv_image_create(ui->screen);
-    lv_obj_set_pos(ui->screen_xiaozhiui_bg1, 0, 0);
-    lv_obj_set_size(ui->screen_xiaozhiui_bg1, 390, 450);
-    lv_obj_add_flag(ui->screen_xiaozhiui_bg1, LV_OBJ_FLAG_CLICKABLE);
-    lv_image_set_src(ui->screen_xiaozhiui_bg1, &_bg1_ARGB8565_390x450);
-    lv_image_set_pivot(ui->screen_xiaozhiui_bg1, 50,50);
-    lv_image_set_rotation(ui->screen_xiaozhiui_bg1, 0);
+    //Write codes screen_xiaozhi_bg
+    ui->screen_xiaozhi_bg = lv_obj_create(ui->screen);
+    lv_obj_set_pos(ui->screen_xiaozhi_bg, 0, 0);
+    lv_obj_set_size(ui->screen_xiaozhi_bg, 390, 450);
+    lv_obj_set_scrollbar_mode(ui->screen_xiaozhi_bg, LV_SCROLLBAR_MODE_OFF);
 
-    //Write style for screen_xiaozhiui_bg1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_image_recolor_opa(ui->screen_xiaozhiui_bg1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_image_opa(ui->screen_xiaozhiui_bg1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-    //Write codes screen_xiaozhiui_bg
-    ui->screen_xiaozhiui_bg = lv_image_create(ui->screen);
-    lv_obj_set_pos(ui->screen_xiaozhiui_bg, 0, 0);
-    lv_obj_set_size(ui->screen_xiaozhiui_bg, 390, 450);
-    lv_obj_add_flag(ui->screen_xiaozhiui_bg, LV_OBJ_FLAG_CLICKABLE);
-    lv_image_set_src(ui->screen_xiaozhiui_bg, &_bg2_ARGB8565_390x450);
-    lv_image_set_pivot(ui->screen_xiaozhiui_bg, 50,50);
-    lv_image_set_rotation(ui->screen_xiaozhiui_bg, 0);
-
-    //Write style for screen_xiaozhiui_bg, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-    lv_obj_set_style_image_recolor_opa(ui->screen_xiaozhiui_bg, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_image_opa(ui->screen_xiaozhiui_bg, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    //Write style for screen_xiaozhi_bg, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_border_width(ui->screen_xiaozhi_bg, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_border_opa(ui->screen_xiaozhi_bg, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_border_color(ui->screen_xiaozhi_bg, lv_color_hex(0x2195f6), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_border_side(ui->screen_xiaozhi_bg, LV_BORDER_SIDE_FULL, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_radius(ui->screen_xiaozhi_bg, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui->screen_xiaozhi_bg, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_top(ui->screen_xiaozhi_bg, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_bottom(ui->screen_xiaozhi_bg, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_left(ui->screen_xiaozhi_bg, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_right(ui->screen_xiaozhi_bg, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_shadow_width(ui->screen_xiaozhi_bg, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes screen_xiaozhiui_time
     ui->screen_xiaozhiui_time = lv_label_create(ui->screen);
     lv_obj_set_pos(ui->screen_xiaozhiui_time, 70, 85);
-    lv_obj_set_size(ui->screen_xiaozhiui_time, 230, 64);
+    lv_obj_set_size(ui->screen_xiaozhiui_time, 230, 70);
     lv_label_set_text(ui->screen_xiaozhiui_time, "00:00");
     lv_label_set_long_mode(ui->screen_xiaozhiui_time, LV_LABEL_LONG_WRAP);
 

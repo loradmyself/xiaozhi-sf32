@@ -688,6 +688,8 @@ static void line_event_handler(struct _lv_event_t* e)
 }
 
 
+lv_obj_t * user_ui_bg_anim;
+
 rt_err_t xiaozhi_ui_obj_init()
 {
     // 如果是低电量模式，只创建基本的屏幕，不创建对话界面
@@ -903,12 +905,18 @@ rt_err_t xiaozhi_ui_obj_init()
 
     //gif  Emoji - 居中显示
     seqimg = lv_seqimg_create(img_container);
-    lv_seqimg_src_array(seqimg, cool, 57);  /* 替换为 cool */
+    lv_seqimg_src_array(seqimg, cool, 55);  /* 替换为 cool */
     lv_seqimg_set_period(seqimg, 30);          // 每帧间隔 100ms
     lv_obj_align(seqimg, LV_ALIGN_CENTER, 0, 0);
     lv_img_set_zoom(seqimg, (int)(LV_SCALE_NONE) * g_scale);
     lv_seqimg_play(seqimg);                     // 开始播放
 
+    user_ui_bg_anim = lv_seqimg_create(standby_screen.screen_xiaozhi_bg); /* 小智背景动画显示 */
+    lv_seqimg_src_array(user_ui_bg_anim, user_ui_bg, 25);
+    lv_seqimg_set_period(user_ui_bg_anim, 30);          
+    lv_obj_align(user_ui_bg_anim, LV_ALIGN_CENTER, 0, 0);
+    lv_img_set_zoom(user_ui_bg_anim, (int)(LV_SCALE_NONE) * g_scale);
+    lv_seqimg_play(user_ui_bg_anim);
 
 
     // ====== 底部文本容器 text_container 占 40% 屏幕高度 ======
@@ -1390,9 +1398,6 @@ void xiaozhi_update_battery_level(int level)
 
 
 
-static uint8_t opa = 255;
-
-
 void xiaozhi_ui_task(void *args)
 {
     rt_err_t ret = RT_EOK;
@@ -1695,9 +1700,7 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
                     user_ui_time_text_set;         /* 设置时间标签文本*/
                     user_ui_second_text_set;      /* 设置秒标签文本*/
                     user_ui_date_text_set;        /* 设置日期标签文本*/
-                    if(opa<0) opa=255;
-                    user_ui_opa_set(opa);         /* 定时更新透明度*/
-                    opa -= 25;
+
                     break;
                 case UI_MSG_CHAT_STATUS:
                     if(msg->data)

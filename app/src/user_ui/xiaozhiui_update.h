@@ -35,7 +35,7 @@ static char battery_percent_str[8];                /*电池电量字符串*/
                           lv_obj_clear_flag(standby_screen.screen_xiaozhiui_ble_N, LV_OBJ_FLAG_HIDDEN);
 
 /* 透明度修改 */
-#define user_ui_opa_set(opa_value) lv_obj_set_style_opa(standby_screen.screen_xiaozhiui_bg, opa_value, LV_PART_MAIN|LV_STATE_DEFAULT);
+//#define user_ui_opa_set(opa_value) lv_obj_set_style_opa(standby_screen.screen_xiaozhiui_bg, opa_value, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 /*ui更新*/
 #define user_ui_update lv_obj_update_layout(standby_screen.screen)
