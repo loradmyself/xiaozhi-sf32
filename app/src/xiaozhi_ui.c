@@ -27,6 +27,10 @@
 #include "../board/board_hardware.h"
 #include "xiaozhi_screen.h"
 
+#include "./user_ui/gui_guider.h"
+#include "./user_ui/events_init.h"
+#include "./user_ui/xiaozhiui_update.h"
+
 #define UPDATE_REAL_WEATHER_AND_TIME 11
 #define LCD_DEVICE_NAME "lcd"
 #define TOUCH_NAME "touch"
@@ -49,6 +53,7 @@
 // LCD_USING_ST7789电池图标尺寸
 #define OUTLINE_W_ST7789 40
 #define OUTLINE_H_ST7789 20
+
 
 
 
@@ -176,32 +181,10 @@ lv_font_t *font_medium;
 
 
 /*待机画面*/
-extern const lv_image_dsc_t ble_icon_img; // 蓝牙图标
-extern const lv_image_dsc_t ble_icon_img_close;
-extern const lv_image_dsc_t network_icon_img; // 网络图标
-extern const lv_image_dsc_t network_icon_img_close;
-extern const lv_image_dsc_t sunny;// 天气图标
 extern const lv_image_dsc_t strip;//天气栏
-extern const lv_image_dsc_t funny2; // 表情图标
-extern const lv_image_dsc_t sleepy2; // 表情图标
 extern const lv_image_dsc_t cool_gif;
-extern const lv_image_dsc_t calendar;//日历
 extern const lv_image_dsc_t second;
-extern const lv_image_dsc_t img_0;  // 数字图片资源
-extern const lv_image_dsc_t img_1;
-extern const lv_image_dsc_t img_2;
-extern const lv_image_dsc_t img_3;
-extern const lv_image_dsc_t img_4;
-extern const lv_image_dsc_t img_5;
-extern const lv_image_dsc_t img_6;
-extern const lv_image_dsc_t img_7;
-extern const lv_image_dsc_t img_8;
-extern const lv_image_dsc_t img_9;
 
-lv_obj_t *hour_tens_img;     // 小时十位数图片
-lv_obj_t *hour_units_img;    // 小时个位数图片
-lv_obj_t *minute_tens_img;   // 分钟十位数图片
-lv_obj_t *minute_units_img;  // 分钟个位数图片
 lv_obj_t *temperature_label = NULL;  // 温度标签
 lv_obj_t *last_update_label = NULL;  // 上次更新时间标签
 lv_obj_t *battery_arc = NULL;           // 电池圆环显示
@@ -213,7 +196,9 @@ lv_obj_t *network_icon = NULL;//网络图标
 lv_obj_t *weather_bgimg;//天气背景图片
 lv_obj_t *weather_icon;//天气图标
 lv_obj_t *ui_Image_calendar;//日历图标
-lv_obj_t *standby_screen = NULL;//待机界面
+
+lv_ui standby_screen;//待机界面
+lv_obj_t *xiaozhi_standby_screen = NULL; /* 添加背景界面 */
 lv_obj_t *ui_Label_ip = NULL;//地址和温度标签
 lv_obj_t *last_time = NULL;//上次更新天气图标
 lv_obj_t *ui_Label_year =NULL;//年份
@@ -410,9 +395,6 @@ static void standby_update_callback(lv_timer_t *timer)
     lv_timer_delete(timer);
     standby_update_timer = NULL;
 }
-
-
-
 
 
 
@@ -706,6 +688,8 @@ static void line_event_handler(struct _lv_event_t* e)
 }
 
 
+lv_obj_t * user_ui_bg_anim;
+
 rt_err_t xiaozhi_ui_obj_init()
 {
     // 如果是低电量模式，只创建基本的屏幕，不创建对话界面
@@ -718,15 +702,18 @@ rt_err_t xiaozhi_ui_obj_init()
         return RT_EOK;
     }
     
+    setup_ui(&standby_screen);           
+    events_init(&standby_screen); 
+
     // 获取屏幕分辨率
     lv_coord_t scr_width = lv_disp_get_hor_res(NULL);
     lv_coord_t scr_height = lv_disp_get_ver_res(NULL);
    
-    standby_screen = lv_obj_create(NULL);
-    lv_obj_clear_flag(standby_screen, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_bg_color(standby_screen, lv_color_hex(0x000000), 0);//黑色
+    xiaozhi_standby_screen  = lv_obj_create(NULL);
+    lv_obj_clear_flag(xiaozhi_standby_screen , LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_bg_color(xiaozhi_standby_screen , lv_color_hex(0x000000), 0);//黑色
 
-    lv_obj_t *standby_header_row = lv_obj_create(standby_screen);
+    lv_obj_t *standby_header_row = lv_obj_create(xiaozhi_standby_screen );
     lv_obj_remove_flag(standby_header_row, LV_OBJ_FLAG_SCROLLABLE);
     lv_obj_set_size(standby_header_row, scr_width, SCALE_DPX(40));
     lv_obj_set_style_bg_opa(standby_header_row, LV_OPA_0, 0);
@@ -739,242 +726,16 @@ rt_err_t xiaozhi_ui_obj_init()
     #if USING_TOUCH_SWITCH
     lv_obj_add_event_cb(standby_header_row, header_row_event_handler, LV_EVENT_ALL, NULL);
     #endif
+    
+    /* 删除不需要的原待机界面显示代码 */
 
-    img_emoji = lv_img_create(standby_screen);
-    LV_IMAGE_DECLARE(sleepy2);
-    LV_IMAGE_DECLARE(funny2);
-    lv_img_set_src(img_emoji, &sleepy2);//初始化提示小智还未连接
-    lv_obj_set_width(img_emoji, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(img_emoji, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(img_emoji, (int)(104 * g_scale));
-    lv_obj_set_y(img_emoji, (int)(-123 * g_scale));
-    lv_obj_set_align(img_emoji, LV_ALIGN_CENTER);
-    lv_obj_add_flag(img_emoji, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
-    lv_obj_clear_flag(img_emoji, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_img_set_zoom(img_emoji, (int)(LV_SCALE_NONE * g_scale)); // 根据缩放因子缩放
-
-    hour_tens_img = lv_img_create(standby_screen);
-    LV_IMAGE_DECLARE(img_1);
-    lv_img_set_src(hour_tens_img, &img_1);
-    lv_obj_set_width(hour_tens_img, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(hour_tens_img, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(hour_tens_img, (int)(-142 * g_scale));
-    lv_obj_set_y(hour_tens_img, (int)(-163 * g_scale));
-    lv_obj_set_align(hour_tens_img, LV_ALIGN_CENTER);
-    lv_obj_add_flag(hour_tens_img, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
-    lv_obj_clear_flag(hour_tens_img, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_img_set_zoom(hour_tens_img, (int)(204 * g_scale));
-
-    hour_units_img = lv_img_create(standby_screen);
-    LV_IMAGE_DECLARE(img_2);
-    lv_img_set_src(hour_units_img, &img_2);
-    lv_obj_set_width(hour_units_img, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(hour_units_img, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(hour_units_img, (int)(-73 * g_scale));
-    lv_obj_set_y(hour_units_img, (int)(-163 * g_scale));
-    lv_obj_set_align(hour_units_img, LV_ALIGN_CENTER);
-    lv_obj_add_flag(hour_units_img, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
-    lv_obj_clear_flag(hour_units_img, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_img_set_zoom(hour_units_img, (int)(204 * g_scale));
-
-    minute_tens_img = lv_img_create(standby_screen);
-        LV_IMAGE_DECLARE(img_3);
-
-    lv_img_set_src(minute_tens_img, &img_3);
-    lv_obj_set_width(minute_tens_img, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(minute_tens_img, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(minute_tens_img, (int)(-142 * g_scale));
-    lv_obj_set_y(minute_tens_img, (int)(-66 * g_scale));
-    lv_obj_set_align(minute_tens_img, LV_ALIGN_CENTER);
-    lv_obj_add_flag(minute_tens_img, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
-    lv_obj_clear_flag(minute_tens_img, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_img_set_zoom(minute_tens_img, (int)(204 * g_scale));
-
-    minute_units_img = lv_img_create(standby_screen);
-            LV_IMAGE_DECLARE(img_4);
-
-    lv_img_set_src(minute_units_img, &img_4);
-    lv_obj_set_width(minute_units_img, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(minute_units_img, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(minute_units_img, (int)(-73 * g_scale));
-    lv_obj_set_y(minute_units_img, (int)(-66 * g_scale));
-    lv_obj_set_align(minute_units_img, LV_ALIGN_CENTER);
-    lv_obj_add_flag(minute_units_img, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
-    lv_obj_clear_flag(minute_units_img, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_img_set_zoom(minute_units_img, (int)(204 * g_scale));
-
-    bluetooth_icon = lv_img_create(standby_screen);
-        LV_IMAGE_DECLARE(ble_icon_img);
-
-    lv_img_set_src(bluetooth_icon, &ble_icon_img);
-    lv_obj_set_width(bluetooth_icon, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(bluetooth_icon, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(bluetooth_icon, (int)(-134 * g_scale));
-    lv_obj_set_y(bluetooth_icon, (int)(133 * g_scale));
-    lv_obj_set_align(bluetooth_icon, LV_ALIGN_CENTER);
-    lv_obj_add_flag(bluetooth_icon, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
-    lv_obj_clear_flag(bluetooth_icon, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_img_set_zoom(bluetooth_icon, (int)(LV_SCALE_NONE * g_scale));
-
-    network_icon = lv_img_create(standby_screen);
-        LV_IMAGE_DECLARE(network_icon_img);
-
-    lv_img_set_src(network_icon, &network_icon_img);
-    lv_obj_set_width(network_icon, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(network_icon, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(network_icon, (int)(0 * g_scale));
-    lv_obj_set_y(network_icon, (int)(133 * g_scale));
-    lv_obj_set_align(network_icon, LV_ALIGN_CENTER);
-    lv_obj_add_flag(network_icon, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
-    lv_obj_clear_flag(network_icon, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_img_set_zoom(network_icon, (int)(384 * g_scale));
-
-    // 电池环形
-    battery_arc = lv_arc_create(standby_screen);
-    lv_obj_set_size(battery_arc, (int)(60 * g_scale), (int)(60 * g_scale)); // 设置圆弧大小
-    lv_obj_set_x(battery_arc, (int)(134 * g_scale));
-    lv_obj_set_y(battery_arc, (int)(133 * g_scale));
-    lv_obj_set_align(battery_arc, LV_ALIGN_CENTER);
-    lv_arc_set_rotation(battery_arc, 270); // 从顶部开始
-    lv_arc_set_bg_angles(battery_arc, 0, 360); // 背景圆环完整
-    lv_arc_set_value(battery_arc, g_battery_level); // 全局电量
-    lv_obj_remove_style(battery_arc, NULL, LV_PART_KNOB); // 移除旋钮
-    lv_obj_set_style_arc_color(battery_arc, lv_color_hex(0x333333), LV_PART_MAIN); // 背景圆环颜色
-    lv_obj_set_style_arc_color(battery_arc, lv_color_hex(0x00CC00), LV_PART_INDICATOR); // 电量颜色(绿色)
-    lv_obj_set_style_arc_width(battery_arc, (int)(8 * g_scale), LV_PART_MAIN); // 背景圆环宽度
-    lv_obj_set_style_arc_width(battery_arc, (int)(6 * g_scale), LV_PART_INDICATOR); // 电量指示宽度
-    // 电池电量百分比文本
-    battery_percent_label = lv_label_create(battery_arc);
-    lv_label_set_text_fmt(battery_percent_label, "%d%%", g_battery_level);
-    lv_obj_set_style_text_color(battery_percent_label, lv_color_white(), 0);
-    lv_obj_set_style_text_font(battery_percent_label, font_medium, 0);
-    lv_obj_align(battery_percent_label, LV_ALIGN_CENTER, 0, 0); // 在圆弧中心
-
-    standby_charging_icon = lv_img_create(battery_arc);
-    lv_img_set_src(standby_charging_icon, &cdian2);
-    lv_obj_set_size(standby_charging_icon, 24, 24); // 设置合适的尺寸
-    lv_obj_align(standby_charging_icon, LV_ALIGN_CENTER, 0, 0); // 在圆弧中心对齐
-    lv_obj_add_flag(standby_charging_icon, LV_OBJ_FLAG_HIDDEN); // 初始隐藏
-
-
-//天气
-    weather_bgimg = lv_img_create(standby_screen);
-    LV_IMAGE_DECLARE(strip);
-    lv_img_set_src(weather_bgimg, &strip);
-    lv_obj_set_width(weather_bgimg, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(weather_bgimg, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(weather_bgimg, (int)(70 * g_scale));
-    lv_obj_set_y(weather_bgimg, (int)(52 * g_scale));
-    lv_obj_set_align(weather_bgimg, LV_ALIGN_CENTER);
-    lv_obj_add_flag(weather_bgimg, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
-    lv_obj_clear_flag(weather_bgimg, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_img_set_zoom(weather_bgimg, (int)(550 * g_scale));
-
-    weather_icon = lv_img_create(standby_screen);
-    LV_IMAGE_DECLARE(sunny);
-
-    lv_img_set_src(weather_icon, &sunny);
-    lv_obj_set_width(weather_icon, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(weather_icon, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(weather_icon, (int)(0 * g_scale));
-    lv_obj_set_y(weather_icon, (int)(50 * g_scale));
-    lv_obj_set_align(weather_icon, LV_ALIGN_CENTER);
-    lv_obj_add_flag(weather_icon, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
-    lv_obj_clear_flag(weather_icon, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_img_set_zoom(weather_icon, (int)(LV_SCALE_NONE * g_scale)); // 根据缩放因子缩放
-
-    ui_Label_ip = lv_label_create(standby_screen);
-    lv_obj_set_width(ui_Label_ip, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_Label_ip, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_Label_ip, (int)(80 * g_scale));
-    lv_obj_set_y(ui_Label_ip, (int)(31 * g_scale));
-    lv_obj_set_align(ui_Label_ip, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label_ip, "IP.00°");
-    lv_obj_add_style(ui_Label_ip, &style2, 0);
-
-
-    last_time = lv_label_create(standby_screen);
-    lv_obj_set_width(last_time, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(last_time, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(last_time, (int)(80 * g_scale));
-    lv_obj_set_y(last_time, (int)(69 * g_scale));
-    lv_obj_set_align(last_time, LV_ALIGN_CENTER);
-    lv_label_set_text(last_time, "00:00");
-    lv_obj_add_style(last_time, &style2, 0);
-
-
-//日历
-    ui_Image_calendar = lv_img_create(standby_screen);
-    LV_IMAGE_DECLARE(calendar);
-    lv_img_set_src(ui_Image_calendar, &calendar);
-    lv_obj_set_width(ui_Image_calendar, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_Image_calendar, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_Image_calendar, (int)(-107 * g_scale));
-    lv_obj_set_y(ui_Image_calendar, (int)(39 * g_scale));
-    lv_obj_set_align(ui_Image_calendar, LV_ALIGN_CENTER);
-    lv_obj_add_flag(ui_Image_calendar, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
-    lv_obj_clear_flag(ui_Image_calendar, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_img_set_zoom(ui_Image_calendar,(int)(320 * g_scale));
-
-    ui_Label_year = lv_label_create(standby_screen);
-    lv_obj_set_width(ui_Label_year, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_Label_year, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_Label_year, (int)(-109 * g_scale));
-    lv_obj_set_y(ui_Label_year, (int)(49 * g_scale));
-    lv_obj_set_align(ui_Label_year, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label_year, "2025");
-        lv_obj_add_style(ui_Label_year, &style, 0);
-
-
-     ui_Label_day = lv_label_create(standby_screen);
-    lv_obj_set_width(ui_Label_day, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_Label_day, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_Label_day, (int)(-109 * g_scale));
-    lv_obj_set_y(ui_Label_day, (int)(74 * g_scale));
-    lv_obj_set_align(ui_Label_day, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label_day, "0801");
-        lv_obj_add_style(ui_Label_day, &style, 0);
-
-//秒
-     ui_Label_second = lv_label_create(standby_screen);
-    lv_obj_set_width(ui_Label_second, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_Label_second, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_Label_second, (int)(-8 * g_scale));
-    lv_obj_set_y(ui_Label_second, (int)(-48 * g_scale));
-    lv_obj_set_align(ui_Label_second, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label_second, "00");
-    lv_obj_add_style(ui_Label_second, &style, 0);
-
-    ui_Image_second = lv_img_create(standby_screen);
-    LV_IMAGE_DECLARE(second);
-    lv_img_set_src(ui_Image_second, &second);
-    lv_obj_set_width(ui_Image_second, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_Image_second, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_Image_second, (int)(-7 * g_scale));
-    lv_obj_set_y(ui_Image_second, (int)(-47 * g_scale));
-    lv_obj_set_align(ui_Image_second, LV_ALIGN_CENTER);
-    lv_obj_add_flag(ui_Image_second, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
-    lv_obj_clear_flag(ui_Image_second, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_img_set_zoom(ui_Image_second,(int)(300 * g_scale));
-
-
-    ui_Label3 = lv_label_create(standby_screen);
-    lv_obj_set_width(ui_Label3, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_Label3, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_Label3, (int)(2 * g_scale));
-    lv_obj_set_y(ui_Label3, (int)(189 * g_scale));
-    lv_obj_set_align(ui_Label3, LV_ALIGN_CENTER);
-    lv_obj_add_style(ui_Label3, &style2, 0);
-    lv_label_set_text(ui_Label3, "等待连接");
 
     LV_IMAGE_DECLARE(ble);
     LV_IMAGE_DECLARE(cdian2);
     LV_IMAGE_DECLARE(ble_close);
 
-
-
     // 创建主容器 - Flex Column，垂直排列
-    main_container = lv_obj_create(lv_screen_active());
+    main_container = lv_obj_create(xiaozhi_standby_screen); /* 将小智对话界面放到新的背景中 */
     lv_obj_remove_flag(main_container, LV_OBJ_FLAG_SCROLLABLE);
     lv_obj_set_size(main_container, scr_width, scr_height);
 
@@ -1144,12 +905,18 @@ rt_err_t xiaozhi_ui_obj_init()
 
     //gif  Emoji - 居中显示
     seqimg = lv_seqimg_create(img_container);
-    lv_seqimg_src_array(seqimg, angry, 57);
+    lv_seqimg_src_array(seqimg, cool, 55);  /* 替换为 cool */
     lv_seqimg_set_period(seqimg, 30);          // 每帧间隔 100ms
     lv_obj_align(seqimg, LV_ALIGN_CENTER, 0, 0);
     lv_img_set_zoom(seqimg, (int)(LV_SCALE_NONE) * g_scale);
     lv_seqimg_play(seqimg);                     // 开始播放
 
+    user_ui_bg_anim = lv_seqimg_create(standby_screen.screen_xiaozhi_bg); /* 小智背景动画显示 */
+    lv_seqimg_src_array(user_ui_bg_anim, user_ui_bg, 25);
+    lv_seqimg_set_period(user_ui_bg_anim, 30);          
+    lv_obj_align(user_ui_bg_anim, LV_ALIGN_CENTER, 0, 0);
+    lv_img_set_zoom(user_ui_bg_anim, (int)(LV_SCALE_NONE) * g_scale);
+    lv_seqimg_play(user_ui_bg_anim);
 
 
     // ====== 底部文本容器 text_container 占 40% 屏幕高度 ======
@@ -1610,6 +1377,8 @@ void xiaozhi_update_battery_level(int level)
         }
     }
 
+    /* 删除环形电池显示 */
+
     if (g_battery_label)
     {
         //rt_kprintf("Updating battery label: %d\n", g_battery_level);
@@ -1617,22 +1386,7 @@ void xiaozhi_update_battery_level(int level)
                               g_battery_level); // 更新电量标签
     }
 
-    // 状态栏的环形电池显示
-    if (battery_arc) {
-        lv_arc_set_value(battery_arc, g_battery_level); // 更新圆弧电量显示
-        
-        // 根据电量改变颜色
-        if (g_battery_level <= 20) {
-            // 低电量红色
-            lv_obj_set_style_arc_color(battery_arc, lv_color_hex(0xCC0000), LV_PART_INDICATOR);
-        } else if (g_battery_level <= 50) {
-            // 中等电量黄色
-            lv_obj_set_style_arc_color(battery_arc, lv_color_hex(0xCCCC00), LV_PART_INDICATOR);
-        } else {
-            // 高电量绿色
-            lv_obj_set_style_arc_color(battery_arc, lv_color_hex(0x00CC00), LV_PART_INDICATOR);
-        }
-    }
+    
     
     // 更新电池电量百分比文本
     if (battery_percent_label) 
@@ -1641,6 +1395,7 @@ void xiaozhi_update_battery_level(int level)
     }
     
 }
+
 
 
 void xiaozhi_ui_task(void *args)
@@ -1759,7 +1514,7 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
     xiaozhi_ui_update_ble("close");
     xiaozhi_ui_chat_status("连接中...");
     xiaozhi_ui_chat_output("等待连接...");
-    xiaozhi_ui_update_emoji("neutral");
+    xiaozhi_ui_update_emoji("cool");
 
 
     //每秒更新时间的ui
@@ -1855,6 +1610,9 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
         {
            // rt_kprintf("Battery level received: %d\n", battery_level);
             xiaozhi_update_battery_level(battery_level);
+            user_ui_battery_bar_set(battery_level); //更新电量进度条
+            Current_Battery(battery_level);
+            user_ui_battery_text_set;//更新电量百分比文本
         }
         
         // 处理UI消息队列中的消息
@@ -1866,7 +1624,8 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
                 case UI_MSG_STANDBY_CHAT_OUTPUT:
                     if(msg->data)
                     {
-                        lv_label_set_text(ui_Label3, msg->data);    
+                        //lv_label_set_text(ui_Label3, msg->data);
+                        user_ui_connect_text_set(msg->data);    /* 小智连接状态文本更新 */
                     }
                     break;
                 case UI_MSG_UPDATE_WEATHER_AND_TIME:
@@ -1874,27 +1633,11 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
                     rt_mb_send(g_bt_app_mb, UPDATE_REAL_WEATHER_AND_TIME);
                     break;
                 case UI_MSG_STANDBY_EMOJI:
-                    if(msg->data)
-                    {
-                        if (strcmp(msg->data, "sleepy") == 0)
-                        {
-                            if (img_emoji) 
-                            {
-                                lv_img_set_src(img_emoji, &sleepy2); // 使用睡眠表情表示小智未连接
-                            }
-                        }
-                        else if (strcmp(msg->data, "funny") == 0)
-                        {
-                            if (img_emoji) 
-                            {
-                                lv_img_set_src(img_emoji, &funny2); // 使用睡眠表情表示小智未连接
-                            }
-                        }
-                    }
+                    /* 删除待机界面表情显示 */
                     break;
                 case UI_MSG_SWITCH_TO_STANDBY:
-                    if (standby_screen) {
-                        lv_screen_load(standby_screen);
+                    if (standby_screen.screen) {
+                        lv_screen_load(standby_screen.screen);
                         lv_obj_set_parent(cont, lv_screen_active());
                         lv_obj_move_foreground(cont);
                         }
@@ -1949,10 +1692,15 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
                     }
                     break;
                 case UI_MSG_WEATHER_UPDATE:
-                    weather_ui_update_callback();
+                    //dweather_ui_update_callback();
+                    user_ui_weather_text_set;
                     break;
                 case UI_MSG_TIME_UPDATE:
                     time_ui_update_callback();
+                    user_ui_time_text_set;         /* 设置时间标签文本*/
+                    user_ui_second_text_set;      /* 设置秒标签文本*/
+                    user_ui_date_text_set;        /* 设置日期标签文本*/
+
                     break;
                 case UI_MSG_CHAT_STATUS:
                     if(msg->data)
@@ -2044,94 +1792,9 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
                 case UI_MSG_UPDATE_EMOJI:
                     if(msg->data)
                     {
-                        if (strcmp(msg->data, "neutral") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, neutral, sizeof(neutral) / sizeof(neutral[0]));
-                        }
-                        else if (strcmp(msg->data, "happy") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, funny, sizeof(funny) / sizeof(funny[0]));
-                        }
-                        else if (strcmp(msg->data, "laughing") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, funny, sizeof(funny) / sizeof(funny[0]));
-                        }
-                        else if (strcmp(msg->data, "funny") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, funny, sizeof(funny) / sizeof(funny[0]));
-                        }
-                        else if (strcmp(msg->data, "sad") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, crying, sizeof(crying) / sizeof(crying[0]));
-                        }
-                        else if (strcmp(msg->data, "angry") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, angry, sizeof(angry) / sizeof(angry[0]));
-                        }
-                        else if (strcmp(msg->data, "crying") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, crying, sizeof(crying) / sizeof(crying[0]));
-                        }
-                        else if (strcmp(msg->data, "loving") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, loving, sizeof(loving) / sizeof(loving[0]));
-                        }
-                        else if (strcmp(msg->data, "embarrassed") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, embarrassed, sizeof(embarrassed) / sizeof(embarrassed[0]));
-                        }
-                        else if (strcmp(msg->data, "surprised") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, surprised, sizeof(surprised) / sizeof(surprised[0]));
-                        }
-                        else if (strcmp(msg->data, "shocked") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, surprised, sizeof(surprised) / sizeof(surprised[0]));
-                        }
-                        else if (strcmp(msg->data, "thinking") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, thinking, sizeof(thinking) / sizeof(thinking[0]));
-                        }
-                        else if (strcmp(msg->data, "winking") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, loving, sizeof(loving) / sizeof(loving[0]));
-                        }
-                        else if (strcmp(msg->data, "cool") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, cool, sizeof(cool) / sizeof(cool[0]));
-                        }
-                        else if (strcmp(msg->data, "relaxed") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, cool, sizeof(cool) / sizeof(cool[0]));
-                        }
-                        else if (strcmp(msg->data, "delicious") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, loving, sizeof(loving) / sizeof(loving[0]));
-                        }
-                        else if (strcmp(msg->data, "kissy") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, kissy, sizeof(kissy) / sizeof(kissy[0]));
-                        }
-                        else if (strcmp(msg->data, "confident") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, cool, sizeof(cool) / sizeof(cool[0]));
-                        }
-                        else if (strcmp(msg->data, "sleepy") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, sleepy, sizeof(sleepy) / sizeof(sleepy[0]));
-                        }
-                        else if (strcmp(msg->data, "silly") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, thinking, sizeof(thinking) / sizeof(thinking[0]));
-                        }
-                        else if (strcmp(msg->data, "confused") == 0)
-                        {
-                            lv_seqimg_src_array(seqimg, thinking, sizeof(thinking) / sizeof(thinking[0]));
-                        }
-                        else
-                        {
-                            lv_seqimg_src_array(seqimg, neutral, sizeof(neutral) / sizeof(neutral[0])); // common emoji is neutral
-                        }
+                        /* 将所有表情图标 默认为 cool */
+                        lv_seqimg_src_array(seqimg, cool, sizeof(cool) / sizeof(cool[0]));
+                        
                     }
                     break;
                 case UI_MSG_UPDATE_BLE:
@@ -2140,10 +1803,12 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
                         if (strcmp(msg->data, "open") == 0)
                         {
                             lv_img_set_src(global_img_ble, &ble);
+                            user_ui_ble_open; /* 添加待机界面蓝牙更新 */
                         }
                         else if (strcmp(msg->data, "close") == 0)
                         {
                             lv_img_set_src(global_img_ble, &ble_close);
+                            user_ui_ble_close; /* 添加待机界面蓝牙更新 */
                         }
                     }
                     break;
@@ -2253,7 +1918,7 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
             lv_obj_t *current_screen = lv_screen_active();
             //rt_kprintf("current_screen: %p, main_container: %p\n", current_screen, main_container);
             //rt_kprintf("inactive_time: %d, limit: %d\n", lv_display_get_inactive_time(NULL), IDLE_TIME_LIMIT);
-            if (lv_display_get_inactive_time(NULL) > IDLE_TIME_LIMIT && current_screen != standby_screen && current_screen != g_startup_screen && current_screen != shutdown_screen &&
+            if (lv_display_get_inactive_time(NULL) > IDLE_TIME_LIMIT && current_screen != standby_screen.screen && current_screen != g_startup_screen && current_screen != shutdown_screen &&
     current_screen != sleep_screen && current_screen != low_battery_shutdown_screen && g_pan_connected) //如果当前满足了屏幕不活跃的时间，并且当前屏幕不是待机屏幕，当前屏幕不是开机启动屏幕，当前屏幕不是关机屏幕，当前屏幕不是睡眠屏幕
             {                       //加这些条件的限制是为了保证只有在对话界面才会进入休眠阶段
 
@@ -2301,7 +1966,7 @@ font_medium = lv_tiny_ttf_create_data(xiaozhi_font, xiaozhi_font_size, medium_fo
                     BT_NOTIFY_LINK_POLICY_SNIFF_MODE | BT_NOTIFY_LINK_POLICY_ROLE_SWITCH); // open role switch
                     MCP_RGBLED_CLOSE();
                     rt_kprintf("time out,xiu_mian\n");
-                    if (standby_screen) 
+                    if (standby_screen.screen) 
                     {
                         LOG_I("休眠->待机\n");
                         ui_swith_to_standby_screen();

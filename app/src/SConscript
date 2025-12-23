@@ -29,6 +29,11 @@ src = src + Glob('./weather/*.c')
 #src = src + Glob('./board/*.cc') 
 #SrcRemove(src, 'xiaozhi.c')
 
+src = src + Glob('./user_ui/*.c') 
+src = src + Glob('./user_ui/guider_customer_fonts*/.c') 
+src = src + Glob('./user_ui/guider_fonts/*.c') 
+src = src + Glob('./user_ui/images/*.c') 
+
 group = DefineGroup('Applications', src, depend = [''], CPPDEFINES = CPPDEFINES, 
     CPPPATH = CPPPATH,
     LIBS = ['libetasr_watch_sifli567'],

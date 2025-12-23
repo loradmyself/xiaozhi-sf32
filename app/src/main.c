@@ -31,6 +31,9 @@
 #include "bt_env.h"
 #include "ulog.h"
 #include "drv_gpio.h"
+
+#include "./user_ui/gui_guider.h"
+#include "./user_ui/events_init.h"
 /* Common functions for RT-Thread based platform
  * -----------------------------------------------*/
 /**
@@ -63,7 +66,7 @@
 extern rt_tick_t last_listen_tick;
 extern xiaozhi_ws_t g_xz_ws;
 extern rt_mailbox_t g_button_event_mb;
-extern lv_obj_t *standby_screen;
+extern lv_ui standby_screen;
 extern lv_timer_t *ui_sleep_timer;
 extern lv_obj_t *shutdown_screen;
 extern lv_obj_t *sleep_screen;
@@ -237,7 +240,7 @@ static void battery_level_task(void *parameter)
         {
             lv_obj_t *now_screen = lv_screen_active();
             rt_kprintf("now_screen address: %p, sleep_screen address: %p, standby_screen address: %p\n", 
-               now_screen, sleep_screen, standby_screen);
+               now_screen, sleep_screen, standby_screen.screen);
             low_battery_shutdown_triggered = false;
             rt_kprintf("Low battery ,shutdown\n");
             // 发送消息到UI线程显示低电量关机页面
@@ -427,7 +430,7 @@ static int bt_app_interface_event_handle(uint16_t type, uint16_t event_id,
             xiaozhi_ui_chat_output("蓝牙断开连接");
             xiaozhi_ui_standby_chat_output("蓝牙断开连接");//待机画面
             lv_obj_t *now_screen = lv_screen_active();
-            if (now_screen != standby_screen && now_screen != sleep_screen && now_screen != shutdown_screen)
+            if (now_screen != standby_screen.screen && now_screen != sleep_screen && now_screen != shutdown_screen)
                 {
                     ui_swith_to_standby_screen();
                 }

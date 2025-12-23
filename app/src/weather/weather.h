@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -20,6 +22,7 @@ typedef struct date_time
     char weekday_str[10];
     char date_str[64];    // 增大缓冲区大小
     char time_str[32];    // 增大缓冲区大小
+    char second_str[8];   /* 秒字符串 */
 } date_time_t;
 
 
@@ -29,6 +32,7 @@ typedef struct {
     char text[32];          // 天气现象文字，如"多云"
     char code[8];           // 天气现象代码，如"4"
     int temperature;        // 温度，摄氏度
+    char weather_str[64];   /* 格式化的天气信息字符串 */
     time_t last_update;     // 最后更新时间
 } weather_info_t;
 

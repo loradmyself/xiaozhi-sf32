@@ -1,0 +1,1 @@
+GEN_CSRCS += _bluetooth2_RGB565A8_40x40.c _bluetooth1_RGB565A8_40x40.c
