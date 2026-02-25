@@ -72,6 +72,7 @@ extern lv_obj_t *shutdown_screen;
 extern lv_obj_t *sleep_screen;
 extern rt_mailbox_t g_ui_task_mb;
 
+
 bt_app_t g_bt_app_env;
 rt_mailbox_t g_bt_app_mb;
 BOOL g_pan_connected = FALSE;
