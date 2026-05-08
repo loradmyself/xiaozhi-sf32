@@ -7,6 +7,8 @@ path = []
 
 if GetDepend(['BSP_USING_BOARD_SF32LB52_XTY_AI']):
     src += Glob('sf32lb52-xty-ai.cc')
+elif GetDepend(['BSP_USING_BOARD_SF32LB52_XIAOZHI_M']):
+    src += Glob('sf32lb52-xiaozhi-m.cc')
 elif GetDepend(['BSP_USING_BOARD_SF32LB52_LCHSPI_ULP']):
     src += Glob('sf32lb52-lchspi-ulp.cc')
 elif GetDepend(['BSP_USING_BOARD_SF32LB52_NANO_52J']):
