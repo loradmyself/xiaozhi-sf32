@@ -36,6 +36,7 @@
 #include "battery_calculator.h"
 #include "bt_pan_ota.h"
 #include "charge.h"
+//#include "ble_control.h"
 /* Common functions for RT-Thread based platform
  * -----------------------------------------------*/
 /**
