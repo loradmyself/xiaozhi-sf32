@@ -2265,12 +2265,12 @@ void xiaozhi_ui_task(void *args)
             }
             else if (ui_event == UI_EVENT_LOW_BATTERY_SHUTDOWN)
             {
-                g_screen_before_low_battery = lv_screen_active();
-                show_low_battery_shutdown();
+                //g_screen_before_low_battery = lv_screen_active();
+                //show_low_battery_shutdown();
             }
             else if (ui_event == UI_EVENT_LOW_BATTERY_WARNING)
             {
-                show_low_battery_warning();
+                //show_low_battery_warning();
             }
         }
         // 处理按钮事件

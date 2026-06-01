@@ -58,3 +58,29 @@ config TINY_TTF_MODE
 config LOW_POWER_NO_SHUTDOWN
     bool "low power dont shutdown"
     default n
+
+config BSP_USING_MOTOR_APP
+    bool "Enable motor control module (app)"
+    default n
+    help
+        Enable dual DC motor control via TB6612 driver.
+        Provides speed/position PID control and finsh command interface.
+
+if BSP_USING_MOTOR_APP
+
+config MOTOR_TOTAL_PPR
+    int "Total encoder PPR (with gear ratio and quadrature)"
+    default 1061
+    help
+        Total pulses per motor shaft revolution, including gear reduction
+        and 4x quadrature decoding.
+        Formula: TOTAL_PPR = encoder_PPR * gear_ratio * 4
+        Example: MG310 -> 13 * 20.409 * 4 = 1061
+
+config MOTOR_MAX_RPM
+    int "Maximum motor speed (RPM)"
+    default 300
+    help
+        Maximum allowed motor speed in RPM for PID control limit.
+
+endif

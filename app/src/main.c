@@ -36,7 +36,10 @@
 #include "battery_calculator.h"
 #include "bt_pan_ota.h"
 #include "charge.h"
-//#include "ble_control.h"
+#ifdef BSP_USING_MOTOR_APP
+    #include "motor/motor_control.h"
+    #include "motor/motor_app.h"
+#endif
 /* Common functions for RT-Thread based platform
  * -----------------------------------------------*/
 /**
@@ -943,6 +946,14 @@ int main(void)
 
 #endif
     set_pinmux();
+
+#ifdef BSP_USING_MOTOR_APP
+    if (motor_hw_init() == 0)
+    {
+        motor_app_start();
+    }
+#endif
+
     // Create  xiaozhi UI
     rt_err_t result = rt_thread_init(
         &xiaozhi_ui_thread, "xz_ui", xiaozhi_ui_task, NULL,

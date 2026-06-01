@@ -8,7 +8,8 @@
 #include <cstring>
 #include "../iot/thing_manager.h"
 #include <webclient.h>
-#include "rgbled_mcp.h" 
+#include "rgbled_mcp.h"
+#include "motor_mcp.h"
 // #include "lwip/apps/websocket_client.h"   // 提供 wsock_write 和 OPCODE_TEXT 定义
 #include "../xiaozhi_websocket.h"        // 提供 g_xz_ws 定义
 #include "../xiaozhi_mqtt.h" 
@@ -120,6 +121,9 @@ void McpServer::AddCommonTools() {
     
         // 添加RGB LED工具
         RGBLEDTool::RegisterRGBLEDTool(this);
+
+        // 添加电机控制工具
+        MotorTool::RegisterMotorTool(this);
 
     //添加唤醒工具
     AddTool("self.wakeup.enable",
