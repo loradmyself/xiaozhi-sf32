@@ -38,3 +38,49 @@ config KWS_ENABLE_DEFAULT
     default n
     help
         Enable KWS (Keyword Spotting) by default in the application. 
+
+
+# EZIP
+config EZIP_BINARY_MODE
+    bool "Enable EZIP binary mode"
+    depends on BSP_USING_BOARD_SF32LB52_NANO_A128R16
+    default y
+    help
+        Enable EZIP binary mode for image resources.
+# TINY_TTF
+config TINY_TTF_MODE
+    bool "Enable Tiny TTF font support"
+    depends on BSP_USING_BOARD_SF32LB52_NANO_A128R16
+    default y
+    help
+        Enable Tiny TTF font support for the application.
+
+config LOW_POWER_NO_SHUTDOWN
+    bool "low power dont shutdown"
+    default n
+
+config BSP_USING_MOTOR_APP
+    bool "Enable motor control module (app)"
+    default n
+    help
+        Enable dual DC motor control via TB6612 driver.
+        Provides speed/position PID control and finsh command interface.
+
+if BSP_USING_MOTOR_APP
+
+config MOTOR_TOTAL_PPR
+    int "Total encoder PPR (with gear ratio and quadrature)"
+    default 1061
+    help
+        Total pulses per motor shaft revolution, including gear reduction
+        and 4x quadrature decoding.
+        Formula: TOTAL_PPR = encoder_PPR * gear_ratio * 4
+        Example: MG310 -> 13 * 20.409 * 4 = 1061
+
+config MOTOR_MAX_RPM
+    int "Maximum motor speed (RPM)"
+    default 300
+    help
+        Maximum allowed motor speed in RPM for PID control limit.
+
+endif
